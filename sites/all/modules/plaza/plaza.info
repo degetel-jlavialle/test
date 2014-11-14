@@ -1,0 +1,8 @@
+name = Plaza
+core = 7.x
+package = Plaza
+dependencies[] = simpletest
+files[] = plaza.test
+configure = admin/config/development/testing/settings
+dependencies[] = simpletest_monitor
+testing_api = 2.x

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PDepend>
+  <Packages>
+    <Package name="+global">
+      <Stats>
+        <TotalClasses>15</TotalClasses>
+        <ConcreteClasses>13</ConcreteClasses>
+        <AbstractClasses>2</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>5</Ce>
+        <A>0.13333333333333</A>
+        <I>1</I>
+        <D>0.13333333333333</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\wamp\www\Test\modules\simpletest\drupal_web_test_case.php">DrupalUnitTestCase</Class>
+        <Class sourceFile="C:\wamp\www\Test\modules\simpletest\drupal_web_test_case.php">DrupalWebTestCase</Class>
+        <Class sourceFile="C:\wamp\www\Test\sites\all\modules\devel\develDrushTest.php">develCase</Class>
+        <Class sourceFile="C:\wamp\www\Test\sites\all\modules\plaza\plazaTests.php">plazaTests</Class>
+        <Class sourceFile="C:\wamp\www\Test\sites\all\modules\simpletest\drupal_web_test_case.php">DrupalUnitTestCase</Class>
+        <Class sourceFile="C:\wamp\www\Test\sites\all\modules\simpletest\drupal_web_test_case.php">DrupalWebTestCase</Class>
+        <Class sourceFile="C:\wamp\www\Test\sites\all\modules\simpletest\drupal_web_test_case.php">DrupalCloneTestCase</Class>
+        <Class sourceFile="C:\wamp\www\Test\sites\all\modules\simpletest\drupal_web_test_case.php">DrupalRemoteTestCase</Class>
+      </ConcreteClasses>
+      <AbstractClasses>
+        <Class sourceFile="C:\wamp\www\Test\modules\simpletest\drupal_web_test_case.php">DrupalTestCase</Class>
+        <Class sourceFile="C:\wamp\www\Test\sites\all\modules\simpletest\drupal_web_test_case.php">DrupalTestCase</Class>
+      </AbstractClasses>
+      <DependsUpon>
+        <Package>+core</Package>
+        <Package>+dom</Package>
+        <Package>+pdo</Package>
+        <Package>+reflection</Package>
+        <Package>+simplexml</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="Drupal\simpletest\Tests">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\wamp\www\Test\modules\simpletest\lib\Drupal\simpletest\Tests\PSR0WebTest.php">PSR0WebTest</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package></Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="Drupal\psr_0_test\Tests">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\wamp\www\Test\modules\simpletest\tests\psr_0_test\lib\Drupal\psr_0_test\Tests\ExampleTest.php">ExampleTest</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package></Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="Drupal\psr_0_test\Tests\Nested">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\wamp\www\Test\modules\simpletest\tests\psr_0_test\lib\Drupal\psr_0_test\Tests\Nested\NestedExampleTest.php">NestedExampleTest</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package></Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="Krumo">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\wamp\www\Test\sites\all\modules\devel\krumo\class.krumo.php">krumo</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>+core</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+  </Packages>
+  <Cycles/>
+</PDepend>

@@ -1,0 +1,880 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>
+            Mayflower Code Browser - Source Code
+        </title>
+        <link rel="stylesheet" type="text/css" href="../js/jquery.sidebar/css/codebrowser/sidebar.css" />
+        <link rel="stylesheet" type="text/css" href="../css/global.css" />
+        <link rel="stylesheet" type="text/css" href="../css/cruisecontrol.css" />
+        <link rel="stylesheet" type="text/css" href="../css/review.css" />
+
+        <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.sidebar/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.sidebar/jquery.sidebar.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/lib/jquery.hoverIntent.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/lib/jquery.bgiframe.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/jquery.cluetip.min.js"></script>
+
+        <script type="text/javascript" src="../js/review.js"></script>
+    </head>
+    <body class="codebrowser">
+        <div class="header">
+            <a href="./../index.html">Go back to index</a> |
+            <a href="http://github.com/mayflowergmbh/PHP_CodeBrowser">PHP CodeBrowser</a>
+        </div>
+        <hr/>
+        <div id="review">
+            <div class="filepath">
+                modules/search/search.pages.inc            </div>
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div class="code"><ol class="code"><li id="line_1" class="odd"><span class="lineNumber">&nbsp;&nbsp;1&nbsp;</span>&lt;?php<a name="line_1"></a></li>
+<li id="line_2" class="even"><span class="lineNumber">&nbsp;&nbsp;2&nbsp;</span><a name="line_2"></a></li>
+<li id="line_3" class="odd"><span class="lineNumber">&nbsp;&nbsp;3&nbsp;</span>/**<a name="line_3"></a></li>
+<li id="line_4" class="even"><span class="lineNumber">&nbsp;&nbsp;4&nbsp;</span>&nbsp;*&nbsp;@file<a name="line_4"></a></li>
+<li id="line_5" class="odd"><span class="lineNumber">&nbsp;&nbsp;5&nbsp;</span>&nbsp;*&nbsp;User&nbsp;page&nbsp;callbacks&nbsp;for&nbsp;the&nbsp;search&nbsp;module.<a name="line_5"></a></li>
+<li id="line_6" class="even"><span class="lineNumber">&nbsp;&nbsp;6&nbsp;</span>&nbsp;*/<a name="line_6"></a></li>
+<li id="line_7" class="odd"><span class="lineNumber">&nbsp;&nbsp;7&nbsp;</span><a name="line_7"></a></li>
+<li id="line_8" class="even"><span class="lineNumber">&nbsp;&nbsp;8&nbsp;</span>/**<a name="line_8"></a></li>
+<li id="line_9" class="odd"><span class="lineNumber">&nbsp;&nbsp;9&nbsp;</span>&nbsp;*&nbsp;Menu&nbsp;callback;&nbsp;presents&nbsp;the&nbsp;search&nbsp;form&nbsp;and/or&nbsp;search&nbsp;results.<a name="line_9"></a></li>
+<li id="line_10" class="even"><span class="lineNumber">&nbsp;10&nbsp;</span>&nbsp;*<a name="line_10"></a></li>
+<li id="line_11" class="odd"><span class="lineNumber">&nbsp;11&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;$module<a name="line_11"></a></li>
+<li id="line_12" class="even"><span class="lineNumber">&nbsp;12&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;Search&nbsp;module&nbsp;to&nbsp;use&nbsp;for&nbsp;the&nbsp;search.<a name="line_12"></a></li>
+<li id="line_13" class="odd"><span class="lineNumber">&nbsp;13&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;$keys<a name="line_13"></a></li>
+<li id="line_14" class="even"><span class="lineNumber">&nbsp;14&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;Keywords&nbsp;to&nbsp;use&nbsp;for&nbsp;the&nbsp;search.<a name="line_14"></a></li>
+<li id="line_15" class="odd"><span class="lineNumber">&nbsp;15&nbsp;</span>&nbsp;*/<a name="line_15"></a></li>
+<li id="line_16" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;16&nbsp;</span>function&nbsp;search_view($module&nbsp;=&nbsp;NULL,&nbsp;$keys&nbsp;=&nbsp;'')&nbsp;{<a name="line_16"></a></li>
+<li id="line_17" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;17&nbsp;</span>&nbsp;&nbsp;$info&nbsp;=&nbsp;FALSE;<a name="line_17"></a></li>
+<li id="line_18" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;18&nbsp;</span>&nbsp;&nbsp;$keys&nbsp;=&nbsp;trim($keys);<a name="line_18"></a></li>
+<li id="line_19" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;19&nbsp;</span>&nbsp;&nbsp;//&nbsp;Also&nbsp;try&nbsp;to&nbsp;pull&nbsp;search&nbsp;keywords&nbsp;out&nbsp;of&nbsp;the&nbsp;$_REQUEST&nbsp;variable&nbsp;to<a name="line_19"></a></li>
+<li id="line_20" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;20&nbsp;</span>&nbsp;&nbsp;//&nbsp;support&nbsp;old&nbsp;GET&nbsp;format&nbsp;of&nbsp;searches&nbsp;for&nbsp;existing&nbsp;links.<a name="line_20"></a></li>
+<li id="line_21" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;21&nbsp;</span>&nbsp;&nbsp;if&nbsp;(!$keys&nbsp;&amp;&amp;&nbsp;!empty($_REQUEST['keys']))&nbsp;{<a name="line_21"></a></li>
+<li id="line_22" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;22&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$keys&nbsp;=&nbsp;trim($_REQUEST['keys']);<a name="line_22"></a></li>
+<li id="line_23" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;23&nbsp;</span>&nbsp;&nbsp;}<a name="line_23"></a></li>
+<li id="line_24" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;24&nbsp;</span><a name="line_24"></a></li>
+<li id="line_25" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;25&nbsp;</span>&nbsp;&nbsp;if&nbsp;(!empty($module))&nbsp;{<a name="line_25"></a></li>
+<li id="line_26" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;26&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$active_module_info&nbsp;=&nbsp;search_get_info();<a name="line_26"></a></li>
+<li id="line_27" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;27&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(isset($active_module_info[$module]))&nbsp;{<a name="line_27"></a></li>
+<li id="line_28" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;28&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$info&nbsp;=&nbsp;$active_module_info[$module];<a name="line_28"></a></li>
+<li id="line_29" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;29&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_29"></a></li>
+<li id="line_30" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;30&nbsp;</span>&nbsp;&nbsp;}<a name="line_30"></a></li>
+<li id="line_31" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;31&nbsp;</span><a name="line_31"></a></li>
+<li id="line_32" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;32&nbsp;</span>&nbsp;&nbsp;if&nbsp;(empty($info))&nbsp;{<a name="line_32"></a></li>
+<li id="line_33" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;33&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;No&nbsp;path&nbsp;or&nbsp;invalid&nbsp;path:&nbsp;find&nbsp;the&nbsp;default&nbsp;module.&nbsp;Note&nbsp;that&nbsp;if&nbsp;there<a name="line_33"></a></li>
+<li id="line_34" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;34&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;are&nbsp;no&nbsp;enabled&nbsp;search&nbsp;modules,&nbsp;this&nbsp;function&nbsp;should&nbsp;never&nbsp;be&nbsp;called,<a name="line_34"></a></li>
+<li id="line_35" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;35&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;since&nbsp;hook_menu()&nbsp;would&nbsp;not&nbsp;have&nbsp;defined&nbsp;any&nbsp;search&nbsp;paths.<a name="line_35"></a></li>
+<li id="line_36" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;36&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$info&nbsp;=&nbsp;search_get_default_module_info();<a name="line_36"></a></li>
+<li id="line_37" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;37&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Redirect&nbsp;from&nbsp;bare&nbsp;/search&nbsp;or&nbsp;an&nbsp;invalid&nbsp;path&nbsp;to&nbsp;the&nbsp;default&nbsp;search&nbsp;path.<a name="line_37"></a></li>
+<li id="line_38" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;38&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$path&nbsp;=&nbsp;'search/'&nbsp;.&nbsp;$info['path'];<a name="line_38"></a></li>
+<li id="line_39" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;39&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($keys)&nbsp;{<a name="line_39"></a></li>
+<li id="line_40" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;40&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$path&nbsp;.=&nbsp;'/'&nbsp;.&nbsp;$keys;<a name="line_40"></a></li>
+<li id="line_41" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;41&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_41"></a></li>
+<li id="line_42" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;42&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;drupal_goto($path);<a name="line_42"></a></li>
+<li id="line_43" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;43&nbsp;</span>&nbsp;&nbsp;}<a name="line_43"></a></li>
+<li id="line_44" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;44&nbsp;</span><a name="line_44"></a></li>
+<li id="line_45" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;45&nbsp;</span>&nbsp;&nbsp;//&nbsp;Default&nbsp;results&nbsp;output&nbsp;is&nbsp;an&nbsp;empty&nbsp;string.<a name="line_45"></a></li>
+<li id="line_46" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;46&nbsp;</span>&nbsp;&nbsp;$results&nbsp;=&nbsp;array('#markup'&nbsp;=&gt;&nbsp;'');<a name="line_46"></a></li>
+<li id="line_47" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;47&nbsp;</span>&nbsp;&nbsp;//&nbsp;Process&nbsp;the&nbsp;search&nbsp;form.&nbsp;Note&nbsp;that&nbsp;if&nbsp;there&nbsp;is&nbsp;$_POST&nbsp;data,<a name="line_47"></a></li>
+<li id="line_48" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;48&nbsp;</span>&nbsp;&nbsp;//&nbsp;search_form_submit()&nbsp;will&nbsp;cause&nbsp;a&nbsp;redirect&nbsp;to&nbsp;search/[module&nbsp;path]/[keys],<a name="line_48"></a></li>
+<li id="line_49" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;49&nbsp;</span>&nbsp;&nbsp;//&nbsp;which&nbsp;will&nbsp;get&nbsp;us&nbsp;back&nbsp;to&nbsp;this&nbsp;page&nbsp;callback.&nbsp;In&nbsp;other&nbsp;words,&nbsp;the&nbsp;search<a name="line_49"></a></li>
+<li id="line_50" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;50&nbsp;</span>&nbsp;&nbsp;//&nbsp;form&nbsp;submits&nbsp;with&nbsp;POST&nbsp;but&nbsp;redirects&nbsp;to&nbsp;GET.&nbsp;This&nbsp;way&nbsp;we&nbsp;can&nbsp;keep<a name="line_50"></a></li>
+<li id="line_51" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;51&nbsp;</span>&nbsp;&nbsp;//&nbsp;the&nbsp;search&nbsp;query&nbsp;URL&nbsp;clean&nbsp;as&nbsp;a&nbsp;whistle.<a name="line_51"></a></li>
+<li id="line_52" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;52&nbsp;</span>&nbsp;&nbsp;if&nbsp;(empty($_POST['form_id'])&nbsp;||&nbsp;$_POST['form_id']&nbsp;!=&nbsp;'search_form')&nbsp;{<a name="line_52"></a></li>
+<li id="line_53" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;53&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$conditions&nbsp;=&nbsp;&nbsp;NULL;<a name="line_53"></a></li>
+<li id="line_54" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;54&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(isset($info['conditions_callback'])&nbsp;&amp;&amp;&nbsp;function_exists($info['conditions_callback']))&nbsp;{<a name="line_54"></a></li>
+<li id="line_55" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;55&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Build&nbsp;an&nbsp;optional&nbsp;array&nbsp;of&nbsp;more&nbsp;search&nbsp;conditions.<a name="line_55"></a></li>
+<li id="line_56" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;56&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$conditions&nbsp;=&nbsp;call_user_func($info['conditions_callback'],&nbsp;$keys);<a name="line_56"></a></li>
+<li id="line_57" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;57&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_57"></a></li>
+<li id="line_58" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;58&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Only&nbsp;search&nbsp;if&nbsp;there&nbsp;are&nbsp;keywords&nbsp;or&nbsp;non-empty&nbsp;conditions.<a name="line_58"></a></li>
+<li id="line_59" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;59&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($keys&nbsp;||&nbsp;!empty($conditions))&nbsp;{<a name="line_59"></a></li>
+<li id="line_60" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;60&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Log&nbsp;the&nbsp;search&nbsp;keys.<a name="line_60"></a></li>
+<li id="line_61" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;61&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;watchdog('search',&nbsp;'Searched&nbsp;%type&nbsp;for&nbsp;%keys.',&nbsp;array('%keys'&nbsp;=&gt;&nbsp;$keys,&nbsp;'%type'&nbsp;=&gt;&nbsp;$info['title']),&nbsp;WATCHDOG_NOTICE,&nbsp;l(t('results'),&nbsp;'search/'&nbsp;.&nbsp;$info['path']&nbsp;.&nbsp;'/'&nbsp;.&nbsp;$keys));<a name="line_61"></a></li>
+<li id="line_62" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;62&nbsp;</span><a name="line_62"></a></li>
+<li id="line_63" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;63&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Collect&nbsp;the&nbsp;search&nbsp;results.<a name="line_63"></a></li>
+<li id="line_64" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;64&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$results&nbsp;=&nbsp;search_data($keys,&nbsp;$info['module'],&nbsp;$conditions);<a name="line_64"></a></li>
+<li id="line_65" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;65&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_65"></a></li>
+<li id="line_66" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;66&nbsp;</span>&nbsp;&nbsp;}<a name="line_66"></a></li>
+<li id="line_67" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;67&nbsp;</span>&nbsp;&nbsp;//&nbsp;The&nbsp;form&nbsp;may&nbsp;be&nbsp;altered&nbsp;based&nbsp;on&nbsp;whether&nbsp;the&nbsp;search&nbsp;was&nbsp;run.<a name="line_67"></a></li>
+<li id="line_68" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;68&nbsp;</span>&nbsp;&nbsp;$build['search_form']&nbsp;=&nbsp;drupal_get_form('search_form',&nbsp;NULL,&nbsp;$keys,&nbsp;$info['module']);<a name="line_68"></a></li>
+<li id="line_69" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;69&nbsp;</span>&nbsp;&nbsp;$build['search_results']&nbsp;=&nbsp;$results;<a name="line_69"></a></li>
+<li id="line_70" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;70&nbsp;</span><a name="line_70"></a></li>
+<li id="line_71" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;71&nbsp;</span>&nbsp;&nbsp;return&nbsp;$build;<a name="line_71"></a></li>
+<li id="line_72" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;72&nbsp;</span>}<a name="line_72"></a></li>
+<li id="line_73" class="odd"><span class="lineNumber">&nbsp;73&nbsp;</span><a name="line_73"></a></li>
+<li id="line_74" class="even"><span class="lineNumber">&nbsp;74&nbsp;</span>/**<a name="line_74"></a></li>
+<li id="line_75" class="odd"><span class="lineNumber">&nbsp;75&nbsp;</span>&nbsp;*&nbsp;Process&nbsp;variables&nbsp;for&nbsp;search-results.tpl.php.<a name="line_75"></a></li>
+<li id="line_76" class="even"><span class="lineNumber">&nbsp;76&nbsp;</span>&nbsp;*<a name="line_76"></a></li>
+<li id="line_77" class="odd"><span class="lineNumber">&nbsp;77&nbsp;</span>&nbsp;*&nbsp;The&nbsp;$variables&nbsp;array&nbsp;contains&nbsp;the&nbsp;following&nbsp;arguments:<a name="line_77"></a></li>
+<li id="line_78" class="even"><span class="lineNumber">&nbsp;78&nbsp;</span>&nbsp;*&nbsp;-&nbsp;$results:&nbsp;Search&nbsp;results&nbsp;array.<a name="line_78"></a></li>
+<li id="line_79" class="odd"><span class="lineNumber">&nbsp;79&nbsp;</span>&nbsp;*&nbsp;-&nbsp;$module:&nbsp;Module&nbsp;the&nbsp;search&nbsp;results&nbsp;came&nbsp;from&nbsp;(module&nbsp;implementing<a name="line_79"></a></li>
+<li id="line_80" class="even"><span class="lineNumber">&nbsp;80&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;hook_search_info()).<a name="line_80"></a></li>
+<li id="line_81" class="odd"><span class="lineNumber">&nbsp;81&nbsp;</span>&nbsp;*<a name="line_81"></a></li>
+<li id="line_82" class="even"><span class="lineNumber">&nbsp;82&nbsp;</span>&nbsp;*&nbsp;@see&nbsp;search-results.tpl.php<a name="line_82"></a></li>
+<li id="line_83" class="odd"><span class="lineNumber">&nbsp;83&nbsp;</span>&nbsp;*/<a name="line_83"></a></li>
+<li id="line_84" class="even"><span class="lineNumber">&nbsp;84&nbsp;</span>function&nbsp;template_preprocess_search_results(&amp;$variables)&nbsp;{<a name="line_84"></a></li>
+<li id="line_85" class="odd"><span class="lineNumber">&nbsp;85&nbsp;</span>&nbsp;&nbsp;$variables['search_results']&nbsp;=&nbsp;'';<a name="line_85"></a></li>
+<li id="line_86" class="even"><span class="lineNumber">&nbsp;86&nbsp;</span>&nbsp;&nbsp;if&nbsp;(!empty($variables['module']))&nbsp;{<a name="line_86"></a></li>
+<li id="line_87" class="odd"><span class="lineNumber">&nbsp;87&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$variables['module']&nbsp;=&nbsp;check_plain($variables['module']);<a name="line_87"></a></li>
+<li id="line_88" class="even"><span class="lineNumber">&nbsp;88&nbsp;</span>&nbsp;&nbsp;}<a name="line_88"></a></li>
+<li id="line_89" class="odd"><span class="lineNumber">&nbsp;89&nbsp;</span>&nbsp;&nbsp;foreach&nbsp;($variables['results']&nbsp;as&nbsp;$result)&nbsp;{<a name="line_89"></a></li>
+<li id="line_90" class="even"><span class="lineNumber">&nbsp;90&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$variables['search_results']&nbsp;.=&nbsp;theme('search_result',&nbsp;array('result'&nbsp;=&gt;&nbsp;$result,&nbsp;'module'&nbsp;=&gt;&nbsp;$variables['module']));<a name="line_90"></a></li>
+<li id="line_91" class="odd"><span class="lineNumber">&nbsp;91&nbsp;</span>&nbsp;&nbsp;}<a name="line_91"></a></li>
+<li id="line_92" class="even"><span class="lineNumber">&nbsp;92&nbsp;</span>&nbsp;&nbsp;$variables['pager']&nbsp;=&nbsp;theme('pager',&nbsp;array('tags'&nbsp;=&gt;&nbsp;NULL));<a name="line_92"></a></li>
+<li id="line_93" class="odd"><span class="lineNumber">&nbsp;93&nbsp;</span>&nbsp;&nbsp;$variables['theme_hook_suggestions'][]&nbsp;=&nbsp;'search_results__'&nbsp;.&nbsp;$variables['module'];<a name="line_93"></a></li>
+<li id="line_94" class="even"><span class="lineNumber">&nbsp;94&nbsp;</span>}<a name="line_94"></a></li>
+<li id="line_95" class="odd"><span class="lineNumber">&nbsp;95&nbsp;</span><a name="line_95"></a></li>
+<li id="line_96" class="even"><span class="lineNumber">&nbsp;96&nbsp;</span>/**<a name="line_96"></a></li>
+<li id="line_97" class="odd"><span class="lineNumber">&nbsp;97&nbsp;</span>&nbsp;*&nbsp;Process&nbsp;variables&nbsp;for&nbsp;search-result.tpl.php.<a name="line_97"></a></li>
+<li id="line_98" class="even"><span class="lineNumber">&nbsp;98&nbsp;</span>&nbsp;*<a name="line_98"></a></li>
+<li id="line_99" class="odd"><span class="lineNumber">&nbsp;99&nbsp;</span>&nbsp;*&nbsp;The&nbsp;$variables&nbsp;array&nbsp;contains&nbsp;the&nbsp;following&nbsp;arguments:<a name="line_99"></a></li>
+<li id="line_100" class="even"><span class="lineNumber">100&nbsp;</span>&nbsp;*&nbsp;-&nbsp;$result<a name="line_100"></a></li>
+<li id="line_101" class="odd"><span class="lineNumber">101&nbsp;</span>&nbsp;*&nbsp;-&nbsp;$module<a name="line_101"></a></li>
+<li id="line_102" class="even"><span class="lineNumber">102&nbsp;</span>&nbsp;*<a name="line_102"></a></li>
+<li id="line_103" class="odd"><span class="lineNumber">103&nbsp;</span>&nbsp;*&nbsp;@see&nbsp;search-result.tpl.php<a name="line_103"></a></li>
+<li id="line_104" class="even"><span class="lineNumber">104&nbsp;</span>&nbsp;*/<a name="line_104"></a></li>
+<li id="line_105" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">105&nbsp;</span>function&nbsp;template_preprocess_search_result(&amp;$variables)&nbsp;{<a name="line_105"></a></li>
+<li id="line_106" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">106&nbsp;</span>&nbsp;&nbsp;global&nbsp;$language;<a name="line_106"></a></li>
+<li id="line_107" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">107&nbsp;</span><a name="line_107"></a></li>
+<li id="line_108" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">108&nbsp;</span>&nbsp;&nbsp;$result&nbsp;=&nbsp;$variables['result'];<a name="line_108"></a></li>
+<li id="line_109" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">109&nbsp;</span>&nbsp;&nbsp;$variables['url']&nbsp;=&nbsp;check_url($result['link']);<a name="line_109"></a></li>
+<li id="line_110" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">110&nbsp;</span>&nbsp;&nbsp;$variables['title']&nbsp;=&nbsp;check_plain($result['title']);<a name="line_110"></a></li>
+<li id="line_111" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">111&nbsp;</span>&nbsp;&nbsp;if&nbsp;(isset($result['language'])&nbsp;&amp;&amp;&nbsp;$result['language']&nbsp;!=&nbsp;$language-&gt;language&nbsp;&amp;&amp;&nbsp;$result['language']&nbsp;!=&nbsp;LANGUAGE_NONE)&nbsp;{<a name="line_111"></a></li>
+<li id="line_112" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">112&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$variables['title_attributes_array']['xml:lang']&nbsp;=&nbsp;$result['language'];<a name="line_112"></a></li>
+<li id="line_113" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">113&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$variables['content_attributes_array']['xml:lang']&nbsp;=&nbsp;$result['language'];<a name="line_113"></a></li>
+<li id="line_114" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">114&nbsp;</span>&nbsp;&nbsp;}<a name="line_114"></a></li>
+<li id="line_115" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">115&nbsp;</span><a name="line_115"></a></li>
+<li id="line_116" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">116&nbsp;</span>&nbsp;&nbsp;$info&nbsp;=&nbsp;array();<a name="line_116"></a></li>
+<li id="line_117" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">117&nbsp;</span>&nbsp;&nbsp;if&nbsp;(!empty($result['module']))&nbsp;{<a name="line_117"></a></li>
+<li id="line_118" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">118&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$info['module']&nbsp;=&nbsp;check_plain($result['module']);<a name="line_118"></a></li>
+<li id="line_119" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">119&nbsp;</span>&nbsp;&nbsp;}<a name="line_119"></a></li>
+<li id="line_120" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">120&nbsp;</span>&nbsp;&nbsp;if&nbsp;(!empty($result['user']))&nbsp;{<a name="line_120"></a></li>
+<li id="line_121" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">121&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$info['user']&nbsp;=&nbsp;$result['user'];<a name="line_121"></a></li>
+<li id="line_122" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">122&nbsp;</span>&nbsp;&nbsp;}<a name="line_122"></a></li>
+<li id="line_123" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">123&nbsp;</span>&nbsp;&nbsp;if&nbsp;(!empty($result['date']))&nbsp;{<a name="line_123"></a></li>
+<li id="line_124" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">124&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$info['date']&nbsp;=&nbsp;format_date($result['date'],&nbsp;'short');<a name="line_124"></a></li>
+<li id="line_125" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">125&nbsp;</span>&nbsp;&nbsp;}<a name="line_125"></a></li>
+<li id="line_126" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">126&nbsp;</span>&nbsp;&nbsp;if&nbsp;(isset($result['extra'])&nbsp;&amp;&amp;&nbsp;is_array($result['extra']))&nbsp;{<a name="line_126"></a></li>
+<li id="line_127" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">127&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$info&nbsp;=&nbsp;array_merge($info,&nbsp;$result['extra']);<a name="line_127"></a></li>
+<li id="line_128" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">128&nbsp;</span>&nbsp;&nbsp;}<a name="line_128"></a></li>
+<li id="line_129" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">129&nbsp;</span>&nbsp;&nbsp;//&nbsp;Check&nbsp;for&nbsp;existence.&nbsp;User&nbsp;search&nbsp;does&nbsp;not&nbsp;include&nbsp;snippets.<a name="line_129"></a></li>
+<li id="line_130" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">130&nbsp;</span>&nbsp;&nbsp;$variables['snippet']&nbsp;=&nbsp;isset($result['snippet'])&nbsp;?&nbsp;$result['snippet']&nbsp;:&nbsp;'';<a name="line_130"></a></li>
+<li id="line_131" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">131&nbsp;</span>&nbsp;&nbsp;//&nbsp;Provide&nbsp;separated&nbsp;and&nbsp;grouped&nbsp;meta&nbsp;information..<a name="line_131"></a></li>
+<li id="line_132" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">132&nbsp;</span>&nbsp;&nbsp;$variables['info_split']&nbsp;=&nbsp;$info;<a name="line_132"></a></li>
+<li id="line_133" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">133&nbsp;</span>&nbsp;&nbsp;$variables['info']&nbsp;=&nbsp;implode('&nbsp;-&nbsp;',&nbsp;$info);<a name="line_133"></a></li>
+<li id="line_134" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">134&nbsp;</span>&nbsp;&nbsp;$variables['theme_hook_suggestions'][]&nbsp;=&nbsp;'search_result__'&nbsp;.&nbsp;$variables['module'];<a name="line_134"></a></li>
+<li id="line_135" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">135&nbsp;</span>}<a name="line_135"></a></li>
+<li id="line_136" class="even"><span class="lineNumber">136&nbsp;</span><a name="line_136"></a></li>
+<li id="line_137" class="odd"><span class="lineNumber">137&nbsp;</span>/**<a name="line_137"></a></li>
+<li id="line_138" class="even"><span class="lineNumber">138&nbsp;</span>&nbsp;*&nbsp;As&nbsp;the&nbsp;search&nbsp;form&nbsp;collates&nbsp;keys&nbsp;from&nbsp;other&nbsp;modules&nbsp;hooked&nbsp;in&nbsp;via<a name="line_138"></a></li>
+<li id="line_139" class="odd"><span class="lineNumber">139&nbsp;</span>&nbsp;*&nbsp;hook_form_alter,&nbsp;the&nbsp;validation&nbsp;takes&nbsp;place&nbsp;in&nbsp;_submit.<a name="line_139"></a></li>
+<li id="line_140" class="even"><span class="lineNumber">140&nbsp;</span>&nbsp;*&nbsp;search_form_validate()&nbsp;is&nbsp;used&nbsp;solely&nbsp;to&nbsp;set&nbsp;the&nbsp;'processed_keys'&nbsp;form<a name="line_140"></a></li>
+<li id="line_141" class="odd"><span class="lineNumber">141&nbsp;</span>&nbsp;*&nbsp;value&nbsp;for&nbsp;the&nbsp;basic&nbsp;search&nbsp;form.<a name="line_141"></a></li>
+<li id="line_142" class="even"><span class="lineNumber">142&nbsp;</span>&nbsp;*/<a name="line_142"></a></li>
+<li id="line_143" class="odd"><span class="lineNumber">143&nbsp;</span>function&nbsp;search_form_validate($form,&nbsp;&amp;$form_state)&nbsp;{<a name="line_143"></a></li>
+<li id="line_144" class="even"><span class="lineNumber">144&nbsp;</span>&nbsp;&nbsp;form_set_value($form['basic']['processed_keys'],&nbsp;trim($form_state['values']['keys']),&nbsp;$form_state);<a name="line_144"></a></li>
+<li id="line_145" class="odd"><span class="lineNumber">145&nbsp;</span>}<a name="line_145"></a></li>
+<li id="line_146" class="even"><span class="lineNumber">146&nbsp;</span><a name="line_146"></a></li>
+<li id="line_147" class="odd"><span class="lineNumber">147&nbsp;</span>/**<a name="line_147"></a></li>
+<li id="line_148" class="even"><span class="lineNumber">148&nbsp;</span>&nbsp;*&nbsp;Process&nbsp;a&nbsp;search&nbsp;form&nbsp;submission.<a name="line_148"></a></li>
+<li id="line_149" class="odd"><span class="lineNumber">149&nbsp;</span>&nbsp;*/<a name="line_149"></a></li>
+<li id="line_150" class="even"><span class="lineNumber">150&nbsp;</span>function&nbsp;search_form_submit($form,&nbsp;&amp;$form_state)&nbsp;{<a name="line_150"></a></li>
+<li id="line_151" class="odd"><span class="lineNumber">151&nbsp;</span>&nbsp;&nbsp;$keys&nbsp;=&nbsp;$form_state['values']['processed_keys'];<a name="line_151"></a></li>
+<li id="line_152" class="even"><span class="lineNumber">152&nbsp;</span>&nbsp;&nbsp;if&nbsp;($keys&nbsp;==&nbsp;'')&nbsp;{<a name="line_152"></a></li>
+<li id="line_153" class="odd"><span class="lineNumber">153&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;form_set_error('keys',&nbsp;t('Please&nbsp;enter&nbsp;some&nbsp;keywords.'));<a name="line_153"></a></li>
+<li id="line_154" class="even"><span class="lineNumber">154&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Fall&nbsp;through&nbsp;to&nbsp;the&nbsp;form&nbsp;redirect.<a name="line_154"></a></li>
+<li id="line_155" class="odd"><span class="lineNumber">155&nbsp;</span>&nbsp;&nbsp;}<a name="line_155"></a></li>
+<li id="line_156" class="even"><span class="lineNumber">156&nbsp;</span><a name="line_156"></a></li>
+<li id="line_157" class="odd"><span class="lineNumber">157&nbsp;</span>&nbsp;&nbsp;$form_state['redirect']&nbsp;=&nbsp;$form_state['action']&nbsp;.&nbsp;'/'&nbsp;.&nbsp;$keys;<a name="line_157"></a></li>
+<li id="line_158" class="even"><span class="lineNumber">158&nbsp;</span>}<a name="line_158"></a></li></ol></div></body></html>
+            
+            <div id="sidebar">
+                <table cellpadding="3">
+                    <thead>
+                        <tr>
+                            <th width="40px" align="center">
+                                <strong>start</strong>
+                            </th>
+                            <th width="40px" align="center">
+                                <strong>end</strong>
+                            </th>
+                            <th>
+                                <strong>comment</strong>
+                            </th>
+                            <th width="120px">
+                                <strong>type of error</strong>
+                            </th>
+                            <th width="60px">
+                                <strong>severity</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr class="PMD">
+                            <td align="center">
+                                <a href="#line_16" onclick="switchLine('line_16')">
+                                16</a>
+                            </td>
+                            <td align="center">
+                                <a href="#line_72" onclick="switchLine('line_16'); new Effect.Highlight('line_16-72', {duration: 1.5}); return false">
+                                72</a>
+                            </td>
+                            <td>
+                                <a href="#line_16" onclick="switchLine('line_16'); new Effect.Highlight('line_16-72', {duration: 1.5}); return false">
+                                
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </a>
+                            </td>
+                            <td>
+                                PMD                            </td>
+                            <td>
+                                error                            </td>
+                        </tr>
+                        
+                        <tr class="PMD">
+                            <td align="center">
+                                <a href="#line_105" onclick="switchLine('line_105')">
+                                105</a>
+                            </td>
+                            <td align="center">
+                                <a href="#line_135" onclick="switchLine('line_105'); new Effect.Highlight('line_105-135', {duration: 1.5}); return false">
+                                135</a>
+                            </td>
+                            <td>
+                                <a href="#line_105" onclick="switchLine('line_105'); new Effect.Highlight('line_105-135', {duration: 1.5}); return false">
+                                
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </a>
+                            </td>
+                            <td>
+                                PMD                            </td>
+                            <td>
+                                error                            </td>
+                        </tr>
+                                            </tbody>
+                </table>
+            </div>
+            <script type="text/javascript" language="javascript">
+                $(initReview);
+            </script>
+                    </div>
+    </body>
+</html>

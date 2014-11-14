@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<project name="name-of-project" default="build">
+    <property name="basedir" value="." />
+    <target name="build"
+            depends="prepare,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdoc,phpunit,phpcb"/>
+ 
+    <target name="clean" description="Supprime les anciennes traces">
+        <delete dir="${basedir}/build/api"/>
+        <delete dir="${basedir}/build/code-browser"/>
+        <delete dir="${basedir}/build/coverage"/>
+        <delete dir="${basedir}/build/logs"/>
+        <delete dir="${basedir}/build/pdepend"/>
+    </target>
+ 
+    <target name="prepare" depends="clean" description="Prépare les dossiers nécessaires pour la création du build">
+        <mkdir dir="${basedir}/build/api"/>
+        <mkdir dir="${basedir}/build/code-browser"/>
+        <mkdir dir="${basedir}/build/coverage"/>
+        <mkdir dir="${basedir}/build/logs"/>
+        <mkdir dir="${basedir}/build/pdepend"/>
+    </target>
+ 
+    <target name="phploc" description="Mesure la taille du projet avec la commande phploc">
+        <exec executable="phploc.bat">
+			<arg path="${basedir}" />
+            <arg value="--log-csv" />
+            <arg value="${basedir}/build/logs/phploc.csv" />
+            <arg value="--exclude"/>
+            <arg path="${basedir}/tests" />
+        </exec>
+    </target>
+	
+    <target name="pdepend">
+		<exec executable="pdepend.bat">
+			<arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
+			<arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
+			<arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
+			<arg path="${basedir}" />
+		</exec>
+    </target>
+
+	<target name="phpmd-ci" description="Génère le fichier pmd.xml en utilisant PHPMD">
+		<exec executable="phpmd.bat">
+			<arg path="${basedir}" />
+			<arg value="xml" />
+			<arg value="${basedir}/build/phpmd.xml" />
+			<arg value="--reportfile" />
+			<arg value="${basedir}/build/logs/pmd.xml" />
+		</exec>
+	</target>
+
+	<target name="phpcs" description="Recherche le code non standard en utilisant PHP_CodeSniffer et renvoie un rapport lisible.">
+		<exec executable="phpcs.bat">
+			<arg value="--standard=${basedir}/build/phpcs.xml" />
+			<arg value="--extensions=php" />
+			<arg path="${basedir}" />
+		</exec>
+	</target>
+
+	<target name="phpcs-ci" description="Recherche le code non standard en utilisant PHP_CodeSniffer et stocke un fichier de log checkstyle.xml">
+		<exec executable="phpcs.bat">
+			<arg value="--report=checkstyle" />
+			<arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
+			<arg value="--standard=${basedir}/build/phpcs.xml" />
+			<arg value="--extensions=php" />
+			<arg path="${basedir}" />
+		</exec>
+	</target>
+
+	<target name="phpcpd" description="Cherche le code dupliqué en utilisant PHPCPD">
+		<exec executable="phpcpd.bat">
+			<arg value="--log-pmd" />
+			<arg value="${basedir}/build/logs/pmd-cpd.xml" />
+			<arg path="${basedir}" />
+		</exec>
+	</target>
+ 
+    <target name="phpdoc" description="Génère une documentation PHP avec PHP Doc">
+        <exec executable="phpdoc.bat">
+			<arg value="--directory" />
+			<arg path="${basedir}" />
+			<arg value="--target" />
+			<arg path="${basedir}/build/api" />
+			<arg value="--ignore" />
+			<arg path="${basedir}/tests" />
+			<arg value="--title" />
+			<arg value="Documentation de mon projet PHP" />
+		</exec>
+    </target>
+ 
+	<target name="phpunit" description="Run unit tests with PHPUnit">
+		<exec command="phpunit.bat --configuration=${basedir}/tests/phpunit.xml
+        --log-junit ${basedir}/build/logs/junit.xml
+        --coverage-clover ${basedir}/build/logs/clover.xml
+        --coverage-html ${basedir}/build/coverage"/>
+	</target>
+ 
+    <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
+		<exec executable="phpcb.bat">
+			<arg value="--log" />
+			<arg path="${basedir}/build/logs" />
+			<arg value="--source" />
+			<arg path="${basedir}" />
+			<arg value="--output" />
+			<arg path="${basedir}/build/code-browser" />
+		</exec>
+    </target>
+</project>

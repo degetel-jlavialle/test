@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>
+            Mayflower Code Browser - Source Code
+        </title>
+        <link rel="stylesheet" type="text/css" href="../../../../js/jquery.sidebar/css/codebrowser/sidebar.css" />
+        <link rel="stylesheet" type="text/css" href="../../../../css/global.css" />
+        <link rel="stylesheet" type="text/css" href="../../../../css/cruisecontrol.css" />
+        <link rel="stylesheet" type="text/css" href="../../../../css/review.css" />
+
+        <script type="text/javascript" src="../../../../js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="../../../../js/jquery.sidebar/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="../../../../js/jquery.sidebar/jquery.sidebar.js"></script>
+        <script type="text/javascript" src="../../../../js/jquery.cluetip/lib/jquery.hoverIntent.js"></script>
+        <script type="text/javascript" src="../../../../js/jquery.cluetip/lib/jquery.bgiframe.min.js"></script>
+        <script type="text/javascript" src="../../../../js/jquery.cluetip/jquery.cluetip.min.js"></script>
+
+        <script type="text/javascript" src="../../../../js/review.js"></script>
+    </head>
+    <body class="codebrowser">
+        <div class="header">
+            <a href="./../../../../index.html">Go back to index</a> |
+            <a href="http://github.com/mayflowergmbh/PHP_CodeBrowser">PHP CodeBrowser</a>
+        </div>
+        <hr/>
+        <div id="review">
+            <div class="filepath">
+                sites/all/modules/devel/devel_generate/devel_generate.fields.inc            </div>
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div class="code"><ol class="code"><li id="line_1" class="odd"><span class="lineNumber">&nbsp;1&nbsp;</span>&lt;?php<a name="line_1"></a></li>
+<li id="line_2" class="even"><span class="lineNumber">&nbsp;2&nbsp;</span><a name="line_2"></a></li>
+<li id="line_3" class="odd"><span class="lineNumber">&nbsp;3&nbsp;</span>/**<a name="line_3"></a></li>
+<li id="line_4" class="even"><span class="lineNumber">&nbsp;4&nbsp;</span>&nbsp;*&nbsp;@file<a name="line_4"></a></li>
+<li id="line_5" class="odd"><span class="lineNumber">&nbsp;5&nbsp;</span>&nbsp;*&nbsp;Functions&nbsp;needed&nbsp;for&nbsp;devel_generate&nbsp;Fields&nbsp;API&nbsp;integration.<a name="line_5"></a></li>
+<li id="line_6" class="even"><span class="lineNumber">&nbsp;6&nbsp;</span>&nbsp;*/<a name="line_6"></a></li>
+<li id="line_7" class="odd"><span class="lineNumber">&nbsp;7&nbsp;</span><a name="line_7"></a></li>
+<li id="line_8" class="even"><span class="lineNumber">&nbsp;8&nbsp;</span>/**<a name="line_8"></a></li>
+<li id="line_9" class="odd"><span class="lineNumber">&nbsp;9&nbsp;</span>&nbsp;*&nbsp;Enrich&nbsp;the&nbsp;$object&nbsp;that&nbsp;is&nbsp;about&nbsp;to&nbsp;be&nbsp;saved&nbsp;with&nbsp;arbitrary<a name="line_9"></a></li>
+<li id="line_10" class="even"><span class="lineNumber">10&nbsp;</span>&nbsp;*&nbsp;information&nbsp;in&nbsp;each&nbsp;of&nbsp;its&nbsp;fields.<a name="line_10"></a></li>
+<li id="line_11" class="odd"><span class="lineNumber">11&nbsp;</span>&nbsp;**/<a name="line_11"></a></li>
+<li id="line_12" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">12&nbsp;</span>function&nbsp;devel_generate_fields(&amp;$object,&nbsp;$obj_type,&nbsp;$bundle)&nbsp;{<a name="line_12"></a></li>
+<li id="line_13" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">13&nbsp;</span>&nbsp;&nbsp;$field_types&nbsp;=&nbsp;field_info_field_types();<a name="line_13"></a></li>
+<li id="line_14" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">14&nbsp;</span>&nbsp;&nbsp;$instances&nbsp;=&nbsp;field_info_instances($obj_type,&nbsp;$bundle);<a name="line_14"></a></li>
+<li id="line_15" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">15&nbsp;</span>&nbsp;&nbsp;$skips&nbsp;=&nbsp;function_exists('drush_get_option')&nbsp;?&nbsp;drush_get_option('skip-fields',&nbsp;'')&nbsp;:&nbsp;@$_REQUEST['skip-fields'];<a name="line_15"></a></li>
+<li id="line_16" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">16&nbsp;</span>&nbsp;&nbsp;foreach&nbsp;(explode(',',&nbsp;$skips)&nbsp;as&nbsp;$skip)&nbsp;{<a name="line_16"></a></li>
+<li id="line_17" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">17&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;unset($instances[$skip]);<a name="line_17"></a></li>
+<li id="line_18" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">18&nbsp;</span>&nbsp;&nbsp;}<a name="line_18"></a></li>
+<li id="line_19" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">19&nbsp;</span>&nbsp;&nbsp;foreach&nbsp;($instances&nbsp;as&nbsp;$instance)&nbsp;{<a name="line_19"></a></li>
+<li id="line_20" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">20&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$field_name&nbsp;=&nbsp;$instance['field_name'];<a name="line_20"></a></li>
+<li id="line_21" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">21&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$field&nbsp;=&nbsp;field_info_field($field_name);<a name="line_21"></a></li>
+<li id="line_22" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">22&nbsp;</span><a name="line_22"></a></li>
+<li id="line_23" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">23&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$object_field&nbsp;=&nbsp;array();<a name="line_23"></a></li>
+<li id="line_24" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">24&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;module&nbsp;handles&nbsp;own&nbsp;multiples,&nbsp;then&nbsp;only&nbsp;call&nbsp;its&nbsp;hook&nbsp;once.<a name="line_24"></a></li>
+<li id="line_25" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">25&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(field_behaviors_widget('multiple&nbsp;values',&nbsp;$instance)&nbsp;==&nbsp;FIELD_BEHAVIOR_CUSTOM)&nbsp;{<a name="line_25"></a></li>
+<li id="line_26" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">26&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$max&nbsp;=&nbsp;0;<a name="line_26"></a></li>
+<li id="line_27" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">27&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_27"></a></li>
+<li id="line_28" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">28&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_28"></a></li>
+<li id="line_29" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">29&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;($field['cardinality'])&nbsp;{<a name="line_29"></a></li>
+<li id="line_30" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">30&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;FIELD_CARDINALITY_UNLIMITED:<a name="line_30"></a></li>
+<li id="line_31" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">31&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$max&nbsp;=&nbsp;rand(0,&nbsp;3);&nbsp;//just&nbsp;an&nbsp;arbitrary&nbsp;number&nbsp;for&nbsp;'unlimited'<a name="line_31"></a></li>
+<li id="line_32" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">32&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<a name="line_32"></a></li>
+<li id="line_33" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">33&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<a name="line_33"></a></li>
+<li id="line_34" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">34&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$max&nbsp;=&nbsp;$field['cardinality']&nbsp;-&nbsp;1;<a name="line_34"></a></li>
+<li id="line_35" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">35&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<a name="line_35"></a></li>
+<li id="line_36" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">36&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_36"></a></li>
+<li id="line_37" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">37&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_37"></a></li>
+<li id="line_38" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">38&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;($i&nbsp;=&nbsp;0;&nbsp;$i&nbsp;&lt;=&nbsp;$max;&nbsp;$i++)&nbsp;{<a name="line_38"></a></li>
+<li id="line_39" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">39&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$module&nbsp;=&nbsp;$field_types[$field['type']]['module'];<a name="line_39"></a></li>
+<li id="line_40" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">40&nbsp;</span><a name="line_40"></a></li>
+<li id="line_41" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">41&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Include&nbsp;any&nbsp;support&nbsp;file&nbsp;that&nbsp;might&nbsp;exist&nbsp;for&nbsp;this&nbsp;field.<a name="line_41"></a></li>
+<li id="line_42" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">42&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(in_array($module,&nbsp;array('file',&nbsp;'image',&nbsp;'taxonomy',&nbsp;'number',&nbsp;'text',&nbsp;'comment',&nbsp;'list')))&nbsp;{<a name="line_42"></a></li>
+<li id="line_43" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">43&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;devel_generate&nbsp;implements&nbsp;on&nbsp;behalf&nbsp;of&nbsp;core&nbsp;and&nbsp;special&nbsp;friends.<a name="line_43"></a></li>
+<li id="line_44" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">44&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module_load_include('inc',&nbsp;'devel_generate',&nbsp;"$module.devel_generate");<a name="line_44"></a></li>
+<li id="line_45" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">45&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_45"></a></li>
+<li id="line_46" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">46&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_46"></a></li>
+<li id="line_47" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">47&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module_load_include('inc',&nbsp;$module,&nbsp;"$module.devel_generate");<a name="line_47"></a></li>
+<li id="line_48" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">48&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_48"></a></li>
+<li id="line_49" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">49&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$function&nbsp;=&nbsp;$module&nbsp;.&nbsp;'_devel_generate';<a name="line_49"></a></li>
+<li id="line_50" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">50&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(function_exists($function))&nbsp;{<a name="line_50"></a></li>
+<li id="line_51" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">51&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($result&nbsp;=&nbsp;$function($object,&nbsp;$field,&nbsp;$instance,&nbsp;$bundle))&nbsp;{<a name="line_51"></a></li>
+<li id="line_52" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">52&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(field_behaviors_widget('multiple&nbsp;values',&nbsp;$instance)&nbsp;==&nbsp;FIELD_BEHAVIOR_CUSTOM)&nbsp;{<a name="line_52"></a></li>
+<li id="line_53" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">53&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Fields&nbsp;that&nbsp;handle&nbsp;their&nbsp;own&nbsp;multiples&nbsp;will&nbsp;add&nbsp;their&nbsp;own&nbsp;deltas.<a name="line_53"></a></li>
+<li id="line_54" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">54&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$object_field&nbsp;=&nbsp;$result;<a name="line_54"></a></li>
+<li id="line_55" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">55&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_55"></a></li>
+<li id="line_56" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">56&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_56"></a></li>
+<li id="line_57" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">57&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;When&nbsp;multiples&nbsp;are&nbsp;handled&nbsp;by&nbsp;the&nbsp;content&nbsp;module,&nbsp;add&nbsp;a&nbsp;delta&nbsp;for&nbsp;each&nbsp;result.<a name="line_57"></a></li>
+<li id="line_58" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">58&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$object_field[$i]&nbsp;=&nbsp;$result;<a name="line_58"></a></li>
+<li id="line_59" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">59&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_59"></a></li>
+<li id="line_60" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">60&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_60"></a></li>
+<li id="line_61" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">61&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_61"></a></li>
+<li id="line_62" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">62&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_62"></a></li>
+<li id="line_63" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">63&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO:&nbsp;Completely&nbsp;overriding&nbsp;any&nbsp;existing&nbsp;$object-&gt;{$field['field_name']}<a name="line_63"></a></li>
+<li id="line_64" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">64&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;is&nbsp;necessary&nbsp;here&nbsp;because&nbsp;the&nbsp;forum&nbsp;module&nbsp;has&nbsp;a&nbsp;bug&nbsp;where&nbsp;it<a name="line_64"></a></li>
+<li id="line_65" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">65&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;initializes&nbsp;the&nbsp;property&nbsp;with&nbsp;incorrect&nbsp;data.<a name="line_65"></a></li>
+<li id="line_66" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">66&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;@see&nbsp;http://drupal.org/node/652176<a name="line_66"></a></li>
+<li id="line_67" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">67&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$object-&gt;{$field['field_name']}&nbsp;=&nbsp;array(<a name="line_67"></a></li>
+<li id="line_68" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">68&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$field['translatable']&nbsp;?&nbsp;&nbsp;$object-&gt;language&nbsp;:&nbsp;LANGUAGE_NONE&nbsp;=&gt;&nbsp;$object_field,<a name="line_68"></a></li>
+<li id="line_69" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">69&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;);<a name="line_69"></a></li>
+<li id="line_70" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">70&nbsp;</span>&nbsp;&nbsp;}<a name="line_70"></a></li>
+<li id="line_71" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">71&nbsp;</span>}<a name="line_71"></a></li>
+<li id="line_72" class="even"><span class="lineNumber">72&nbsp;</span><a name="line_72"></a></li>
+<li id="line_73" class="odd"><span class="lineNumber">73&nbsp;</span>/**<a name="line_73"></a></li>
+<li id="line_74" class="even"><span class="lineNumber">74&nbsp;</span>&nbsp;*&nbsp;A&nbsp;simple&nbsp;function&nbsp;to&nbsp;return&nbsp;multiple&nbsp;values&nbsp;for&nbsp;fields&nbsp;that&nbsp;use<a name="line_74"></a></li>
+<li id="line_75" class="odd"><span class="lineNumber">75&nbsp;</span>&nbsp;*&nbsp;custom&nbsp;multiple&nbsp;value&nbsp;widgets&nbsp;but&nbsp;don't&nbsp;need&nbsp;any&nbsp;other&nbsp;special&nbsp;multiple<a name="line_75"></a></li>
+<li id="line_76" class="even"><span class="lineNumber">76&nbsp;</span>&nbsp;*&nbsp;values&nbsp;handling.&nbsp;This&nbsp;will&nbsp;call&nbsp;the&nbsp;field&nbsp;generation&nbsp;function<a name="line_76"></a></li>
+<li id="line_77" class="odd"><span class="lineNumber">77&nbsp;</span>&nbsp;*&nbsp;a&nbsp;random&nbsp;number&nbsp;of&nbsp;times&nbsp;and&nbsp;compile&nbsp;the&nbsp;results&nbsp;into&nbsp;a&nbsp;node&nbsp;array.<a name="line_77"></a></li>
+<li id="line_78" class="even"><span class="lineNumber">78&nbsp;</span>&nbsp;*/<a name="line_78"></a></li>
+<li id="line_79" class="odd"><span class="lineNumber">79&nbsp;</span>function&nbsp;devel_generate_multiple($function,&nbsp;$object,&nbsp;$field,&nbsp;$instance,&nbsp;$bundle)&nbsp;{<a name="line_79"></a></li>
+<li id="line_80" class="even"><span class="lineNumber">80&nbsp;</span>&nbsp;&nbsp;$object_field&nbsp;=&nbsp;array();<a name="line_80"></a></li>
+<li id="line_81" class="odd"><span class="lineNumber">81&nbsp;</span>&nbsp;&nbsp;if&nbsp;(function_exists($function))&nbsp;{<a name="line_81"></a></li>
+<li id="line_82" class="even"><span class="lineNumber">82&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;($field['cardinality'])&nbsp;{<a name="line_82"></a></li>
+<li id="line_83" class="odd"><span class="lineNumber">83&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;FIELD_CARDINALITY_UNLIMITED:<a name="line_83"></a></li>
+<li id="line_84" class="even"><span class="lineNumber">84&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$max&nbsp;=&nbsp;rand(0,&nbsp;3);&nbsp;//just&nbsp;an&nbsp;arbitrary&nbsp;number&nbsp;for&nbsp;'unlimited'<a name="line_84"></a></li>
+<li id="line_85" class="odd"><span class="lineNumber">85&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<a name="line_85"></a></li>
+<li id="line_86" class="even"><span class="lineNumber">86&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<a name="line_86"></a></li>
+<li id="line_87" class="odd"><span class="lineNumber">87&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$max&nbsp;=&nbsp;$field['cardinality']&nbsp;-&nbsp;1;<a name="line_87"></a></li>
+<li id="line_88" class="even"><span class="lineNumber">88&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<a name="line_88"></a></li>
+<li id="line_89" class="odd"><span class="lineNumber">89&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_89"></a></li>
+<li id="line_90" class="even"><span class="lineNumber">90&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;($i&nbsp;=&nbsp;0;&nbsp;$i&nbsp;&lt;=&nbsp;$max;&nbsp;$i++)&nbsp;{<a name="line_90"></a></li>
+<li id="line_91" class="odd"><span class="lineNumber">91&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$result&nbsp;=&nbsp;$function($object,&nbsp;$field,&nbsp;$instance,&nbsp;$bundle);<a name="line_91"></a></li>
+<li id="line_92" class="even"><span class="lineNumber">92&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($result))&nbsp;{<a name="line_92"></a></li>
+<li id="line_93" class="odd"><span class="lineNumber">93&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$object_field[$i]&nbsp;=&nbsp;$result;<a name="line_93"></a></li>
+<li id="line_94" class="even"><span class="lineNumber">94&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_94"></a></li>
+<li id="line_95" class="odd"><span class="lineNumber">95&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_95"></a></li>
+<li id="line_96" class="even"><span class="lineNumber">96&nbsp;</span>&nbsp;&nbsp;}<a name="line_96"></a></li>
+<li id="line_97" class="odd"><span class="lineNumber">97&nbsp;</span>&nbsp;&nbsp;return&nbsp;$object_field;<a name="line_97"></a></li>
+<li id="line_98" class="even"><span class="lineNumber">98&nbsp;</span>}<a name="line_98"></a></li></ol></div></body></html>
+            
+            <div id="sidebar">
+                <table cellpadding="3">
+                    <thead>
+                        <tr>
+                            <th width="40px" align="center">
+                                <strong>start</strong>
+                            </th>
+                            <th width="40px" align="center">
+                                <strong>end</strong>
+                            </th>
+                            <th>
+                                <strong>comment</strong>
+                            </th>
+                            <th width="120px">
+                                <strong>type of error</strong>
+                            </th>
+                            <th width="60px">
+                                <strong>severity</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr class="PMD">
+                            <td align="center">
+                                <a href="#line_12" onclick="switchLine('line_12')">
+                                12</a>
+                            </td>
+                            <td align="center">
+                                <a href="#line_71" onclick="switchLine('line_12'); new Effect.Highlight('line_12-71', {duration: 1.5}); return false">
+                                71</a>
+                            </td>
+                            <td>
+                                <a href="#line_12" onclick="switchLine('line_12'); new Effect.Highlight('line_12-71', {duration: 1.5}); return false">
+                                
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </a>
+                            </td>
+                            <td>
+                                PMD                            </td>
+                            <td>
+                                error                            </td>
+                        </tr>
+                                            </tbody>
+                </table>
+            </div>
+            <script type="text/javascript" language="javascript">
+                $(initReview);
+            </script>
+                    </div>
+    </body>
+</html>

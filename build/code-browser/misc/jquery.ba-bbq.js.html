@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>
+            Mayflower Code Browser - Source Code
+        </title>
+        <link rel="stylesheet" type="text/css" href="js/jquery.sidebar/css/codebrowser/sidebar.css" />
+        <link rel="stylesheet" type="text/css" href="css/global.css" />
+        <link rel="stylesheet" type="text/css" href="css/cruisecontrol.css" />
+        <link rel="stylesheet" type="text/css" href="css/review.css" />
+
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.sidebar/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="js/jquery.sidebar/jquery.sidebar.js"></script>
+        <script type="text/javascript" src="js/jquery.cluetip/lib/jquery.hoverIntent.js"></script>
+        <script type="text/javascript" src="js/jquery.cluetip/lib/jquery.bgiframe.min.js"></script>
+        <script type="text/javascript" src="js/jquery.cluetip/jquery.cluetip.min.js"></script>
+
+        <script type="text/javascript" src="js/review.js"></script>
+    </head>
+    <body class="codebrowser">
+        <div class="header">
+            <a href="./index.html">Go back to index</a> |
+            <a href="http://github.com/mayflowergmbh/PHP_CodeBrowser">PHP CodeBrowser</a>
+        </div>
+        <hr/>
+        <div id="review">
+            <div class="filepath">
+                misc/jquery.ba-bbq.js            </div>
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div class="code"><ol class="code"><li id="line_1" class="odd"><span class="lineNumber">&nbsp;1&nbsp;</span>/*<a name="line_1"></a></li>
+<li id="line_2" class="even"><span class="lineNumber">&nbsp;2&nbsp;</span>&nbsp;*&nbsp;jQuery&nbsp;BBQ:&nbsp;Back&nbsp;Button&nbsp;&amp;&nbsp;Query&nbsp;Library&nbsp;-&nbsp;v1.2.1&nbsp;-&nbsp;2/17/2010<a name="line_2"></a></li>
+<li id="line_3" class="odd"><span class="lineNumber">&nbsp;3&nbsp;</span>&nbsp;*&nbsp;http://benalman.com/projects/jquery-bbq-plugin/<a name="line_3"></a></li>
+<li id="line_4" class="even"><span class="lineNumber">&nbsp;4&nbsp;</span>&nbsp;*<a name="line_4"></a></li>
+<li id="line_5" class="odd"><span class="lineNumber">&nbsp;5&nbsp;</span>&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2010&nbsp;"Cowboy"&nbsp;Ben&nbsp;Alman<a name="line_5"></a></li>
+<li id="line_6" class="even"><span class="lineNumber">&nbsp;6&nbsp;</span>&nbsp;*&nbsp;Dual&nbsp;licensed&nbsp;under&nbsp;the&nbsp;MIT&nbsp;and&nbsp;GPL&nbsp;licenses.<a name="line_6"></a></li>
+<li id="line_7" class="odd"><span class="lineNumber">&nbsp;7&nbsp;</span>&nbsp;*&nbsp;http://benalman.com/about/license/<a name="line_7"></a></li>
+<li id="line_8" class="even"><span class="lineNumber">&nbsp;8&nbsp;</span>&nbsp;*/<a name="line_8"></a></li>
+<li id="line_9" class="odd"><span class="lineNumber">&nbsp;9&nbsp;</span>(function($,p){var&nbsp;i,m=Array.prototype.slice,r=decodeURIComponent,a=$.param,c,l,v,b=$.bbq=$.bbq||{},q,u,j,e=$.event.special,d="hashchange",A="querystring",D="fragment",y="elemUrlAttr",g="location",k="href",t="src",x=/^.*\?|#.*$/g,w=/^.*\#/,h,C={};function&nbsp;E(F){return&nbsp;typeof&nbsp;F==="string"}function&nbsp;B(G){var&nbsp;F=m.call(arguments,1);return&nbsp;function(){return&nbsp;G.apply(this,F.concat(m.call(arguments)))}}function&nbsp;n(F){return&nbsp;F.replace(/^[^#]*#?(.*)$/,"$1")}function&nbsp;o(F){return&nbsp;F.replace(/(?:^[^?#]*\?([^#]*).*$)?.*/,"$1")}function&nbsp;f(H,M,F,I,G){var&nbsp;O,L,K,N,J;if(I!==i){K=F.match(H?/^([^#]*)\#?(.*)$/:/^([^#?]*)\??([^#]*)(#?.*)/);J=K[3]||"";if(G===2&amp;&amp;E(I)){L=I.replace(H?w:x,"")}else{N=l(K[2]);I=E(I)?l[H?D:A](I):I;L=G===2?I:G===1?$.extend({},I,N):$.extend({},N,I);L=a(L);if(H){L=L.replace(h,r)}}O=K[1]+(H?"#":L||!K[1]?"?":"")+L+J}else{O=M(F!==i?F:p[g][k])}return&nbsp;O}a[A]=B(f,0,o);a[D]=c=B(f,1,n);c.noEscape=function(G){G=G||"";var&nbsp;F=$.map(G.split(""),encodeURIComponent);h=new&nbsp;RegExp(F.join("|"),"g")};c.noEscape(",/");$.deparam=l=function(I,F){var&nbsp;H={},G={"true":!0,"false":!1,"null":null};$.each(I.replace(/\+/g,"&nbsp;").split("&amp;"),function(L,Q){var&nbsp;K=Q.split("="),P=r(K[0]),J,O=H,M=0,R=P.split("]["),N=R.length-1;if(/\[/.test(R[0])&amp;&amp;/\]$/.test(R[N])){R[N]=R[N].replace(/\]$/,"");R=R.shift().split("[").concat(R);N=R.length-1}else{N=0}if(K.length===2){J=r(K[1]);if(F){J=J&amp;&amp;!isNaN(J)?+J:J==="undefined"?i:G[J]!==i?G[J]:J}if(N){for(;M&lt;=N;M++){P=R[M]===""?O.length:R[M];O=O[P]=M&lt;N?O[P]||(R[M+1]&amp;&amp;isNaN(R[M+1])?{}:[]):J}}else{if($.isArray(H[P])){H[P].push(J)}else{if(H[P]!==i){H[P]=[H[P],J]}else{H[P]=J}}}}else{if(P){H[P]=F?i:""}}});return&nbsp;H};function&nbsp;z(H,F,G){if(F===i||typeof&nbsp;F==="boolean"){G=F;F=a[H?D:A]()}else{F=E(F)?F.replace(H?w:x,""):F}return&nbsp;l(F,G)}l[A]=B(z,0);l[D]=v=B(z,1);$[y]||($[y]=function(F){return&nbsp;$.extend(C,F)})({a:k,base:k,iframe:t,img:t,input:t,form:"action",link:k,script:t});j=$[y];function&nbsp;s(I,G,H,F){if(!E(H)&amp;&amp;typeof&nbsp;H!=="object"){F=H;H=G;G=i}return&nbsp;this.each(function(){var&nbsp;L=$(this),J=G||j()[(this.nodeName||"").toLowerCase()]||"",K=J&amp;&amp;L.attr(J)||"";L.attr(J,a[I](K,H,F))})}$.fn[A]=B(s,A);$.fn[D]=B(s,D);b.pushState=q=function(I,F){if(E(I)&amp;&amp;/^#/.test(I)&amp;&amp;F===i){F=2}var&nbsp;H=I!==i,G=c(p[g][k],H?I:{},H?F:2);p[g][k]=G+(/#/.test(G)?"":"#")};b.getState=u=function(F,G){return&nbsp;F===i||typeof&nbsp;F==="boolean"?v(F):v(G)[F]};b.removeState=function(F){var&nbsp;G={};if(F!==i){G=u();$.each($.isArray(F)?F:arguments,function(I,H){delete&nbsp;G[H]})}q(G,2)};e[d]=$.extend(e[d],{add:function(F){var&nbsp;H;function&nbsp;G(J){var&nbsp;I=J[D]=c();J.getState=function(K,L){return&nbsp;K===i||typeof&nbsp;K==="boolean"?l(I,K):l(I,L)[K]};H.apply(this,arguments)}if($.isFunction(F)){H=F;return&nbsp;G}else{H=F.handler;F.handler=G}}})})(jQuery,this);<a name="line_9"></a></li>
+<li id="line_10" class="even"><span class="lineNumber">10&nbsp;</span>/*<a name="line_10"></a></li>
+<li id="line_11" class="odd"><span class="lineNumber">11&nbsp;</span>&nbsp;*&nbsp;jQuery&nbsp;hashchange&nbsp;event&nbsp;-&nbsp;v1.2&nbsp;-&nbsp;2/11/2010<a name="line_11"></a></li>
+<li id="line_12" class="even"><span class="lineNumber">12&nbsp;</span>&nbsp;*&nbsp;http://benalman.com/projects/jquery-hashchange-plugin/<a name="line_12"></a></li>
+<li id="line_13" class="odd"><span class="lineNumber">13&nbsp;</span>&nbsp;*<a name="line_13"></a></li>
+<li id="line_14" class="even"><span class="lineNumber">14&nbsp;</span>&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2010&nbsp;"Cowboy"&nbsp;Ben&nbsp;Alman<a name="line_14"></a></li>
+<li id="line_15" class="odd"><span class="lineNumber">15&nbsp;</span>&nbsp;*&nbsp;Dual&nbsp;licensed&nbsp;under&nbsp;the&nbsp;MIT&nbsp;and&nbsp;GPL&nbsp;licenses.<a name="line_15"></a></li>
+<li id="line_16" class="even"><span class="lineNumber">16&nbsp;</span>&nbsp;*&nbsp;http://benalman.com/about/license/<a name="line_16"></a></li>
+<li id="line_17" class="odd"><span class="lineNumber">17&nbsp;</span>&nbsp;*/<a name="line_17"></a></li>
+<li id="line_18" class="even"><span class="lineNumber">18&nbsp;</span>(function($,i,b){var&nbsp;j,k=$.event.special,c="location",d="hashchange",l="href",f=$.browser,g=document.documentMode,h=f.msie&amp;&amp;(g===b||g&lt;8),e="on"+d&nbsp;in&nbsp;i&amp;&amp;!h;function&nbsp;a(m){m=m||i[c][l];return&nbsp;m.replace(/^[^#]*#?(.*)$/,"$1")}$[d+"Delay"]=100;k[d]=$.extend(k[d],{setup:function(){if(e){return&nbsp;false}$(j.start)},teardown:function(){if(e){return&nbsp;false}$(j.stop)}});j=(function(){var&nbsp;m={},r,n,o,q;function&nbsp;p(){o=q=function(s){return&nbsp;s};if(h){n=$('&lt;iframe&nbsp;src="javascript:0"/&gt;').hide().insertAfter("body")[0].contentWindow;q=function(){return&nbsp;a(n.document[c][l])};o=function(u,s){if(u!==s){var&nbsp;t=n.document;t.open().close();t[c].hash="#"+u}};o(a())}}m.start=function(){if(r){return}var&nbsp;t=a();o||p();(function&nbsp;s(){var&nbsp;v=a(),u=q(t);if(v!==t){o(t=v,u);$(i).trigger(d)}else{if(u!==t){i[c][l]=i[c][l].replace(/#.*/,"")+"#"+u}}r=setTimeout(s,$[d+"Delay"])})()};m.stop=function(){if(!n){r&amp;&amp;clearTimeout(r);r=0}};return&nbsp;m})()})(jQuery,this);<a name="line_18"></a></li></ol></div></body></html>
+                    </div>
+    </body>
+</html>

@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pmd version="1.5.0" timestamp="2014-11-14T12:05:05+01:00">
+  <file name="C:\wamp\www\Test\includes\actions.inc">
+    <violation beginline="58" endline="143" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="actions_do" priority="3">
+      The function actions_do() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\ajax.inc">
+    <violation beginline="232" endline="302" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="ajax_render" priority="3">
+      The function ajax_render() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="525" endline="577" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="ajax_prepare_response" priority="3">
+      The function ajax_prepare_response() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="642" endline="774" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="ajax_pre_render_element" priority="3">
+      The function ajax_pre_render_element() has a Cyclomatic Complexity of 28. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\batch.inc">
+    <violation beginline="43" endline="94" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_batch_page" priority="3">
+      The function _batch_page() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="241" endline="370" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_batch_process" priority="3">
+      The function _batch_process() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="453" endline="524" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_batch_finished" priority="3">
+      The function _batch_finished() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\bootstrap.inc">
+    <violation beginline="541" endline="572" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="conf_path" priority="3">
+      The function conf_path() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="716" endline="796" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_settings_initialize" priority="3">
+      The function drupal_settings_initialize() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="827" endline="901" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_get_filename" priority="3">
+      The function drupal_get_filename() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1287" endline="1377" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_serve_page_from_cache" priority="3">
+      The function drupal_serve_page_from_cache() has a Cyclomatic Complexity of 19. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1981" endline="2040" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_random_bytes" priority="3">
+      The function drupal_random_bytes() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2199" endline="2273" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_bootstrap" priority="3">
+      The function drupal_bootstrap() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="3002" endline="3051" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_get_complete_schema" priority="3">
+      The function drupal_get_complete_schema() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="3110" endline="3174" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_registry_check_code" priority="3">
+      The function _registry_check_code() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\cache.inc">
+    <violation beginline="472" endline="540" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalDatabaseCache" method="clear" priority="3">
+      The method clear() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\common.inc">
+    <violation beginline="782" endline="1085" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_http_request" priority="3">
+      The function drupal_http_request() has a Cyclomatic Complexity of 52. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1474" endline="1530" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_filter_xss_split" priority="3">
+      The function _filter_xss_split() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1538" endline="1634" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_filter_xss_attributes" priority="3">
+      The function _filter_xss_attributes() has a Cyclomatic Complexity of 19. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1729" endline="1752" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="format_xml_elements" priority="3">
+      The function format_xml_elements() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1956" endline="2025" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="format_date" priority="3">
+      The function format_date() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2175" endline="2290" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="url" priority="3">
+      The function url() has a Cyclomatic Complexity of 35. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2426" endline="2480" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="l" priority="3">
+      The function l() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2579" endline="2674" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_deliver_html_page" priority="3">
+      The function drupal_deliver_html_page() has a Cyclomatic Complexity of 20. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="3353" endline="3514" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_pre_render_styles" priority="3">
+      The function drupal_pre_render_styles() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="3540" endline="3610" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_build_css_cache" priority="3">
+      The function drupal_build_css_cache() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="3873" endline="3950" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_html_id" priority="3">
+      The function drupal_html_id() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="4257" endline="4408" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_get_js" priority="3">
+      The function drupal_get_js() has a Cyclomatic Complexity of 27. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="4466" endline="4529" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_process_attached" priority="3">
+      The function drupal_process_attached() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="4930" endline="4977" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_build_js_cache" priority="3">
+      The function drupal_build_js_cache() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="5226" endline="5308" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_cron_run" priority="3">
+      The function drupal_cron_run() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="5374" endline="5444" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_system_listing" priority="3">
+      The function drupal_system_listing() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="5840" endline="5950" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_render" priority="3">
+      The function drupal_render() has a Cyclomatic Complexity of 29. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="6421" endline="6450" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="element_children" priority="3">
+      The function element_children() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="7105" endline="7237" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_write_record" priority="3">
+      The function drupal_write_record() has a Cyclomatic Complexity of 31. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="7330" endline="7385" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_parse_info_format" priority="3">
+      The function drupal_parse_info_format() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="7551" endline="7589" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_parse_dependency" priority="3">
+      The function drupal_parse_dependency() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="7625" endline="7693" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="entity_get_info" priority="3">
+      The function entity_get_info() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\database\database.inc">
+    <violation beginline="1519" endline="1562" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Database" method="parseConnectionInfo" priority="3">
+      The method parseConnectionInfo() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\database\mysql\schema.inc">
+    <violation beginline="131" endline="184" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseSchema_mysql" method="createFieldSql" priority="3">
+      The method createFieldSql() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\database\pgsql\database.inc">
+    <violation beginline="88" endline="141" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseConnection_pgsql" method="query" priority="3">
+      The method query() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\database\pgsql\query.inc">
+    <violation beginline="16" endline="103" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="InsertQuery_pgsql" method="execute" priority="3">
+      The method execute() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\database\pgsql\schema.inc">
+    <violation beginline="119" endline="163" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseSchema_pgsql" method="createTableSql" priority="3">
+      The method createTableSql() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="177" endline="209" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseSchema_pgsql" method="createFieldSql" priority="3">
+      The method createFieldSql() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="496" endline="580" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseSchema_pgsql" method="changeField" priority="3">
+      The method changeField() has a Cyclomatic Complexity of 18. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\database\pgsql\select.inc">
+    <violation beginline="50" endline="102" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="SelectQuery_pgsql" method="orderBy" priority="3">
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\database\prefetch.inc">
+    <violation beginline="271" endline="319" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseStatementPrefetch" method="current" priority="3">
+      The method current() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\database\query.inc">
+    <violation beginline="1793" endline="1868" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseCondition" method="compile" priority="3">
+      The method compile() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\database\select.inc">
+    <violation beginline="1429" endline="1481" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="SelectQuery" method="countQuery" priority="3">
+      The method countQuery() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1483" endline="1596" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="SelectQuery" method="__toString" priority="3">
+      The method __toString() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\database\sqlite\database.inc">
+    <violation beginline="403" endline="457" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseStatement_sqlite" method="getStatement" priority="3">
+      The method getStatement() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="459" endline="514" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseStatement_sqlite" method="execute" priority="3">
+      The method execute() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\database\sqlite\schema.inc">
+    <violation beginline="147" endline="186" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseSchema_sqlite" method="createFieldSql" priority="3">
+      The method createFieldSql() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="410" endline="469" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseSchema_sqlite" method="introspectSchema" priority="3">
+      The method introspectSchema() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="495" endline="537" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DatabaseSchema_sqlite" method="changeField" priority="3">
+      The method changeField() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\entity.inc">
+    <violation beginline="155" endline="222" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalDefaultEntityController" method="load" priority="3">
+      The method load() has a Cyclomatic Complexity of 18. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="345" endline="384" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalDefaultEntityController" method="cacheGet" priority="3">
+      The method cacheGet() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1202" endline="1282" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="EntityFieldQuery" method="propertyQuery" priority="3">
+      The method propertyQuery() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\errors.inc">
+    <violation beginline="88" endline="124" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_drupal_decode_exception" priority="3">
+      The function _drupal_decode_exception() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="171" endline="249" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_drupal_log_error" priority="3">
+      The function _drupal_log_error() has a Cyclomatic Complexity of 18. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\file.inc">
+    <violation beginline="123" endline="171" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="file_get_stream_wrappers" priority="3">
+      The function file_get_stream_wrappers() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="888" endline="959" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="file_unmanaged_copy" priority="3">
+      The function file_unmanaged_copy() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1443" endline="1610" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="file_save_upload" priority="3">
+      The function file_save_upload() has a Cyclomatic Complexity of 27. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2111" endline="2152" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="file_scan_directory" priority="3">
+      The function file_scan_directory() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\form.inc">
+    <violation beginline="313" endline="396" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_build_form" priority="3">
+      The function drupal_build_form() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="516" endline="551" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="form_get_cache" priority="3">
+      The function form_get_cache() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="763" endline="845" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_retrieve_form" priority="3">
+      The function drupal_retrieve_form() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="864" endline="987" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_process_form" priority="3">
+      The function drupal_process_form() has a Cyclomatic Complexity of 25. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1004" endline="1129" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_prepare_form" priority="3">
+      The function drupal_prepare_form() has a Cyclomatic Complexity of 22. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1157" endline="1225" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_validate_form" priority="3">
+      The function drupal_validate_form() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1338" endline="1469" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_form_validate" priority="3">
+      The function _form_validate() has a Cyclomatic Complexity of 42. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1793" endline="1975" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="form_builder" priority="3">
+      The function form_builder() has a Cyclomatic Complexity of 47. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1980" endline="2114" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_form_builder_handle_input_element" priority="3">
+      The function _form_builder_handle_input_element() has a Cyclomatic Complexity of 34. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2469" endline="2495" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="form_type_select_value" priority="3">
+      The function form_type_select_value() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2714" endline="2744" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="form_select_options" priority="3">
+      The function form_select_options() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="3393" endline="3457" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="form_process_tableselect" priority="3">
+      The function form_process_tableselect() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="3663" endline="3707" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="form_pre_render_fieldset" priority="3">
+      The function form_pre_render_fieldset() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="4058" endline="4118" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_form_element" priority="3">
+      The function theme_form_element() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\graph.inc">
+    <violation beginline="90" endline="145" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_drupal_depth_first_search" priority="3">
+      The function _drupal_depth_first_search() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\install.core.inc">
+    <violation beginline="325" endline="359" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="install_run_tasks" priority="3">
+      The function install_run_tasks() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="373" endline="472" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="install_run_task" priority="3">
+      The function install_run_task() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="520" endline="621" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="install_tasks" priority="3">
+      The function install_tasks() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1220" endline="1303" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="install_select_locale" priority="3">
+      The function install_select_locale() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1612" endline="1731" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="install_check_requirements" priority="3">
+      The function install_check_requirements() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\install.inc">
+    <violation beginline="590" endline="660" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_rewrite_settings" priority="3">
+      The function drupal_rewrite_settings() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="766" endline="814" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_uninstall_modules" priority="3">
+      The function drupal_uninstall_modules() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="829" endline="894" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_verify_install_file" priority="3">
+      The function drupal_verify_install_file() has a Cyclomatic Complexity of 33. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="958" endline="1017" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_install_fix_file" priority="3">
+      The function drupal_install_fix_file() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1111" endline="1154" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="st" priority="3">
+      The function st() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\json-encode.inc">
+    <violation beginline="13" endline="102" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_json_encode_helper" priority="3">
+      The function drupal_json_encode_helper() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\language.inc">
+    <violation beginline="427" endline="459" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="language_provider_invoke" priority="3">
+      The function language_provider_invoke() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\locale.inc">
+    <violation beginline="131" endline="202" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="locale_language_from_browser" priority="3">
+      The function locale_language_from_browser() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="264" endline="305" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="locale_language_from_url" priority="3">
+      The function locale_language_from_url() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="411" endline="470" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="locale_language_url_rewrite_url" priority="3">
+      The function locale_language_url_rewrite_url() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="690" endline="936" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_locale_import_read_po" priority="3">
+      The function _locale_import_read_po() has a Cyclomatic Complexity of 42. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="976" endline="1050" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_locale_import_one_string" priority="3">
+      The function _locale_import_one_string() has a Cyclomatic Complexity of 18. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1247" endline="1336" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_locale_import_parse_arithmetic" priority="3">
+      The function _locale_import_parse_arithmetic() has a Cyclomatic Complexity of 22. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1347" endline="1401" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_locale_import_tokenize_formula" priority="3">
+      The function _locale_import_tokenize_formula() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1654" endline="1734" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_locale_export_po_generate" priority="3">
+      The function _locale_export_po_generate() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1849" endline="1944" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_locale_translate_seek" priority="3">
+      The function _locale_translate_seek() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2003" endline="2124" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_locale_rebuild_js" priority="3">
+      The function _locale_rebuild_js() has a Cyclomatic Complexity of 22. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\mail.inc">
+    <violation beginline="402" endline="558" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_html_to_text" priority="3">
+      The function drupal_html_to_text() has a Cyclomatic Complexity of 38. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\menu.inc">
+    <violation beginline="500" endline="537" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="menu_execute_active_handler" priority="3">
+      The function menu_execute_active_handler() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="554" endline="607" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_menu_load_objects" priority="3">
+      The function _menu_load_objects() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="668" endline="721" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_menu_item_localize" priority="3">
+      The function _menu_item_localize() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="753" endline="798" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_menu_translate" priority="3">
+      The function _menu_translate() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="870" endline="943" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_menu_link_translate" priority="3">
+      The function _menu_link_translate() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1016" endline="1083" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="menu_tree_output" priority="3">
+      The function menu_tree_output() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1214" endline="1324" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="menu_tree_page_data" priority="3">
+      The function menu_tree_page_data() has a Cyclomatic Complexity of 19. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1368" endline="1453" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_menu_build_tree" priority="3">
+      The function _menu_build_tree() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1740" endline="1764" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="menu_get_custom_theme" priority="3">
+      The function menu_get_custom_theme() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1834" endline="1880" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="menu_navigation_links" priority="3">
+      The function menu_navigation_links() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1899" endline="2121" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="menu_local_tasks" priority="3">
+      The function menu_local_tasks() has a Cyclomatic Complexity of 29. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2367" endline="2435" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="menu_set_active_trail" priority="3">
+      The function menu_set_active_trail() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2454" endline="2533" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="menu_link_get_preferred" priority="3">
+      The function menu_link_get_preferred() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2820" endline="2915" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_menu_navigation_links_rebuild" priority="3">
+      The function _menu_navigation_links_rebuild() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="3074" endline="3225" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="menu_link_save" priority="3">
+      The function menu_link_save() has a Cyclomatic Complexity of 25. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="3247" endline="3305" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_menu_link_find_parent" priority="3">
+      The function _menu_link_find_parent() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="3545" endline="3767" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_menu_router_build" priority="3">
+      The function _menu_router_build() has a Cyclomatic Complexity of 61. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\module.inc">
+    <violation beginline="66" endline="102" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="module_list" priority="3">
+      The function module_list() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="122" endline="219" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="system_list" priority="3">
+      The function system_list() has a Cyclomatic Complexity of 19. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="383" endline="503" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="module_enable" priority="3">
+      The function module_enable() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="515" endline="587" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="module_disable" priority="3">
+      The function module_disable() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="694" endline="775" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="module_implements" priority="3">
+      The function module_implements() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="787" endline="828" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="module_hook_info" priority="3">
+      The function module_hook_info() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="988" endline="1103" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_alter" priority="3">
+      The function drupal_alter() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\pager.inc">
+    <violation beginline="320" endline="427" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_pager" priority="3">
+      The function theme_pager() has a Cyclomatic Complexity of 20. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\path.inc">
+    <violation beginline="45" endline="193" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_lookup_path" priority="3">
+      The function drupal_lookup_path() has a Cyclomatic Complexity of 26. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\registry.inc">
+    <violation beginline="21" endline="110" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_registry_update" priority="3">
+      The function _registry_update() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\session.inc">
+    <violation beginline="70" endline="138" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_drupal_session_read" priority="3">
+      The function _drupal_session_read() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="158" endline="234" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_drupal_session_write" priority="3">
+      The function _drupal_session_write() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="350" endline="413" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_session_regenerate" priority="3">
+      The function drupal_session_regenerate() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\tablesort.inc">
+    <violation beginline="205" endline="229" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="tablesort_get_order" priority="3">
+      The function tablesort_get_order() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\theme.inc">
+    <violation beginline="141" endline="236" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_drupal_theme_initialize" priority="3">
+      The function _drupal_theme_initialize() has a Cyclomatic Complexity of 23. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="515" endline="665" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_theme_process_registry" priority="3">
+      The function _theme_process_registry() has a Cyclomatic Complexity of 34. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="678" endline="727" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_theme_build_registry" priority="3">
+      The function _theme_build_registry() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="774" endline="826" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="list_themes" priority="3">
+      The function list_themes() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1012" endline="1207" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme" priority="3">
+      The function theme() has a Cyclomatic Complexity of 43. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1240" endline="1284" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_find_theme_functions" priority="3">
+      The function drupal_find_theme_functions() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1296" endline="1378" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_find_theme_templates" priority="3">
+      The function drupal_find_theme_templates() has a Cyclomatic Complexity of 18. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1401" endline="1496" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_get_setting" priority="3">
+      The function theme_get_setting() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1685" endline="1759" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_links" priority="3">
+      The function theme_links() has a Cyclomatic Complexity of 18. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1895" endline="2027" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_table" priority="3">
+      The function theme_table() has a Cyclomatic Complexity of 28. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2082" endline="2137" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_item_list" priority="3">
+      The function theme_item_list() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2452" endline="2526" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="template_preprocess_html" priority="3">
+      The function template_preprocess_html() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2545" endline="2585" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="template_preprocess_page" priority="3">
+      The function template_preprocess_page() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2722" endline="2806" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="template_preprocess_maintenance_page" priority="3">
+      The function template_preprocess_maintenance_page() has a Cyclomatic Complexity of 20. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\theme.maintenance.inc">
+    <violation beginline="17" endline="85" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_drupal_maintenance_theme" priority="3">
+      The function _drupal_maintenance_theme() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\unicode.inc">
+    <violation beginline="586" endline="672" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_substr" priority="3">
+      The function drupal_substr() has a Cyclomatic Complexity of 27. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\update.inc">
+    <violation beginline="43" endline="68" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_check_incompatibility" priority="3">
+      The function update_check_incompatibility() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="81" endline="318" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_prepare_d7_bootstrap" priority="3">
+      The function update_prepare_d7_bootstrap() has a Cyclomatic Complexity of 23. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="355" endline="467" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_fix_d7_block_deltas" priority="3">
+      The function update_fix_d7_block_deltas() has a Cyclomatic Complexity of 19. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="478" endline="783" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_fix_d7_requirements" priority="3">
+      The function update_fix_d7_requirements() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="951" endline="1003" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_do_one" priority="3">
+      The function update_do_one() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1135" endline="1178" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_get_update_list" priority="3">
+      The function update_get_update_list() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1426" endline="1477" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_retrieve_dependencies" priority="3">
+      The function update_retrieve_dependencies() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\utility.inc">
+    <violation beginline="19" endline="66" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drupal_var_export" priority="3">
+      The function drupal_var_export() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\xmlrpc.inc">
+    <violation beginline="57" endline="85" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="xmlrpc_value_calculate_type" priority="3">
+      The function xmlrpc_value_calculate_type() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="96" endline="136" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="xmlrpc_value_get_xml" priority="3">
+      The function xmlrpc_value_get_xml() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="173" endline="230" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="xmlrpc_message_parse" priority="3">
+      The function xmlrpc_message_parse() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="303" endline="390" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="xmlrpc_message_tag_close" priority="3">
+      The function xmlrpc_message_tag_close() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\includes\xmlrpcs.inc">
+    <violation beginline="180" endline="249" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="xmlrpc_server_call" priority="3">
+      The function xmlrpc_server_call() has a Cyclomatic Complexity of 25. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\aggregator\aggregator.admin.inc">
+    <violation beginline="66" endline="133" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="aggregator_form_feed" priority="3">
+      The function aggregator_form_feed() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="421" endline="524" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="aggregator_admin_form" priority="3">
+      The function aggregator_admin_form() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\aggregator\aggregator.fetcher.inc">
+    <violation beginline="21" endline="61" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="aggregator_aggregator_fetch" priority="3">
+      The function aggregator_aggregator_fetch() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\aggregator\aggregator.parser.inc">
+    <violation beginline="67" endline="165" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="aggregator_parse_feed" priority="3">
+      The function aggregator_parse_feed() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="172" endline="215" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="aggregator_element_start" priority="3">
+      The function aggregator_element_start() has a Cyclomatic Complexity of 18. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="246" endline="288" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="aggregator_element_data" priority="3">
+      The function aggregator_element_data() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\aggregator\aggregator.processor.inc">
+    <violation beginline="21" endline="48" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="aggregator_aggregator_process" priority="3">
+      The function aggregator_aggregator_process() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\block\block.admin.inc">
+    <violation beginline="255" endline="440" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="block_admin_configure" priority="3">
+      The function block_admin_configure() has a Cyclomatic Complexity of 23. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\comment\comment.pages.inc">
+    <violation beginline="33" endline="103" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="comment_reply" priority="3">
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\comment\comment.tokens.inc">
+    <violation beginline="105" endline="243" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="comment_tokens" priority="3">
+      The function comment_tokens() has a Cyclomatic Complexity of 43. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\contact\contact.pages.inc">
+    <violation beginline="15" endline="112" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="contact_site_form" priority="3">
+      The function contact_site_form() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\field\field.api.php">
+    <violation beginline="1770" endline="1816" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="hook_field_storage_load" priority="3">
+      The function hook_field_storage_load() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1835" endline="1913" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="hook_field_storage_write" priority="3">
+      The function hook_field_storage_write() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1989" endline="2088" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="hook_field_storage_query" priority="3">
+      The function hook_field_storage_query() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\field\field.attach.inc">
+    <violation beginline="181" endline="231" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_field_invoke" priority="3">
+      The function _field_invoke() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="278" endline="372" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_field_invoke_multiple" priority="3">
+      The function _field_invoke_multiple() has a Cyclomatic Complexity of 19. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="622" endline="734" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_attach_load" priority="3">
+      The function field_attach_load() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\field\field.crud.inc">
+    <violation beginline="56" endline="198" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_create_field" priority="3">
+      The function field_create_field() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="340" endline="403" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_read_fields" priority="3">
+      The function field_read_fields() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\field\field.form.inc">
+    <violation beginline="42" endline="170" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_default_form" priority="3">
+      The function field_default_form() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="180" endline="287" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_multiple_value_form" priority="3">
+      The function field_multiple_value_form() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\field\field.info.class.inc">
+    <violation beginline="341" endline="425" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="FieldInfo" method="getBundleInstances" priority="3">
+      The method getBundleInstances() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\field\field.info.inc">
+    <violation beginline="141" endline="231" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_field_info_collate_types" priority="3">
+      The function _field_info_collate_types() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\field\tests\field_test.storage.inc">
+    <violation beginline="83" endline="114" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_test_field_storage_load" priority="3">
+      The function field_test_field_storage_load() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="119" endline="184" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_test_field_storage_write" priority="3">
+      The function field_test_field_storage_write() has a Cyclomatic Complexity of 20. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="246" endline="346" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_test_field_storage_query" priority="3">
+      The function field_test_field_storage_query() has a Cyclomatic Complexity of 37. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\field_ui\field_ui.admin.inc">
+    <violation beginline="11" endline="51" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_ui_fields_list" priority="3">
+      The function field_ui_fields_list() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="128" endline="195" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_ui_table_pre_render" priority="3">
+      The function field_ui_table_pre_render() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="207" endline="277" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_field_ui_table" priority="3">
+      The function theme_field_ui_table() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="288" endline="654" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_ui_field_overview_form" priority="3">
+      The function field_ui_field_overview_form() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="774" endline="875" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_ui_field_overview_form_submit" priority="3">
+      The function field_ui_field_overview_form_submit() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="884" endline="1230" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_ui_display_overview_form" priority="3">
+      The function field_ui_display_overview_form() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1314" endline="1387" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_ui_display_overview_form_submit" priority="3">
+      The function field_ui_display_overview_form_submit() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1523" endline="1556" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_ui_existing_field_options" priority="3">
+      The function field_ui_existing_field_options() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1801" endline="1950" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="field_ui_field_edit_form" priority="3">
+      The function field_ui_field_edit_form() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\file\file.field.inc">
+    <violation beginline="253" endline="300" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="file_field_update" priority="3">
+      The function file_field_update() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="456" endline="530" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="file_field_widget_form" priority="3">
+      The function file_field_widget_form() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="617" endline="680" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="file_field_widget_process" priority="3">
+      The function file_field_widget_process() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="824" endline="918" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_file_widget_multiple" priority="3">
+      The function theme_file_widget_multiple() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="933" endline="966" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_file_upload_help" priority="3">
+      The function theme_file_upload_help() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\filter\filter.admin.inc">
+    <violation beginline="154" endline="292" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="filter_admin_format_form" priority="3">
+      The function filter_admin_format_form() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\filter\filter.pages.inc">
+    <violation beginline="54" endline="92" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_filter_tips" priority="3">
+      The function theme_filter_tips() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\image\image.admin.inc">
+    <violation beginline="36" endline="168" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="image_style_form" priority="3">
+      The function image_style_form() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="714" endline="760" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_image_style_effects" priority="3">
+      The function theme_image_style_effects() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\image\image.field.inc">
+    <violation beginline="368" endline="443" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="image_field_widget_process" priority="3">
+      The function image_field_widget_process() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="599" endline="642" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_image_formatter" priority="3">
+      The function theme_image_formatter() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\locale\locale.admin.inc">
+    <violation beginline="375" endline="399" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="locale_languages_edit_form_validate" priority="3">
+      The function locale_languages_edit_form_validate() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="756" endline="788" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="locale_translate_overview_screen" priority="3">
+      The function locale_translate_overview_screen() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\menu\menu.admin.inc">
+    <violation beginline="92" endline="150" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_menu_overview_tree_form" priority="3">
+      The function _menu_overview_tree_form() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\node\content_types.inc">
+    <violation beginline="286" endline="362" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="node_type_form_submit" priority="3">
+      The function node_type_form_submit() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\node\node.admin.inc">
+    <violation beginline="156" endline="226" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="node_filter_form" priority="3">
+      The function node_filter_form() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="428" endline="594" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="node_admin_nodes" priority="3">
+      The function node_admin_nodes() has a Cyclomatic Complexity of 20. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\node\node.api.php">
+    <violation beginline="605" endline="628" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="hook_node_access" priority="3">
+      The function hook_node_access() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\node\node.pages.inc">
+    <violation beginline="107" endline="328" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="node_form" priority="3">
+      The function node_form() has a Cyclomatic Complexity of 25. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="564" endline="610" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="node_revision_overview" priority="3">
+      The function node_revision_overview() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\node\node.tokens.inc">
+    <violation beginline="92" endline="210" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="node_tokens" priority="3">
+      The function node_tokens() has a Cyclomatic Complexity of 35. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\openid\openid.inc">
+    <violation beginline="139" endline="200" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_openid_xrds_parse" priority="3">
+      The function _openid_xrds_parse() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="215" endline="257" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_openid_select_service" priority="3">
+      The function _openid_select_service() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="647" endline="679" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="openid_extract_namespace" priority="3">
+      The function openid_extract_namespace() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="842" endline="899" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_openid_invalid_openid_transition" priority="3">
+      The function _openid_invalid_openid_transition() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\poll\poll.tokens.inc">
+    <violation beginline="41" endline="107" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="poll_tokens" priority="3">
+      The function poll_tokens() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\profile\profile.admin.inc">
+    <violation beginline="187" endline="305" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="profile_field_form" priority="3">
+      The function profile_field_form() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="310" endline="358" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="profile_field_form_validate" priority="3">
+      The function profile_field_form_validate() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\profile\profile.pages.inc">
+    <violation beginline="11" endline="113" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="profile_browse" priority="3">
+      The function profile_browse() has a Cyclomatic Complexity of 18. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\search\search.extender.inc">
+    <violation beginline="186" endline="309" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="SearchQuery" method="parseSearchExpression" priority="3">
+      The method parseSearchExpression() has a Cyclomatic Complexity of 25. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\search\search.pages.inc">
+    <violation beginline="16" endline="72" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="search_view" priority="3">
+      The function search_view() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="105" endline="135" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="template_preprocess_search_result" priority="3">
+      The function template_preprocess_search_result() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\simpletest\drupal_web_test_case.php">
+    <violation beginline="1756" endline="1816" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalWebTestCase" method="curlExec" priority="3">
+      The method curlExec() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2018" endline="2102" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalWebTestCase" method="drupalPost" priority="3">
+      The method drupalPost() has a Cyclomatic Complexity of 22. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2146" endline="2306" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalWebTestCase" method="drupalPostAJAX" priority="3">
+      The method drupalPostAJAX() has a Cyclomatic Complexity of 36. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2373" endline="2508" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalWebTestCase" method="handleForm" priority="3">
+      The method handleForm() has a Cyclomatic Complexity of 45. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="3237" endline="3271" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalWebTestCase" method="assertFieldByXPath" priority="3">
+      The method assertFieldByXPath() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\system\system.admin.inc">
+    <violation beginline="136" endline="250" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="system_themes_page" priority="3">
+      The function system_themes_page() has a Cyclomatic Complexity of 19. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="399" endline="602" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="system_theme_settings" priority="3">
+      The function system_theme_settings() has a Cyclomatic Complexity of 24. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="788" endline="943" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="system_modules" priority="3">
+      The function system_modules() has a Cyclomatic Complexity of 30. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1106" endline="1237" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="system_modules_submit" priority="3">
+      The function system_modules_submit() has a Cyclomatic Complexity of 25. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1254" endline="1311" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="system_modules_uninstall" priority="3">
+      The function system_modules_uninstall() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1567" endline="1600" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="system_site_information_settings_validate" priority="3">
+      The function system_site_information_settings_validate() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2006" endline="2073" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="system_date_time_settings" priority="3">
+      The function system_date_time_settings() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2236" endline="2318" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="system_clean_url_settings" priority="3">
+      The function system_clean_url_settings() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2727" endline="2774" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_system_themes_page" priority="3">
+      The function theme_system_themes_page() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2958" endline="3011" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="system_actions_manage" priority="3">
+      The function system_actions_manage() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\system\system.api.php">
+    <violation beginline="4382" endline="4436" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="hook_tokens" priority="3">
+      The function hook_tokens() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\system\system.tar.inc">
+    <violation beginline="105" endline="168" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Archive_Tar" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Archive_Tar" method="__construct" priority="3">
+      The method __construct() has a Cyclomatic Complexity of 18. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="683" endline="731" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Archive_Tar" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Archive_Tar" method="_openRead" priority="3">
+      The method _openRead() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="896" endline="959" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Archive_Tar" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Archive_Tar" method="_addList" priority="3">
+      The method _addList() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="963" endline="1022" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Archive_Tar" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Archive_Tar" method="_addFile" priority="3">
+      The method _addFile() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1277" endline="1352" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Archive_Tar" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Archive_Tar" method="_readHeader" priority="3">
+      The method _readHeader() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1415" endline="1456" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Archive_Tar" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Archive_Tar" method="_extractInString" priority="3">
+      The method _extractInString() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1460" endline="1681" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Archive_Tar" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Archive_Tar" method="_extractList" priority="3">
+      The method _extractList() has a Cyclomatic Complexity of 59. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1685" endline="1770" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Archive_Tar" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Archive_Tar" method="_openAppend" priority="3">
+      The method _openAppend() has a Cyclomatic Complexity of 18. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\system\system.tokens.inc">
+    <violation beginline="131" endline="269" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="system_tokens" priority="3">
+      The function system_tokens() has a Cyclomatic Complexity of 42. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\taxonomy\taxonomy.admin.inc">
+    <violation beginline="249" endline="419" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="taxonomy_overview_terms" priority="3">
+      The function taxonomy_overview_terms() has a Cyclomatic Complexity of 34. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="436" endline="536" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="taxonomy_overview_terms_submit" priority="3">
+      The function taxonomy_overview_terms_submit() has a Cyclomatic Complexity of 23. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="548" endline="629" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_taxonomy_overview_terms" priority="3">
+      The function theme_taxonomy_overview_terms() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="637" endline="780" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="taxonomy_form_term" priority="3">
+      The function taxonomy_form_term() has a Cyclomatic Complexity of 19. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="801" endline="851" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="taxonomy_form_term_submit" priority="3">
+      The function taxonomy_form_term_submit() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\taxonomy\taxonomy.pages.inc">
+    <violation beginline="121" endline="181" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="taxonomy_autocomplete" priority="3">
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\taxonomy\taxonomy.tokens.inc">
+    <violation beginline="91" endline="189" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="taxonomy_tokens" priority="3">
+      The function taxonomy_tokens() has a Cyclomatic Complexity of 27. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\tracker\tracker.pages.inc">
+    <violation beginline="15" endline="128" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="tracker_page" priority="3">
+      The function tracker_page() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\translation\translation.pages.inc">
+    <violation beginline="19" endline="82" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="translation_node_overview" priority="3">
+      The function translation_node_overview() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\update\update.compare.inc">
+    <violation beginline="106" endline="236" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_update_process_info_list" priority="3">
+      The function _update_process_info_list() has a Cyclomatic Complexity of 26. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="427" endline="749" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_calculate_project_update_status" priority="3">
+      The function update_calculate_project_update_status() has a Cyclomatic Complexity of 73. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\update\update.fetch.inc">
+    <violation beginline="129" endline="192" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_update_process_fetch_task" priority="3">
+      The function _update_process_fetch_task() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="340" endline="372" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_update_cron_notify" priority="3">
+      The function _update_cron_notify() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="384" endline="423" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_parse_xml" priority="3">
+      The function update_parse_xml() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\update\update.manager.inc">
+    <violation beginline="62" endline="265" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_manager_update_form" priority="3">
+      The function update_manager_update_form() has a Cyclomatic Complexity of 32. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="639" endline="745" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_manager_install_form_submit" priority="3">
+      The function update_manager_install_form_submit() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\update\update.report.inc">
+    <violation beginline="33" endline="252" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_update_report" priority="3">
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\user\user.admin.inc">
+    <violation beginline="124" endline="154" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="user_filter_form_submit" priority="3">
+      The function user_filter_form_submit() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="672" endline="746" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="user_admin_permissions" priority="3">
+      The function user_admin_permissions() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\user\user.pages.inc">
+    <violation beginline="93" endline="165" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="user_pass_reset" priority="3">
+      The function user_pass_reset() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="356" endline="425" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="user_cancel_confirm_form" priority="3">
+      The function user_cancel_confirm_form() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="518" endline="542" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="user_cancel_confirm" priority="3">
+      The function user_cancel_confirm() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\modules\user\user.tokens.inc">
+    <violation beginline="64" endline="131" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="user_tokens" priority="3">
+      The function user_tokens() has a Cyclomatic Complexity of 22. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\sites\all\modules\devel\devel_generate\devel_generate.drush.inc">
+    <violation beginline="185" endline="222" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="drush_devel_generate_menus" priority="3">
+      The function drush_devel_generate_menus() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\sites\all\modules\devel\devel_generate\devel_generate.fields.inc">
+    <violation beginline="12" endline="71" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="devel_generate_fields" priority="3">
+      The function devel_generate_fields() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\sites\all\modules\devel\devel_generate\devel_generate.inc">
+    <violation beginline="17" endline="114" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="devel_create_users" priority="3">
+      The function devel_create_users() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="380" endline="460" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="devel_generate_links" priority="3">
+      The function devel_generate_links() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\sites\all\modules\devel\devel_generate\number.devel_generate.inc">
+    <violation beginline="13" endline="45" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="_number_devel_generate" priority="3">
+      The function _number_devel_generate() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\sites\all\modules\devel\krumo\class.krumo.php">
+    <violation beginline="547" endline="622" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Krumo" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="krumo" method="dump" priority="3">
+      The method dump() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="789" endline="856" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Krumo" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="krumo" method="_dump" priority="3">
+      The method _dump() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\sites\all\modules\examples\ajax_example\ajax_example_graceful_degradation.inc">
+    <violation beginline="360" endline="464" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="ajax_example_wizard" priority="3">
+      The function ajax_example_wizard() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\sites\all\modules\examples\form_example\form_example_elements.inc">
+    <violation beginline="400" endline="461" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_form_example_inline_form_element" priority="3">
+      The function theme_form_example_inline_form_element() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\sites\all\modules\examples\token_example\token_example.tokens.inc">
+    <violation beginline="62" endline="142" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="token_example_tokens" priority="3">
+      The function token_example_tokens() has a Cyclomatic Complexity of 24. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\sites\all\modules\module_filter\module_filter.theme.inc">
+    <violation beginline="17" endline="155" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="theme_module_filter_system_modules_tabs" priority="3">
+      The function theme_module_filter_system_modules_tabs() has a Cyclomatic Complexity of 24. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\sites\all\modules\simpletest\drupal_web_test_case.php">
+    <violation beginline="1598" endline="1658" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalWebTestCase" method="curlExec" priority="3">
+      The method curlExec() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1851" endline="1928" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalWebTestCase" method="drupalPost" priority="3">
+      The method drupalPost() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1972" endline="2105" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalWebTestCase" method="drupalPostAJAX" priority="3">
+      The method drupalPostAJAX() has a Cyclomatic Complexity of 30. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2172" endline="2300" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalWebTestCase" method="handleForm" priority="3">
+      The method handleForm() has a Cyclomatic Complexity of 38. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="2994" endline="3028" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="DrupalWebTestCase" method="assertFieldByXPath" priority="3">
+      The method assertFieldByXPath() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="C:\wamp\www\Test\update.php">
+    <violation beginline="46" endline="148" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_script_selection_form" priority="3">
+      The function update_script_selection_form() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="164" endline="243" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" function="update_results_page" priority="3">
+      The function update_results_page() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+</pmd>

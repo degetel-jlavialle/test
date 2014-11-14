@@ -1,0 +1,563 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>
+            Mayflower Code Browser - Source Code
+        </title>
+        <link rel="stylesheet" type="text/css" href="../../js/jquery.sidebar/css/codebrowser/sidebar.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/global.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/cruisecontrol.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/review.css" />
+
+        <script type="text/javascript" src="../../js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery.sidebar/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery.sidebar/jquery.sidebar.js"></script>
+        <script type="text/javascript" src="../../js/jquery.cluetip/lib/jquery.hoverIntent.js"></script>
+        <script type="text/javascript" src="../../js/jquery.cluetip/lib/jquery.bgiframe.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery.cluetip/jquery.cluetip.min.js"></script>
+
+        <script type="text/javascript" src="../../js/review.js"></script>
+    </head>
+    <body class="codebrowser">
+        <div class="header">
+            <a href="./../../index.html">Go back to index</a> |
+            <a href="http://github.com/mayflowergmbh/PHP_CodeBrowser">PHP CodeBrowser</a>
+        </div>
+        <hr/>
+        <div id="review">
+            <div class="filepath">
+                includes/database/pgsql/select.inc            </div>
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div class="code"><ol class="code"><li id="line_1" class="odd"><span class="lineNumber">&nbsp;&nbsp;1&nbsp;</span>&lt;?php<a name="line_1"></a></li>
+<li id="line_2" class="even"><span class="lineNumber">&nbsp;&nbsp;2&nbsp;</span><a name="line_2"></a></li>
+<li id="line_3" class="odd"><span class="lineNumber">&nbsp;&nbsp;3&nbsp;</span>/**<a name="line_3"></a></li>
+<li id="line_4" class="even"><span class="lineNumber">&nbsp;&nbsp;4&nbsp;</span>&nbsp;*&nbsp;@file<a name="line_4"></a></li>
+<li id="line_5" class="odd"><span class="lineNumber">&nbsp;&nbsp;5&nbsp;</span>&nbsp;*&nbsp;Select&nbsp;builder&nbsp;for&nbsp;PostgreSQL&nbsp;database&nbsp;engine.<a name="line_5"></a></li>
+<li id="line_6" class="even"><span class="lineNumber">&nbsp;&nbsp;6&nbsp;</span>&nbsp;*/<a name="line_6"></a></li>
+<li id="line_7" class="odd"><span class="lineNumber">&nbsp;&nbsp;7&nbsp;</span><a name="line_7"></a></li>
+<li id="line_8" class="even"><span class="lineNumber">&nbsp;&nbsp;8&nbsp;</span>/**<a name="line_8"></a></li>
+<li id="line_9" class="odd"><span class="lineNumber">&nbsp;&nbsp;9&nbsp;</span>&nbsp;*&nbsp;@addtogroup&nbsp;database<a name="line_9"></a></li>
+<li id="line_10" class="even"><span class="lineNumber">&nbsp;10&nbsp;</span>&nbsp;*&nbsp;@{<a name="line_10"></a></li>
+<li id="line_11" class="odd"><span class="lineNumber">&nbsp;11&nbsp;</span>&nbsp;*/<a name="line_11"></a></li>
+<li id="line_12" class="even"><span class="lineNumber">&nbsp;12&nbsp;</span><a name="line_12"></a></li>
+<li id="line_13" class="odd"><span class="lineNumber">&nbsp;13&nbsp;</span>class&nbsp;SelectQuery_pgsql&nbsp;extends&nbsp;SelectQuery&nbsp;{<a name="line_13"></a></li>
+<li id="line_14" class="even"><span class="lineNumber">&nbsp;14&nbsp;</span><a name="line_14"></a></li>
+<li id="line_15" class="odd"><span class="lineNumber">&nbsp;15&nbsp;</span>&nbsp;&nbsp;public&nbsp;function&nbsp;orderRandom()&nbsp;{<a name="line_15"></a></li>
+<li id="line_16" class="even"><span class="lineNumber">&nbsp;16&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$alias&nbsp;=&nbsp;$this-&gt;addExpression('RANDOM()',&nbsp;'random_field');<a name="line_16"></a></li>
+<li id="line_17" class="odd"><span class="lineNumber">&nbsp;17&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;orderBy($alias);<a name="line_17"></a></li>
+<li id="line_18" class="even"><span class="lineNumber">&nbsp;18&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$this;<a name="line_18"></a></li>
+<li id="line_19" class="odd"><span class="lineNumber">&nbsp;19&nbsp;</span>&nbsp;&nbsp;}<a name="line_19"></a></li>
+<li id="line_20" class="even"><span class="lineNumber">&nbsp;20&nbsp;</span><a name="line_20"></a></li>
+<li id="line_21" class="odd"><span class="lineNumber">&nbsp;21&nbsp;</span>&nbsp;&nbsp;/**<a name="line_21"></a></li>
+<li id="line_22" class="even"><span class="lineNumber">&nbsp;22&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;Overrides&nbsp;SelectQuery::orderBy().<a name="line_22"></a></li>
+<li id="line_23" class="odd"><span class="lineNumber">&nbsp;23&nbsp;</span>&nbsp;&nbsp;&nbsp;*<a name="line_23"></a></li>
+<li id="line_24" class="even"><span class="lineNumber">&nbsp;24&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;PostgreSQL&nbsp;adheres&nbsp;strictly&nbsp;to&nbsp;the&nbsp;SQL-92&nbsp;standard&nbsp;and&nbsp;requires&nbsp;that&nbsp;when<a name="line_24"></a></li>
+<li id="line_25" class="odd"><span class="lineNumber">&nbsp;25&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;using&nbsp;DISTINCT&nbsp;or&nbsp;GROUP&nbsp;BY&nbsp;conditions,&nbsp;fields&nbsp;and&nbsp;expressions&nbsp;that&nbsp;are<a name="line_25"></a></li>
+<li id="line_26" class="even"><span class="lineNumber">&nbsp;26&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;ordered&nbsp;on&nbsp;also&nbsp;need&nbsp;to&nbsp;be&nbsp;selected.&nbsp;This&nbsp;is&nbsp;a&nbsp;best&nbsp;effort&nbsp;implementation<a name="line_26"></a></li>
+<li id="line_27" class="odd"><span class="lineNumber">&nbsp;27&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;to&nbsp;handle&nbsp;the&nbsp;cases&nbsp;that&nbsp;can&nbsp;be&nbsp;automated&nbsp;by&nbsp;adding&nbsp;the&nbsp;field&nbsp;if&nbsp;it&nbsp;is&nbsp;not<a name="line_27"></a></li>
+<li id="line_28" class="even"><span class="lineNumber">&nbsp;28&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;yet&nbsp;selected.<a name="line_28"></a></li>
+<li id="line_29" class="odd"><span class="lineNumber">&nbsp;29&nbsp;</span>&nbsp;&nbsp;&nbsp;*<a name="line_29"></a></li>
+<li id="line_30" class="even"><span class="lineNumber">&nbsp;30&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;@code<a name="line_30"></a></li>
+<li id="line_31" class="odd"><span class="lineNumber">&nbsp;31&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;$query&nbsp;=&nbsp;db_select('node',&nbsp;'n');<a name="line_31"></a></li>
+<li id="line_32" class="even"><span class="lineNumber">&nbsp;32&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;$query-&gt;join('node_revision',&nbsp;'nr',&nbsp;'n.vid&nbsp;=&nbsp;nr.vid');<a name="line_32"></a></li>
+<li id="line_33" class="odd"><span class="lineNumber">&nbsp;33&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;$query<a name="line_33"></a></li>
+<li id="line_34" class="even"><span class="lineNumber">&nbsp;34&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;distinct()<a name="line_34"></a></li>
+<li id="line_35" class="odd"><span class="lineNumber">&nbsp;35&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;fields('n')<a name="line_35"></a></li>
+<li id="line_36" class="even"><span class="lineNumber">&nbsp;36&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;orderBy('timestamp');<a name="line_36"></a></li>
+<li id="line_37" class="odd"><span class="lineNumber">&nbsp;37&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;@endcode<a name="line_37"></a></li>
+<li id="line_38" class="even"><span class="lineNumber">&nbsp;38&nbsp;</span>&nbsp;&nbsp;&nbsp;*<a name="line_38"></a></li>
+<li id="line_39" class="odd"><span class="lineNumber">&nbsp;39&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;In&nbsp;this&nbsp;query,&nbsp;it&nbsp;is&nbsp;not&nbsp;possible&nbsp;(without&nbsp;relying&nbsp;on&nbsp;the&nbsp;schema)&nbsp;to&nbsp;know<a name="line_39"></a></li>
+<li id="line_40" class="even"><span class="lineNumber">&nbsp;40&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;whether&nbsp;timestamp&nbsp;belongs&nbsp;to&nbsp;node_revisions&nbsp;and&nbsp;needs&nbsp;to&nbsp;be&nbsp;added&nbsp;or<a name="line_40"></a></li>
+<li id="line_41" class="odd"><span class="lineNumber">&nbsp;41&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;belongs&nbsp;to&nbsp;node&nbsp;and&nbsp;is&nbsp;already&nbsp;selected.&nbsp;Queries&nbsp;like&nbsp;this&nbsp;will&nbsp;need&nbsp;to&nbsp;be<a name="line_41"></a></li>
+<li id="line_42" class="even"><span class="lineNumber">&nbsp;42&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;corrected&nbsp;in&nbsp;the&nbsp;original&nbsp;query&nbsp;by&nbsp;adding&nbsp;an&nbsp;explicit&nbsp;call&nbsp;to<a name="line_42"></a></li>
+<li id="line_43" class="odd"><span class="lineNumber">&nbsp;43&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;SelectQuery::addField()&nbsp;or&nbsp;SelectQuery::fields().<a name="line_43"></a></li>
+<li id="line_44" class="even"><span class="lineNumber">&nbsp;44&nbsp;</span>&nbsp;&nbsp;&nbsp;*<a name="line_44"></a></li>
+<li id="line_45" class="odd"><span class="lineNumber">&nbsp;45&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;Since&nbsp;this&nbsp;has&nbsp;a&nbsp;small&nbsp;performance&nbsp;impact,&nbsp;both&nbsp;by&nbsp;the&nbsp;additional<a name="line_45"></a></li>
+<li id="line_46" class="even"><span class="lineNumber">&nbsp;46&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;processing&nbsp;in&nbsp;this&nbsp;function&nbsp;and&nbsp;in&nbsp;the&nbsp;database&nbsp;that&nbsp;needs&nbsp;to&nbsp;return&nbsp;the<a name="line_46"></a></li>
+<li id="line_47" class="odd"><span class="lineNumber">&nbsp;47&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;additional&nbsp;fields,&nbsp;this&nbsp;is&nbsp;done&nbsp;as&nbsp;an&nbsp;override&nbsp;instead&nbsp;of&nbsp;implementing&nbsp;it<a name="line_47"></a></li>
+<li id="line_48" class="even"><span class="lineNumber">&nbsp;48&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;directly&nbsp;in&nbsp;SelectQuery::orderBy().<a name="line_48"></a></li>
+<li id="line_49" class="odd"><span class="lineNumber">&nbsp;49&nbsp;</span>&nbsp;&nbsp;&nbsp;*/<a name="line_49"></a></li>
+<li id="line_50" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;50&nbsp;</span>&nbsp;&nbsp;public&nbsp;function&nbsp;orderBy($field,&nbsp;$direction&nbsp;=&nbsp;'ASC')&nbsp;{<a name="line_50"></a></li>
+<li id="line_51" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;51&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Call&nbsp;parent&nbsp;function&nbsp;to&nbsp;order&nbsp;on&nbsp;this.<a name="line_51"></a></li>
+<li id="line_52" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;52&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$return&nbsp;=&nbsp;parent::orderBy($field,&nbsp;$direction);<a name="line_52"></a></li>
+<li id="line_53" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;53&nbsp;</span><a name="line_53"></a></li>
+<li id="line_54" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;54&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;there&nbsp;is&nbsp;a&nbsp;table&nbsp;alias&nbsp;specified,&nbsp;split&nbsp;it&nbsp;up.<a name="line_54"></a></li>
+<li id="line_55" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;55&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(strpos($field,&nbsp;'.')&nbsp;!==&nbsp;FALSE)&nbsp;{<a name="line_55"></a></li>
+<li id="line_56" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;56&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list($table,&nbsp;$table_field)&nbsp;=&nbsp;explode('.',&nbsp;$field);<a name="line_56"></a></li>
+<li id="line_57" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;57&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_57"></a></li>
+<li id="line_58" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;58&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Figure&nbsp;out&nbsp;if&nbsp;the&nbsp;field&nbsp;has&nbsp;already&nbsp;been&nbsp;added.<a name="line_58"></a></li>
+<li id="line_59" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;59&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;($this-&gt;fields&nbsp;as&nbsp;$existing_field)&nbsp;{<a name="line_59"></a></li>
+<li id="line_60" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;60&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($table))&nbsp;{<a name="line_60"></a></li>
+<li id="line_61" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;61&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;table&nbsp;alias&nbsp;is&nbsp;given,&nbsp;check&nbsp;if&nbsp;field&nbsp;and&nbsp;table&nbsp;exists.<a name="line_61"></a></li>
+<li id="line_62" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;62&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($existing_field['table']&nbsp;==&nbsp;$table&nbsp;&amp;&amp;&nbsp;$existing_field['field']&nbsp;==&nbsp;$table_field)&nbsp;{<a name="line_62"></a></li>
+<li id="line_63" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;63&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$return;<a name="line_63"></a></li>
+<li id="line_64" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;64&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_64"></a></li>
+<li id="line_65" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;65&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_65"></a></li>
+<li id="line_66" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;66&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_66"></a></li>
+<li id="line_67" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;67&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;there&nbsp;is&nbsp;no&nbsp;table,&nbsp;simply&nbsp;check&nbsp;if&nbsp;the&nbsp;field&nbsp;exists&nbsp;as&nbsp;a&nbsp;field&nbsp;or<a name="line_67"></a></li>
+<li id="line_68" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;68&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;an&nbsp;aliased&nbsp;field.<a name="line_68"></a></li>
+<li id="line_69" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;69&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($existing_field['alias']&nbsp;==&nbsp;$field)&nbsp;{<a name="line_69"></a></li>
+<li id="line_70" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;70&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$return;<a name="line_70"></a></li>
+<li id="line_71" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;71&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_71"></a></li>
+<li id="line_72" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;72&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_72"></a></li>
+<li id="line_73" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;73&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_73"></a></li>
+<li id="line_74" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;74&nbsp;</span><a name="line_74"></a></li>
+<li id="line_75" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;75&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Also&nbsp;check&nbsp;expression&nbsp;aliases.<a name="line_75"></a></li>
+<li id="line_76" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;76&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;($this-&gt;expressions&nbsp;as&nbsp;$expression)&nbsp;{<a name="line_76"></a></li>
+<li id="line_77" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;77&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($expression['alias']&nbsp;==&nbsp;$field)&nbsp;{<a name="line_77"></a></li>
+<li id="line_78" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;78&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$return;<a name="line_78"></a></li>
+<li id="line_79" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;79&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_79"></a></li>
+<li id="line_80" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;80&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_80"></a></li>
+<li id="line_81" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;81&nbsp;</span><a name="line_81"></a></li>
+<li id="line_82" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;82&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;a&nbsp;table&nbsp;loads&nbsp;all&nbsp;fields,&nbsp;it&nbsp;can&nbsp;not&nbsp;be&nbsp;added&nbsp;again.&nbsp;It&nbsp;would<a name="line_82"></a></li>
+<li id="line_83" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;83&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;result&nbsp;in&nbsp;an&nbsp;ambigious&nbsp;alias&nbsp;error&nbsp;because&nbsp;that&nbsp;field&nbsp;would&nbsp;be&nbsp;loaded<a name="line_83"></a></li>
+<li id="line_84" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;84&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;twice:&nbsp;Once&nbsp;through&nbsp;table_alias.*&nbsp;and&nbsp;once&nbsp;directly.&nbsp;If&nbsp;the&nbsp;field<a name="line_84"></a></li>
+<li id="line_85" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;85&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;actually&nbsp;belongs&nbsp;to&nbsp;a&nbsp;different&nbsp;table,&nbsp;it&nbsp;must&nbsp;be&nbsp;added&nbsp;manually.<a name="line_85"></a></li>
+<li id="line_86" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;86&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;($this-&gt;tables&nbsp;as&nbsp;$table)&nbsp;{<a name="line_86"></a></li>
+<li id="line_87" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;87&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($table['all_fields']))&nbsp;{<a name="line_87"></a></li>
+<li id="line_88" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;88&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$return;<a name="line_88"></a></li>
+<li id="line_89" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;89&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_89"></a></li>
+<li id="line_90" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;90&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_90"></a></li>
+<li id="line_91" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;91&nbsp;</span><a name="line_91"></a></li>
+<li id="line_92" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;92&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;$field&nbsp;contains&nbsp;an&nbsp;characters&nbsp;which&nbsp;are&nbsp;not&nbsp;allowed&nbsp;in&nbsp;a&nbsp;field&nbsp;name<a name="line_92"></a></li>
+<li id="line_93" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;93&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;it&nbsp;is&nbsp;considered&nbsp;an&nbsp;expression,&nbsp;these&nbsp;can't&nbsp;be&nbsp;handeld&nbsp;automatically<a name="line_93"></a></li>
+<li id="line_94" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;94&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;either.<a name="line_94"></a></li>
+<li id="line_95" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;95&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($this-&gt;connection-&gt;escapeField($field)&nbsp;!=&nbsp;$field)&nbsp;{<a name="line_95"></a></li>
+<li id="line_96" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;96&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$return;<a name="line_96"></a></li>
+<li id="line_97" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;97&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_97"></a></li>
+<li id="line_98" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;98&nbsp;</span><a name="line_98"></a></li>
+<li id="line_99" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;99&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;This&nbsp;is&nbsp;a&nbsp;case&nbsp;that&nbsp;can&nbsp;be&nbsp;handled&nbsp;automatically,&nbsp;add&nbsp;the&nbsp;field.<a name="line_99"></a></li>
+<li id="line_100" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">100&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;addField(NULL,&nbsp;$field);<a name="line_100"></a></li>
+<li id="line_101" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">101&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$return;<a name="line_101"></a></li>
+<li id="line_102" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">102&nbsp;</span>&nbsp;&nbsp;}<a name="line_102"></a></li>
+<li id="line_103" class="odd"><span class="lineNumber">103&nbsp;</span>}<a name="line_103"></a></li>
+<li id="line_104" class="even"><span class="lineNumber">104&nbsp;</span><a name="line_104"></a></li>
+<li id="line_105" class="odd"><span class="lineNumber">105&nbsp;</span>/**<a name="line_105"></a></li>
+<li id="line_106" class="even"><span class="lineNumber">106&nbsp;</span>&nbsp;*&nbsp;@}&nbsp;End&nbsp;of&nbsp;"addtogroup&nbsp;database".<a name="line_106"></a></li>
+<li id="line_107" class="odd"><span class="lineNumber">107&nbsp;</span>&nbsp;*/<a name="line_107"></a></li></ol></div></body></html>
+            
+            <div id="sidebar">
+                <table cellpadding="3">
+                    <thead>
+                        <tr>
+                            <th width="40px" align="center">
+                                <strong>start</strong>
+                            </th>
+                            <th width="40px" align="center">
+                                <strong>end</strong>
+                            </th>
+                            <th>
+                                <strong>comment</strong>
+                            </th>
+                            <th width="120px">
+                                <strong>type of error</strong>
+                            </th>
+                            <th width="60px">
+                                <strong>severity</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr class="PMD">
+                            <td align="center">
+                                <a href="#line_50" onclick="switchLine('line_50')">
+                                50</a>
+                            </td>
+                            <td align="center">
+                                <a href="#line_102" onclick="switchLine('line_50'); new Effect.Highlight('line_50-102', {duration: 1.5}); return false">
+                                102</a>
+                            </td>
+                            <td>
+                                <a href="#line_50" onclick="switchLine('line_50'); new Effect.Highlight('line_50-102', {duration: 1.5}); return false">
+                                
+      The method orderBy() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </a>
+                            </td>
+                            <td>
+                                PMD                            </td>
+                            <td>
+                                error                            </td>
+                        </tr>
+                                            </tbody>
+                </table>
+            </div>
+            <script type="text/javascript" language="javascript">
+                $(initReview);
+            </script>
+                    </div>
+    </body>
+</html>

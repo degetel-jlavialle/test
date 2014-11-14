@@ -1,0 +1,3 @@
+<file name="C:\wamp\www\Test\modules\simpletest\tests\theme_test.template_test.tpl.php">
+ <error line="1" column="1" severity="warning" message="No PHP code was found in this file and short open tags are not allowed by this install of PHP. This file may be using short open tags but PHP does not allow them." source="Internal.NoCodeFound"/>
+</file>

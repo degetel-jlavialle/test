@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>
+            Mayflower Code Browser - Source Code
+        </title>
+        <link rel="stylesheet" type="text/css" href="../js/jquery.sidebar/css/codebrowser/sidebar.css" />
+        <link rel="stylesheet" type="text/css" href="../css/global.css" />
+        <link rel="stylesheet" type="text/css" href="../css/cruisecontrol.css" />
+        <link rel="stylesheet" type="text/css" href="../css/review.css" />
+
+        <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.sidebar/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.sidebar/jquery.sidebar.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/lib/jquery.hoverIntent.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/lib/jquery.bgiframe.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/jquery.cluetip.min.js"></script>
+
+        <script type="text/javascript" src="../js/review.js"></script>
+    </head>
+    <body class="codebrowser">
+        <div class="header">
+            <a href="./../index.html">Go back to index</a> |
+            <a href="http://github.com/mayflowergmbh/PHP_CodeBrowser">PHP CodeBrowser</a>
+        </div>
+        <hr/>
+        <div id="review">
+            <div class="filepath">
+                modules/file/file.js            </div>
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div class="code"><ol class="code"><li id="line_1" class="odd"><span class="lineNumber">&nbsp;&nbsp;1&nbsp;</span>/**<a name="line_1"></a></li>
+<li id="line_2" class="even"><span class="lineNumber">&nbsp;&nbsp;2&nbsp;</span>&nbsp;*&nbsp;@file<a name="line_2"></a></li>
+<li id="line_3" class="odd"><span class="lineNumber">&nbsp;&nbsp;3&nbsp;</span>&nbsp;*&nbsp;Provides&nbsp;JavaScript&nbsp;additions&nbsp;to&nbsp;the&nbsp;managed&nbsp;file&nbsp;field&nbsp;type.<a name="line_3"></a></li>
+<li id="line_4" class="even"><span class="lineNumber">&nbsp;&nbsp;4&nbsp;</span>&nbsp;*<a name="line_4"></a></li>
+<li id="line_5" class="odd"><span class="lineNumber">&nbsp;&nbsp;5&nbsp;</span>&nbsp;*&nbsp;This&nbsp;file&nbsp;provides&nbsp;progress&nbsp;bar&nbsp;support&nbsp;(if&nbsp;available),&nbsp;popup&nbsp;windows&nbsp;for<a name="line_5"></a></li>
+<li id="line_6" class="even"><span class="lineNumber">&nbsp;&nbsp;6&nbsp;</span>&nbsp;*&nbsp;file&nbsp;previews,&nbsp;and&nbsp;disabling&nbsp;of&nbsp;other&nbsp;file&nbsp;fields&nbsp;during&nbsp;Ajax&nbsp;uploads&nbsp;(which<a name="line_6"></a></li>
+<li id="line_7" class="odd"><span class="lineNumber">&nbsp;&nbsp;7&nbsp;</span>&nbsp;*&nbsp;prevents&nbsp;separate&nbsp;file&nbsp;fields&nbsp;from&nbsp;accidentally&nbsp;uploading&nbsp;files).<a name="line_7"></a></li>
+<li id="line_8" class="even"><span class="lineNumber">&nbsp;&nbsp;8&nbsp;</span>&nbsp;*/<a name="line_8"></a></li>
+<li id="line_9" class="odd"><span class="lineNumber">&nbsp;&nbsp;9&nbsp;</span><a name="line_9"></a></li>
+<li id="line_10" class="even"><span class="lineNumber">&nbsp;10&nbsp;</span>(function&nbsp;($)&nbsp;{<a name="line_10"></a></li>
+<li id="line_11" class="odd"><span class="lineNumber">&nbsp;11&nbsp;</span><a name="line_11"></a></li>
+<li id="line_12" class="even"><span class="lineNumber">&nbsp;12&nbsp;</span>/**<a name="line_12"></a></li>
+<li id="line_13" class="odd"><span class="lineNumber">&nbsp;13&nbsp;</span>&nbsp;*&nbsp;Attach&nbsp;behaviors&nbsp;to&nbsp;managed&nbsp;file&nbsp;element&nbsp;upload&nbsp;fields.<a name="line_13"></a></li>
+<li id="line_14" class="even"><span class="lineNumber">&nbsp;14&nbsp;</span>&nbsp;*/<a name="line_14"></a></li>
+<li id="line_15" class="odd"><span class="lineNumber">&nbsp;15&nbsp;</span>Drupal.behaviors.fileValidateAutoAttach&nbsp;=&nbsp;{<a name="line_15"></a></li>
+<li id="line_16" class="even"><span class="lineNumber">&nbsp;16&nbsp;</span>&nbsp;&nbsp;attach:&nbsp;function&nbsp;(context,&nbsp;settings)&nbsp;{<a name="line_16"></a></li>
+<li id="line_17" class="odd"><span class="lineNumber">&nbsp;17&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(settings.file&nbsp;&amp;&amp;&nbsp;settings.file.elements)&nbsp;{<a name="line_17"></a></li>
+<li id="line_18" class="even"><span class="lineNumber">&nbsp;18&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$.each(settings.file.elements,&nbsp;function(selector)&nbsp;{<a name="line_18"></a></li>
+<li id="line_19" class="odd"><span class="lineNumber">&nbsp;19&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;extensions&nbsp;=&nbsp;settings.file.elements[selector];<a name="line_19"></a></li>
+<li id="line_20" class="even"><span class="lineNumber">&nbsp;20&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(selector,&nbsp;context).bind('change',&nbsp;{extensions:&nbsp;extensions},&nbsp;Drupal.file.validateExtension);<a name="line_20"></a></li>
+<li id="line_21" class="odd"><span class="lineNumber">&nbsp;21&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<a name="line_21"></a></li>
+<li id="line_22" class="even"><span class="lineNumber">&nbsp;22&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_22"></a></li>
+<li id="line_23" class="odd"><span class="lineNumber">&nbsp;23&nbsp;</span>&nbsp;&nbsp;},<a name="line_23"></a></li>
+<li id="line_24" class="even"><span class="lineNumber">&nbsp;24&nbsp;</span>&nbsp;&nbsp;detach:&nbsp;function&nbsp;(context,&nbsp;settings)&nbsp;{<a name="line_24"></a></li>
+<li id="line_25" class="odd"><span class="lineNumber">&nbsp;25&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(settings.file&nbsp;&amp;&amp;&nbsp;settings.file.elements)&nbsp;{<a name="line_25"></a></li>
+<li id="line_26" class="even"><span class="lineNumber">&nbsp;26&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$.each(settings.file.elements,&nbsp;function(selector)&nbsp;{<a name="line_26"></a></li>
+<li id="line_27" class="odd"><span class="lineNumber">&nbsp;27&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(selector,&nbsp;context).unbind('change',&nbsp;Drupal.file.validateExtension);<a name="line_27"></a></li>
+<li id="line_28" class="even"><span class="lineNumber">&nbsp;28&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<a name="line_28"></a></li>
+<li id="line_29" class="odd"><span class="lineNumber">&nbsp;29&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_29"></a></li>
+<li id="line_30" class="even"><span class="lineNumber">&nbsp;30&nbsp;</span>&nbsp;&nbsp;}<a name="line_30"></a></li>
+<li id="line_31" class="odd"><span class="lineNumber">&nbsp;31&nbsp;</span>};<a name="line_31"></a></li>
+<li id="line_32" class="even"><span class="lineNumber">&nbsp;32&nbsp;</span><a name="line_32"></a></li>
+<li id="line_33" class="odd"><span class="lineNumber">&nbsp;33&nbsp;</span>/**<a name="line_33"></a></li>
+<li id="line_34" class="even"><span class="lineNumber">&nbsp;34&nbsp;</span>&nbsp;*&nbsp;Attach&nbsp;behaviors&nbsp;to&nbsp;the&nbsp;file&nbsp;upload&nbsp;and&nbsp;remove&nbsp;buttons.<a name="line_34"></a></li>
+<li id="line_35" class="odd"><span class="lineNumber">&nbsp;35&nbsp;</span>&nbsp;*/<a name="line_35"></a></li>
+<li id="line_36" class="even"><span class="lineNumber">&nbsp;36&nbsp;</span>Drupal.behaviors.fileButtons&nbsp;=&nbsp;{<a name="line_36"></a></li>
+<li id="line_37" class="odd"><span class="lineNumber">&nbsp;37&nbsp;</span>&nbsp;&nbsp;attach:&nbsp;function&nbsp;(context)&nbsp;{<a name="line_37"></a></li>
+<li id="line_38" class="even"><span class="lineNumber">&nbsp;38&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$('input.form-submit',&nbsp;context).bind('mousedown',&nbsp;Drupal.file.disableFields);<a name="line_38"></a></li>
+<li id="line_39" class="odd"><span class="lineNumber">&nbsp;39&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$('div.form-managed-file&nbsp;input.form-submit',&nbsp;context).bind('mousedown',&nbsp;Drupal.file.progressBar);<a name="line_39"></a></li>
+<li id="line_40" class="even"><span class="lineNumber">&nbsp;40&nbsp;</span>&nbsp;&nbsp;},<a name="line_40"></a></li>
+<li id="line_41" class="odd"><span class="lineNumber">&nbsp;41&nbsp;</span>&nbsp;&nbsp;detach:&nbsp;function&nbsp;(context)&nbsp;{<a name="line_41"></a></li>
+<li id="line_42" class="even"><span class="lineNumber">&nbsp;42&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$('input.form-submit',&nbsp;context).unbind('mousedown',&nbsp;Drupal.file.disableFields);<a name="line_42"></a></li>
+<li id="line_43" class="odd"><span class="lineNumber">&nbsp;43&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$('div.form-managed-file&nbsp;input.form-submit',&nbsp;context).unbind('mousedown',&nbsp;Drupal.file.progressBar);<a name="line_43"></a></li>
+<li id="line_44" class="even"><span class="lineNumber">&nbsp;44&nbsp;</span>&nbsp;&nbsp;}<a name="line_44"></a></li>
+<li id="line_45" class="odd"><span class="lineNumber">&nbsp;45&nbsp;</span>};<a name="line_45"></a></li>
+<li id="line_46" class="even"><span class="lineNumber">&nbsp;46&nbsp;</span><a name="line_46"></a></li>
+<li id="line_47" class="odd"><span class="lineNumber">&nbsp;47&nbsp;</span>/**<a name="line_47"></a></li>
+<li id="line_48" class="even"><span class="lineNumber">&nbsp;48&nbsp;</span>&nbsp;*&nbsp;Attach&nbsp;behaviors&nbsp;to&nbsp;links&nbsp;within&nbsp;managed&nbsp;file&nbsp;elements.<a name="line_48"></a></li>
+<li id="line_49" class="odd"><span class="lineNumber">&nbsp;49&nbsp;</span>&nbsp;*/<a name="line_49"></a></li>
+<li id="line_50" class="even"><span class="lineNumber">&nbsp;50&nbsp;</span>Drupal.behaviors.filePreviewLinks&nbsp;=&nbsp;{<a name="line_50"></a></li>
+<li id="line_51" class="odd"><span class="lineNumber">&nbsp;51&nbsp;</span>&nbsp;&nbsp;attach:&nbsp;function&nbsp;(context)&nbsp;{<a name="line_51"></a></li>
+<li id="line_52" class="even"><span class="lineNumber">&nbsp;52&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$('div.form-managed-file&nbsp;.file&nbsp;a,&nbsp;.file-widget&nbsp;.file&nbsp;a',&nbsp;context).bind('click',Drupal.file.openInNewWindow);<a name="line_52"></a></li>
+<li id="line_53" class="odd"><span class="lineNumber">&nbsp;53&nbsp;</span>&nbsp;&nbsp;},<a name="line_53"></a></li>
+<li id="line_54" class="even"><span class="lineNumber">&nbsp;54&nbsp;</span>&nbsp;&nbsp;detach:&nbsp;function&nbsp;(context){<a name="line_54"></a></li>
+<li id="line_55" class="odd"><span class="lineNumber">&nbsp;55&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$('div.form-managed-file&nbsp;.file&nbsp;a,&nbsp;.file-widget&nbsp;.file&nbsp;a',&nbsp;context).unbind('click',&nbsp;Drupal.file.openInNewWindow);<a name="line_55"></a></li>
+<li id="line_56" class="even"><span class="lineNumber">&nbsp;56&nbsp;</span>&nbsp;&nbsp;}<a name="line_56"></a></li>
+<li id="line_57" class="odd"><span class="lineNumber">&nbsp;57&nbsp;</span>};<a name="line_57"></a></li>
+<li id="line_58" class="even"><span class="lineNumber">&nbsp;58&nbsp;</span><a name="line_58"></a></li>
+<li id="line_59" class="odd"><span class="lineNumber">&nbsp;59&nbsp;</span>/**<a name="line_59"></a></li>
+<li id="line_60" class="even"><span class="lineNumber">&nbsp;60&nbsp;</span>&nbsp;*&nbsp;File&nbsp;upload&nbsp;utility&nbsp;functions.<a name="line_60"></a></li>
+<li id="line_61" class="odd"><span class="lineNumber">&nbsp;61&nbsp;</span>&nbsp;*/<a name="line_61"></a></li>
+<li id="line_62" class="even"><span class="lineNumber">&nbsp;62&nbsp;</span>Drupal.file&nbsp;=&nbsp;Drupal.file&nbsp;||&nbsp;{<a name="line_62"></a></li>
+<li id="line_63" class="odd"><span class="lineNumber">&nbsp;63&nbsp;</span>&nbsp;&nbsp;/**<a name="line_63"></a></li>
+<li id="line_64" class="even"><span class="lineNumber">&nbsp;64&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;Client-side&nbsp;file&nbsp;input&nbsp;validation&nbsp;of&nbsp;file&nbsp;extensions.<a name="line_64"></a></li>
+<li id="line_65" class="odd"><span class="lineNumber">&nbsp;65&nbsp;</span>&nbsp;&nbsp;&nbsp;*/<a name="line_65"></a></li>
+<li id="line_66" class="even"><span class="lineNumber">&nbsp;66&nbsp;</span>&nbsp;&nbsp;validateExtension:&nbsp;function&nbsp;(event)&nbsp;{<a name="line_66"></a></li>
+<li id="line_67" class="odd"><span class="lineNumber">&nbsp;67&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Remove&nbsp;any&nbsp;previous&nbsp;errors.<a name="line_67"></a></li>
+<li id="line_68" class="even"><span class="lineNumber">&nbsp;68&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$('.file-upload-js-error').remove();<a name="line_68"></a></li>
+<li id="line_69" class="odd"><span class="lineNumber">&nbsp;69&nbsp;</span><a name="line_69"></a></li>
+<li id="line_70" class="even"><span class="lineNumber">&nbsp;70&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Add&nbsp;client&nbsp;side&nbsp;validation&nbsp;for&nbsp;the&nbsp;input[type=file].<a name="line_70"></a></li>
+<li id="line_71" class="odd"><span class="lineNumber">&nbsp;71&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;extensionPattern&nbsp;=&nbsp;event.data.extensions.replace(/,\s*/g,&nbsp;'|');<a name="line_71"></a></li>
+<li id="line_72" class="even"><span class="lineNumber">&nbsp;72&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(extensionPattern.length&nbsp;&gt;&nbsp;1&nbsp;&amp;&amp;&nbsp;this.value.length&nbsp;&gt;&nbsp;0)&nbsp;{<a name="line_72"></a></li>
+<li id="line_73" class="odd"><span class="lineNumber">&nbsp;73&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;acceptableMatch&nbsp;=&nbsp;new&nbsp;RegExp('\\.('&nbsp;+&nbsp;extensionPattern&nbsp;+&nbsp;')$',&nbsp;'gi');<a name="line_73"></a></li>
+<li id="line_74" class="even"><span class="lineNumber">&nbsp;74&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!acceptableMatch.test(this.value))&nbsp;{<a name="line_74"></a></li>
+<li id="line_75" class="odd"><span class="lineNumber">&nbsp;75&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;error&nbsp;=&nbsp;Drupal.t("The&nbsp;selected&nbsp;file&nbsp;%filename&nbsp;cannot&nbsp;be&nbsp;uploaded.&nbsp;Only&nbsp;files&nbsp;with&nbsp;the&nbsp;following&nbsp;extensions&nbsp;are&nbsp;allowed:&nbsp;%extensions.",&nbsp;{<a name="line_75"></a></li>
+<li id="line_76" class="even"><span class="lineNumber">&nbsp;76&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;According&nbsp;to&nbsp;the&nbsp;specifications&nbsp;of&nbsp;HTML5,&nbsp;a&nbsp;file&nbsp;upload&nbsp;control<a name="line_76"></a></li>
+<li id="line_77" class="odd"><span class="lineNumber">&nbsp;77&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;should&nbsp;not&nbsp;reveal&nbsp;the&nbsp;real&nbsp;local&nbsp;path&nbsp;to&nbsp;the&nbsp;file&nbsp;that&nbsp;a&nbsp;user<a name="line_77"></a></li>
+<li id="line_78" class="even"><span class="lineNumber">&nbsp;78&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;has&nbsp;selected.&nbsp;Some&nbsp;web&nbsp;browsers&nbsp;implement&nbsp;this&nbsp;restriction&nbsp;by<a name="line_78"></a></li>
+<li id="line_79" class="odd"><span class="lineNumber">&nbsp;79&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;replacing&nbsp;the&nbsp;local&nbsp;path&nbsp;with&nbsp;"C:\fakepath\",&nbsp;which&nbsp;can&nbsp;cause<a name="line_79"></a></li>
+<li id="line_80" class="even"><span class="lineNumber">&nbsp;80&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;confusion&nbsp;by&nbsp;leaving&nbsp;the&nbsp;user&nbsp;thinking&nbsp;perhaps&nbsp;Drupal&nbsp;could&nbsp;not<a name="line_80"></a></li>
+<li id="line_81" class="odd"><span class="lineNumber">&nbsp;81&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;find&nbsp;the&nbsp;file&nbsp;because&nbsp;it&nbsp;messed&nbsp;up&nbsp;the&nbsp;file&nbsp;path.&nbsp;To&nbsp;avoid&nbsp;this<a name="line_81"></a></li>
+<li id="line_82" class="even"><span class="lineNumber">&nbsp;82&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;confusion,&nbsp;therefore,&nbsp;we&nbsp;strip&nbsp;out&nbsp;the&nbsp;bogus&nbsp;fakepath&nbsp;string.<a name="line_82"></a></li>
+<li id="line_83" class="odd"><span class="lineNumber">&nbsp;83&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'%filename':&nbsp;this.value.replace('C:\\fakepath\\',&nbsp;''),<a name="line_83"></a></li>
+<li id="line_84" class="even"><span class="lineNumber">&nbsp;84&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'%extensions':&nbsp;extensionPattern.replace(/\|/g,&nbsp;',&nbsp;')<a name="line_84"></a></li>
+<li id="line_85" class="odd"><span class="lineNumber">&nbsp;85&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<a name="line_85"></a></li>
+<li id="line_86" class="even"><span class="lineNumber">&nbsp;86&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).closest('div.form-managed-file').prepend('&lt;div&nbsp;class="messages&nbsp;error&nbsp;file-upload-js-error"&nbsp;aria-live="polite"&gt;'&nbsp;+&nbsp;error&nbsp;+&nbsp;'&lt;/div&gt;');<a name="line_86"></a></li>
+<li id="line_87" class="odd"><span class="lineNumber">&nbsp;87&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.value&nbsp;=&nbsp;'';<a name="line_87"></a></li>
+<li id="line_88" class="even"><span class="lineNumber">&nbsp;88&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;<a name="line_88"></a></li>
+<li id="line_89" class="odd"><span class="lineNumber">&nbsp;89&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_89"></a></li>
+<li id="line_90" class="even"><span class="lineNumber">&nbsp;90&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_90"></a></li>
+<li id="line_91" class="odd"><span class="lineNumber">&nbsp;91&nbsp;</span>&nbsp;&nbsp;},<a name="line_91"></a></li>
+<li id="line_92" class="even"><span class="lineNumber">&nbsp;92&nbsp;</span>&nbsp;&nbsp;/**<a name="line_92"></a></li>
+<li id="line_93" class="odd"><span class="lineNumber">&nbsp;93&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;Prevent&nbsp;file&nbsp;uploads&nbsp;when&nbsp;using&nbsp;buttons&nbsp;not&nbsp;intended&nbsp;to&nbsp;upload.<a name="line_93"></a></li>
+<li id="line_94" class="even"><span class="lineNumber">&nbsp;94&nbsp;</span>&nbsp;&nbsp;&nbsp;*/<a name="line_94"></a></li>
+<li id="line_95" class="odd"><span class="lineNumber">&nbsp;95&nbsp;</span>&nbsp;&nbsp;disableFields:&nbsp;function&nbsp;(event){<a name="line_95"></a></li>
+<li id="line_96" class="even"><span class="lineNumber">&nbsp;96&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;clickedButton&nbsp;=&nbsp;this;<a name="line_96"></a></li>
+<li id="line_97" class="odd"><span class="lineNumber">&nbsp;97&nbsp;</span><a name="line_97"></a></li>
+<li id="line_98" class="even"><span class="lineNumber">&nbsp;98&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Only&nbsp;disable&nbsp;upload&nbsp;fields&nbsp;for&nbsp;Ajax&nbsp;buttons.<a name="line_98"></a></li>
+<li id="line_99" class="odd"><span class="lineNumber">&nbsp;99&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!$(clickedButton).hasClass('ajax-processed'))&nbsp;{<a name="line_99"></a></li>
+<li id="line_100" class="even"><span class="lineNumber">100&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<a name="line_100"></a></li>
+<li id="line_101" class="odd"><span class="lineNumber">101&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_101"></a></li>
+<li id="line_102" class="even"><span class="lineNumber">102&nbsp;</span><a name="line_102"></a></li>
+<li id="line_103" class="odd"><span class="lineNumber">103&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Check&nbsp;if&nbsp;we're&nbsp;working&nbsp;with&nbsp;an&nbsp;"Upload"&nbsp;button.<a name="line_103"></a></li>
+<li id="line_104" class="even"><span class="lineNumber">104&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$enabledFields&nbsp;=&nbsp;[];<a name="line_104"></a></li>
+<li id="line_105" class="odd"><span class="lineNumber">105&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($(this).closest('div.form-managed-file').length&nbsp;&gt;&nbsp;0)&nbsp;{<a name="line_105"></a></li>
+<li id="line_106" class="even"><span class="lineNumber">106&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$enabledFields&nbsp;=&nbsp;$(this).closest('div.form-managed-file').find('input.form-file');<a name="line_106"></a></li>
+<li id="line_107" class="odd"><span class="lineNumber">107&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_107"></a></li>
+<li id="line_108" class="even"><span class="lineNumber">108&nbsp;</span><a name="line_108"></a></li>
+<li id="line_109" class="odd"><span class="lineNumber">109&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Temporarily&nbsp;disable&nbsp;upload&nbsp;fields&nbsp;other&nbsp;than&nbsp;the&nbsp;one&nbsp;we're&nbsp;currently<a name="line_109"></a></li>
+<li id="line_110" class="even"><span class="lineNumber">110&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;working&nbsp;with.&nbsp;Filter&nbsp;out&nbsp;fields&nbsp;that&nbsp;are&nbsp;already&nbsp;disabled&nbsp;so&nbsp;that&nbsp;they<a name="line_110"></a></li>
+<li id="line_111" class="odd"><span class="lineNumber">111&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;do&nbsp;not&nbsp;get&nbsp;enabled&nbsp;when&nbsp;we&nbsp;re-enable&nbsp;these&nbsp;fields&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;behavior<a name="line_111"></a></li>
+<li id="line_112" class="even"><span class="lineNumber">112&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;processing.&nbsp;Re-enable&nbsp;in&nbsp;a&nbsp;setTimeout&nbsp;set&nbsp;to&nbsp;a&nbsp;relatively&nbsp;short&nbsp;amount<a name="line_112"></a></li>
+<li id="line_113" class="odd"><span class="lineNumber">113&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;of&nbsp;time&nbsp;(1&nbsp;second).&nbsp;All&nbsp;the&nbsp;other&nbsp;mousedown&nbsp;handlers&nbsp;(like&nbsp;Drupal's&nbsp;Ajax<a name="line_113"></a></li>
+<li id="line_114" class="even"><span class="lineNumber">114&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;behaviors)&nbsp;are&nbsp;excuted&nbsp;before&nbsp;any&nbsp;timeout&nbsp;functions&nbsp;are&nbsp;called,&nbsp;so&nbsp;we<a name="line_114"></a></li>
+<li id="line_115" class="odd"><span class="lineNumber">115&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;don't&nbsp;have&nbsp;to&nbsp;worry&nbsp;about&nbsp;the&nbsp;fields&nbsp;being&nbsp;re-enabled&nbsp;too&nbsp;soon.<a name="line_115"></a></li>
+<li id="line_116" class="even"><span class="lineNumber">116&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;@todo&nbsp;If&nbsp;the&nbsp;previous&nbsp;sentence&nbsp;is&nbsp;true,&nbsp;why&nbsp;not&nbsp;set&nbsp;the&nbsp;timeout&nbsp;to&nbsp;0?<a name="line_116"></a></li>
+<li id="line_117" class="odd"><span class="lineNumber">117&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$fieldsToTemporarilyDisable&nbsp;=&nbsp;$('div.form-managed-file&nbsp;input.form-file').not($enabledFields).not(':disabled');<a name="line_117"></a></li>
+<li id="line_118" class="even"><span class="lineNumber">118&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$fieldsToTemporarilyDisable.attr('disabled',&nbsp;'disabled');<a name="line_118"></a></li>
+<li id="line_119" class="odd"><span class="lineNumber">119&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(function&nbsp;(){<a name="line_119"></a></li>
+<li id="line_120" class="even"><span class="lineNumber">120&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$fieldsToTemporarilyDisable.attr('disabled',&nbsp;false);<a name="line_120"></a></li>
+<li id="line_121" class="odd"><span class="lineNumber">121&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;1000);<a name="line_121"></a></li>
+<li id="line_122" class="even"><span class="lineNumber">122&nbsp;</span>&nbsp;&nbsp;},<a name="line_122"></a></li>
+<li id="line_123" class="odd"><span class="lineNumber">123&nbsp;</span>&nbsp;&nbsp;/**<a name="line_123"></a></li>
+<li id="line_124" class="even"><span class="lineNumber">124&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;Add&nbsp;progress&nbsp;bar&nbsp;support&nbsp;if&nbsp;possible.<a name="line_124"></a></li>
+<li id="line_125" class="odd"><span class="lineNumber">125&nbsp;</span>&nbsp;&nbsp;&nbsp;*/<a name="line_125"></a></li>
+<li id="line_126" class="even"><span class="lineNumber">126&nbsp;</span>&nbsp;&nbsp;progressBar:&nbsp;function&nbsp;(event)&nbsp;{<a name="line_126"></a></li>
+<li id="line_127" class="odd"><span class="lineNumber">127&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;clickedButton&nbsp;=&nbsp;this;<a name="line_127"></a></li>
+<li id="line_128" class="even"><span class="lineNumber">128&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$progressId&nbsp;=&nbsp;$(clickedButton).closest('div.form-managed-file').find('input.file-progress');<a name="line_128"></a></li>
+<li id="line_129" class="odd"><span class="lineNumber">129&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($progressId.length)&nbsp;{<a name="line_129"></a></li>
+<li id="line_130" class="even"><span class="lineNumber">130&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;originalName&nbsp;=&nbsp;$progressId.attr('name');<a name="line_130"></a></li>
+<li id="line_131" class="odd"><span class="lineNumber">131&nbsp;</span><a name="line_131"></a></li>
+<li id="line_132" class="even"><span class="lineNumber">132&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Replace&nbsp;the&nbsp;name&nbsp;with&nbsp;the&nbsp;required&nbsp;identifier.<a name="line_132"></a></li>
+<li id="line_133" class="odd"><span class="lineNumber">133&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$progressId.attr('name',&nbsp;originalName.match(/APC_UPLOAD_PROGRESS|UPLOAD_IDENTIFIER/)[0]);<a name="line_133"></a></li>
+<li id="line_134" class="even"><span class="lineNumber">134&nbsp;</span><a name="line_134"></a></li>
+<li id="line_135" class="odd"><span class="lineNumber">135&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Restore&nbsp;the&nbsp;original&nbsp;name&nbsp;after&nbsp;the&nbsp;upload&nbsp;begins.<a name="line_135"></a></li>
+<li id="line_136" class="even"><span class="lineNumber">136&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(function&nbsp;()&nbsp;{<a name="line_136"></a></li>
+<li id="line_137" class="odd"><span class="lineNumber">137&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$progressId.attr('name',&nbsp;originalName);<a name="line_137"></a></li>
+<li id="line_138" class="even"><span class="lineNumber">138&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;1000);<a name="line_138"></a></li>
+<li id="line_139" class="odd"><span class="lineNumber">139&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_139"></a></li>
+<li id="line_140" class="even"><span class="lineNumber">140&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Show&nbsp;the&nbsp;progress&nbsp;bar&nbsp;if&nbsp;the&nbsp;upload&nbsp;takes&nbsp;longer&nbsp;than&nbsp;half&nbsp;a&nbsp;second.<a name="line_140"></a></li>
+<li id="line_141" class="odd"><span class="lineNumber">141&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(function&nbsp;()&nbsp;{<a name="line_141"></a></li>
+<li id="line_142" class="even"><span class="lineNumber">142&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(clickedButton).closest('div.form-managed-file').find('div.ajax-progress-bar').slideDown();<a name="line_142"></a></li>
+<li id="line_143" class="odd"><span class="lineNumber">143&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;500);<a name="line_143"></a></li>
+<li id="line_144" class="even"><span class="lineNumber">144&nbsp;</span>&nbsp;&nbsp;},<a name="line_144"></a></li>
+<li id="line_145" class="odd"><span class="lineNumber">145&nbsp;</span>&nbsp;&nbsp;/**<a name="line_145"></a></li>
+<li id="line_146" class="even"><span class="lineNumber">146&nbsp;</span>&nbsp;&nbsp;&nbsp;*&nbsp;Open&nbsp;links&nbsp;to&nbsp;files&nbsp;within&nbsp;forms&nbsp;in&nbsp;a&nbsp;new&nbsp;window.<a name="line_146"></a></li>
+<li id="line_147" class="odd"><span class="lineNumber">147&nbsp;</span>&nbsp;&nbsp;&nbsp;*/<a name="line_147"></a></li>
+<li id="line_148" class="even"><span class="lineNumber">148&nbsp;</span>&nbsp;&nbsp;openInNewWindow:&nbsp;function&nbsp;(event)&nbsp;{<a name="line_148"></a></li>
+<li id="line_149" class="odd"><span class="lineNumber">149&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$(this).attr('target',&nbsp;'_blank');<a name="line_149"></a></li>
+<li id="line_150" class="even"><span class="lineNumber">150&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;window.open(this.href,&nbsp;'filePreview',&nbsp;'toolbar=0,scrollbars=1,location=1,statusbar=1,menubar=0,resizable=1,width=500,height=550');<a name="line_150"></a></li>
+<li id="line_151" class="odd"><span class="lineNumber">151&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;<a name="line_151"></a></li>
+<li id="line_152" class="even"><span class="lineNumber">152&nbsp;</span>&nbsp;&nbsp;}<a name="line_152"></a></li>
+<li id="line_153" class="odd"><span class="lineNumber">153&nbsp;</span>};<a name="line_153"></a></li>
+<li id="line_154" class="even"><span class="lineNumber">154&nbsp;</span><a name="line_154"></a></li>
+<li id="line_155" class="odd"><span class="lineNumber">155&nbsp;</span>})(jQuery);<a name="line_155"></a></li></ol></div></body></html>
+                    </div>
+    </body>
+</html>

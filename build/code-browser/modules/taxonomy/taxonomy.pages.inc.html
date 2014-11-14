@@ -1,0 +1,693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>
+            Mayflower Code Browser - Source Code
+        </title>
+        <link rel="stylesheet" type="text/css" href="../js/jquery.sidebar/css/codebrowser/sidebar.css" />
+        <link rel="stylesheet" type="text/css" href="../css/global.css" />
+        <link rel="stylesheet" type="text/css" href="../css/cruisecontrol.css" />
+        <link rel="stylesheet" type="text/css" href="../css/review.css" />
+
+        <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.sidebar/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.sidebar/jquery.sidebar.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/lib/jquery.hoverIntent.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/lib/jquery.bgiframe.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/jquery.cluetip.min.js"></script>
+
+        <script type="text/javascript" src="../js/review.js"></script>
+    </head>
+    <body class="codebrowser">
+        <div class="header">
+            <a href="./../index.html">Go back to index</a> |
+            <a href="http://github.com/mayflowergmbh/PHP_CodeBrowser">PHP CodeBrowser</a>
+        </div>
+        <hr/>
+        <div id="review">
+            <div class="filepath">
+                modules/taxonomy/taxonomy.pages.inc            </div>
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div class="code"><ol class="code"><li id="line_1" class="odd"><span class="lineNumber">&nbsp;&nbsp;1&nbsp;</span>&lt;?php<a name="line_1"></a></li>
+<li id="line_2" class="even"><span class="lineNumber">&nbsp;&nbsp;2&nbsp;</span><a name="line_2"></a></li>
+<li id="line_3" class="odd"><span class="lineNumber">&nbsp;&nbsp;3&nbsp;</span>/**<a name="line_3"></a></li>
+<li id="line_4" class="even"><span class="lineNumber">&nbsp;&nbsp;4&nbsp;</span>&nbsp;*&nbsp;@file<a name="line_4"></a></li>
+<li id="line_5" class="odd"><span class="lineNumber">&nbsp;&nbsp;5&nbsp;</span>&nbsp;*&nbsp;Page&nbsp;callbacks&nbsp;for&nbsp;the&nbsp;taxonomy&nbsp;module.<a name="line_5"></a></li>
+<li id="line_6" class="even"><span class="lineNumber">&nbsp;&nbsp;6&nbsp;</span>&nbsp;*/<a name="line_6"></a></li>
+<li id="line_7" class="odd"><span class="lineNumber">&nbsp;&nbsp;7&nbsp;</span><a name="line_7"></a></li>
+<li id="line_8" class="even"><span class="lineNumber">&nbsp;&nbsp;8&nbsp;</span>/**<a name="line_8"></a></li>
+<li id="line_9" class="odd"><span class="lineNumber">&nbsp;&nbsp;9&nbsp;</span>&nbsp;*&nbsp;Menu&nbsp;callback;&nbsp;displays&nbsp;all&nbsp;nodes&nbsp;associated&nbsp;with&nbsp;a&nbsp;term.<a name="line_9"></a></li>
+<li id="line_10" class="even"><span class="lineNumber">&nbsp;10&nbsp;</span>&nbsp;*<a name="line_10"></a></li>
+<li id="line_11" class="odd"><span class="lineNumber">&nbsp;11&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;$term<a name="line_11"></a></li>
+<li id="line_12" class="even"><span class="lineNumber">&nbsp;12&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;The&nbsp;taxonomy&nbsp;term.<a name="line_12"></a></li>
+<li id="line_13" class="odd"><span class="lineNumber">&nbsp;13&nbsp;</span>&nbsp;*&nbsp;@return<a name="line_13"></a></li>
+<li id="line_14" class="even"><span class="lineNumber">&nbsp;14&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;The&nbsp;page&nbsp;content.<a name="line_14"></a></li>
+<li id="line_15" class="odd"><span class="lineNumber">&nbsp;15&nbsp;</span>&nbsp;*/<a name="line_15"></a></li>
+<li id="line_16" class="even"><span class="lineNumber">&nbsp;16&nbsp;</span>function&nbsp;taxonomy_term_page($term)&nbsp;{<a name="line_16"></a></li>
+<li id="line_17" class="odd"><span class="lineNumber">&nbsp;17&nbsp;</span>&nbsp;&nbsp;//&nbsp;If&nbsp;there&nbsp;is&nbsp;a&nbsp;menu&nbsp;link&nbsp;to&nbsp;this&nbsp;term,&nbsp;the&nbsp;link&nbsp;becomes&nbsp;the&nbsp;last&nbsp;part&nbsp;of<a name="line_17"></a></li>
+<li id="line_18" class="even"><span class="lineNumber">&nbsp;18&nbsp;</span>&nbsp;&nbsp;//&nbsp;the&nbsp;active&nbsp;trail,&nbsp;and&nbsp;the&nbsp;link&nbsp;name&nbsp;becomes&nbsp;the&nbsp;page&nbsp;title.&nbsp;Thus,&nbsp;we&nbsp;must<a name="line_18"></a></li>
+<li id="line_19" class="odd"><span class="lineNumber">&nbsp;19&nbsp;</span>&nbsp;&nbsp;//&nbsp;explicitly&nbsp;set&nbsp;the&nbsp;page&nbsp;title&nbsp;to&nbsp;be&nbsp;the&nbsp;term&nbsp;title.<a name="line_19"></a></li>
+<li id="line_20" class="even"><span class="lineNumber">&nbsp;20&nbsp;</span>&nbsp;&nbsp;drupal_set_title($term-&gt;name);<a name="line_20"></a></li>
+<li id="line_21" class="odd"><span class="lineNumber">&nbsp;21&nbsp;</span><a name="line_21"></a></li>
+<li id="line_22" class="even"><span class="lineNumber">&nbsp;22&nbsp;</span>&nbsp;&nbsp;//&nbsp;Build&nbsp;breadcrumb&nbsp;based&nbsp;on&nbsp;the&nbsp;hierarchy&nbsp;of&nbsp;the&nbsp;term.<a name="line_22"></a></li>
+<li id="line_23" class="odd"><span class="lineNumber">&nbsp;23&nbsp;</span>&nbsp;&nbsp;$current&nbsp;=&nbsp;(object)&nbsp;array(<a name="line_23"></a></li>
+<li id="line_24" class="even"><span class="lineNumber">&nbsp;24&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'tid'&nbsp;=&gt;&nbsp;$term-&gt;tid,<a name="line_24"></a></li>
+<li id="line_25" class="odd"><span class="lineNumber">&nbsp;25&nbsp;</span>&nbsp;&nbsp;);<a name="line_25"></a></li>
+<li id="line_26" class="even"><span class="lineNumber">&nbsp;26&nbsp;</span>&nbsp;&nbsp;//&nbsp;@todo&nbsp;This&nbsp;overrides&nbsp;any&nbsp;other&nbsp;possible&nbsp;breadcrumb&nbsp;and&nbsp;is&nbsp;a&nbsp;pure&nbsp;hard-coded<a name="line_26"></a></li>
+<li id="line_27" class="odd"><span class="lineNumber">&nbsp;27&nbsp;</span>&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;presumption.&nbsp;Make&nbsp;this&nbsp;behavior&nbsp;configurable&nbsp;per&nbsp;vocabulary&nbsp;or&nbsp;term.<a name="line_27"></a></li>
+<li id="line_28" class="even"><span class="lineNumber">&nbsp;28&nbsp;</span>&nbsp;&nbsp;$breadcrumb&nbsp;=&nbsp;array();<a name="line_28"></a></li>
+<li id="line_29" class="odd"><span class="lineNumber">&nbsp;29&nbsp;</span>&nbsp;&nbsp;while&nbsp;($parents&nbsp;=&nbsp;taxonomy_get_parents($current-&gt;tid))&nbsp;{<a name="line_29"></a></li>
+<li id="line_30" class="even"><span class="lineNumber">&nbsp;30&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$current&nbsp;=&nbsp;array_shift($parents);<a name="line_30"></a></li>
+<li id="line_31" class="odd"><span class="lineNumber">&nbsp;31&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$breadcrumb[]&nbsp;=&nbsp;l($current-&gt;name,&nbsp;'taxonomy/term/'&nbsp;.&nbsp;$current-&gt;tid);<a name="line_31"></a></li>
+<li id="line_32" class="even"><span class="lineNumber">&nbsp;32&nbsp;</span>&nbsp;&nbsp;}<a name="line_32"></a></li>
+<li id="line_33" class="odd"><span class="lineNumber">&nbsp;33&nbsp;</span>&nbsp;&nbsp;$breadcrumb[]&nbsp;=&nbsp;l(t('Home'),&nbsp;NULL);<a name="line_33"></a></li>
+<li id="line_34" class="even"><span class="lineNumber">&nbsp;34&nbsp;</span>&nbsp;&nbsp;$breadcrumb&nbsp;=&nbsp;array_reverse($breadcrumb);<a name="line_34"></a></li>
+<li id="line_35" class="odd"><span class="lineNumber">&nbsp;35&nbsp;</span>&nbsp;&nbsp;drupal_set_breadcrumb($breadcrumb);<a name="line_35"></a></li>
+<li id="line_36" class="even"><span class="lineNumber">&nbsp;36&nbsp;</span>&nbsp;&nbsp;drupal_add_feed('taxonomy/term/'&nbsp;.&nbsp;$term-&gt;tid&nbsp;.&nbsp;'/feed',&nbsp;'RSS&nbsp;-&nbsp;'&nbsp;.&nbsp;$term-&gt;name);<a name="line_36"></a></li>
+<li id="line_37" class="odd"><span class="lineNumber">&nbsp;37&nbsp;</span><a name="line_37"></a></li>
+<li id="line_38" class="even"><span class="lineNumber">&nbsp;38&nbsp;</span>&nbsp;&nbsp;//&nbsp;Set&nbsp;the&nbsp;term&nbsp;path&nbsp;as&nbsp;the&nbsp;canonical&nbsp;URL&nbsp;to&nbsp;prevent&nbsp;duplicate&nbsp;content.<a name="line_38"></a></li>
+<li id="line_39" class="odd"><span class="lineNumber">&nbsp;39&nbsp;</span>&nbsp;&nbsp;$uri&nbsp;=&nbsp;entity_uri('taxonomy_term',&nbsp;$term);<a name="line_39"></a></li>
+<li id="line_40" class="even"><span class="lineNumber">&nbsp;40&nbsp;</span>&nbsp;&nbsp;drupal_add_html_head_link(array('rel'&nbsp;=&gt;&nbsp;'canonical',&nbsp;'href'&nbsp;=&gt;&nbsp;url($uri['path'],&nbsp;$uri['options'])),&nbsp;TRUE);<a name="line_40"></a></li>
+<li id="line_41" class="odd"><span class="lineNumber">&nbsp;41&nbsp;</span>&nbsp;&nbsp;//&nbsp;Set&nbsp;the&nbsp;non-aliased&nbsp;path&nbsp;as&nbsp;a&nbsp;default&nbsp;shortlink.<a name="line_41"></a></li>
+<li id="line_42" class="even"><span class="lineNumber">&nbsp;42&nbsp;</span>&nbsp;&nbsp;drupal_add_html_head_link(array('rel'&nbsp;=&gt;&nbsp;'shortlink',&nbsp;'href'&nbsp;=&gt;&nbsp;url($uri['path'],&nbsp;array_merge($uri['options'],&nbsp;array('alias'&nbsp;=&gt;&nbsp;TRUE)))),&nbsp;TRUE);<a name="line_42"></a></li>
+<li id="line_43" class="odd"><span class="lineNumber">&nbsp;43&nbsp;</span><a name="line_43"></a></li>
+<li id="line_44" class="even"><span class="lineNumber">&nbsp;44&nbsp;</span>&nbsp;&nbsp;//&nbsp;Normally&nbsp;we&nbsp;would&nbsp;call&nbsp;taxonomy_term_show()&nbsp;here,&nbsp;but&nbsp;for&nbsp;backwards<a name="line_44"></a></li>
+<li id="line_45" class="odd"><span class="lineNumber">&nbsp;45&nbsp;</span>&nbsp;&nbsp;//&nbsp;compatibility&nbsp;in&nbsp;Drupal&nbsp;7&nbsp;we&nbsp;do&nbsp;not&nbsp;want&nbsp;to&nbsp;do&nbsp;that&nbsp;(it&nbsp;produces&nbsp;different<a name="line_45"></a></li>
+<li id="line_46" class="even"><span class="lineNumber">&nbsp;46&nbsp;</span>&nbsp;&nbsp;//&nbsp;data&nbsp;structures&nbsp;and&nbsp;HTML&nbsp;markup&nbsp;than&nbsp;what&nbsp;Drupal&nbsp;7&nbsp;released&nbsp;with).&nbsp;Calling<a name="line_46"></a></li>
+<li id="line_47" class="odd"><span class="lineNumber">&nbsp;47&nbsp;</span>&nbsp;&nbsp;//&nbsp;taxonomy_term_view()&nbsp;directly&nbsp;provides&nbsp;essentially&nbsp;the&nbsp;same&nbsp;thing,&nbsp;but<a name="line_47"></a></li>
+<li id="line_48" class="even"><span class="lineNumber">&nbsp;48&nbsp;</span>&nbsp;&nbsp;//&nbsp;allows&nbsp;us&nbsp;to&nbsp;wrap&nbsp;the&nbsp;rendered&nbsp;term&nbsp;in&nbsp;our&nbsp;desired&nbsp;array&nbsp;structure.<a name="line_48"></a></li>
+<li id="line_49" class="odd"><span class="lineNumber">&nbsp;49&nbsp;</span>&nbsp;&nbsp;$build['term_heading']&nbsp;=&nbsp;array(<a name="line_49"></a></li>
+<li id="line_50" class="even"><span class="lineNumber">&nbsp;50&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'#prefix'&nbsp;=&gt;&nbsp;'&lt;div&nbsp;class="term-listing-heading"&gt;',<a name="line_50"></a></li>
+<li id="line_51" class="odd"><span class="lineNumber">&nbsp;51&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'#suffix'&nbsp;=&gt;&nbsp;'&lt;/div&gt;',<a name="line_51"></a></li>
+<li id="line_52" class="even"><span class="lineNumber">&nbsp;52&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'term'&nbsp;=&gt;&nbsp;taxonomy_term_view($term,&nbsp;'full'),<a name="line_52"></a></li>
+<li id="line_53" class="odd"><span class="lineNumber">&nbsp;53&nbsp;</span>&nbsp;&nbsp;);<a name="line_53"></a></li>
+<li id="line_54" class="even"><span class="lineNumber">&nbsp;54&nbsp;</span><a name="line_54"></a></li>
+<li id="line_55" class="odd"><span class="lineNumber">&nbsp;55&nbsp;</span>&nbsp;&nbsp;if&nbsp;($nids&nbsp;=&nbsp;taxonomy_select_nodes($term-&gt;tid,&nbsp;TRUE,&nbsp;variable_get('default_nodes_main',&nbsp;10)))&nbsp;{<a name="line_55"></a></li>
+<li id="line_56" class="even"><span class="lineNumber">&nbsp;56&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$nodes&nbsp;=&nbsp;node_load_multiple($nids);<a name="line_56"></a></li>
+<li id="line_57" class="odd"><span class="lineNumber">&nbsp;57&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$build&nbsp;+=&nbsp;node_view_multiple($nodes);<a name="line_57"></a></li>
+<li id="line_58" class="even"><span class="lineNumber">&nbsp;58&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$build['pager']&nbsp;=&nbsp;array(<a name="line_58"></a></li>
+<li id="line_59" class="odd"><span class="lineNumber">&nbsp;59&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'#theme'&nbsp;=&gt;&nbsp;'pager',<a name="line_59"></a></li>
+<li id="line_60" class="even"><span class="lineNumber">&nbsp;60&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'#weight'&nbsp;=&gt;&nbsp;5,<a name="line_60"></a></li>
+<li id="line_61" class="odd"><span class="lineNumber">&nbsp;61&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;);<a name="line_61"></a></li>
+<li id="line_62" class="even"><span class="lineNumber">&nbsp;62&nbsp;</span>&nbsp;&nbsp;}<a name="line_62"></a></li>
+<li id="line_63" class="odd"><span class="lineNumber">&nbsp;63&nbsp;</span>&nbsp;&nbsp;else&nbsp;{<a name="line_63"></a></li>
+<li id="line_64" class="even"><span class="lineNumber">&nbsp;64&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$build['no_content']&nbsp;=&nbsp;array(<a name="line_64"></a></li>
+<li id="line_65" class="odd"><span class="lineNumber">&nbsp;65&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'#prefix'&nbsp;=&gt;&nbsp;'&lt;p&gt;',<a name="line_65"></a></li>
+<li id="line_66" class="even"><span class="lineNumber">&nbsp;66&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'#markup'&nbsp;=&gt;&nbsp;t('There&nbsp;is&nbsp;currently&nbsp;no&nbsp;content&nbsp;classified&nbsp;with&nbsp;this&nbsp;term.'),<a name="line_66"></a></li>
+<li id="line_67" class="odd"><span class="lineNumber">&nbsp;67&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'#suffix'&nbsp;=&gt;&nbsp;'&lt;/p&gt;',<a name="line_67"></a></li>
+<li id="line_68" class="even"><span class="lineNumber">&nbsp;68&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;);<a name="line_68"></a></li>
+<li id="line_69" class="odd"><span class="lineNumber">&nbsp;69&nbsp;</span>&nbsp;&nbsp;}<a name="line_69"></a></li>
+<li id="line_70" class="even"><span class="lineNumber">&nbsp;70&nbsp;</span>&nbsp;&nbsp;return&nbsp;$build;<a name="line_70"></a></li>
+<li id="line_71" class="odd"><span class="lineNumber">&nbsp;71&nbsp;</span>}<a name="line_71"></a></li>
+<li id="line_72" class="even"><span class="lineNumber">&nbsp;72&nbsp;</span><a name="line_72"></a></li>
+<li id="line_73" class="odd"><span class="lineNumber">&nbsp;73&nbsp;</span>/**<a name="line_73"></a></li>
+<li id="line_74" class="even"><span class="lineNumber">&nbsp;74&nbsp;</span>&nbsp;*&nbsp;Generate&nbsp;the&nbsp;content&nbsp;feed&nbsp;for&nbsp;a&nbsp;taxonomy&nbsp;term.<a name="line_74"></a></li>
+<li id="line_75" class="odd"><span class="lineNumber">&nbsp;75&nbsp;</span>&nbsp;*<a name="line_75"></a></li>
+<li id="line_76" class="even"><span class="lineNumber">&nbsp;76&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;$term<a name="line_76"></a></li>
+<li id="line_77" class="odd"><span class="lineNumber">&nbsp;77&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;The&nbsp;taxonomy&nbsp;term.<a name="line_77"></a></li>
+<li id="line_78" class="even"><span class="lineNumber">&nbsp;78&nbsp;</span>&nbsp;*/<a name="line_78"></a></li>
+<li id="line_79" class="odd"><span class="lineNumber">&nbsp;79&nbsp;</span>function&nbsp;taxonomy_term_feed($term)&nbsp;{<a name="line_79"></a></li>
+<li id="line_80" class="even"><span class="lineNumber">&nbsp;80&nbsp;</span>&nbsp;&nbsp;$channel['link']&nbsp;=&nbsp;url('taxonomy/term/'&nbsp;.&nbsp;$term-&gt;tid,&nbsp;array('absolute'&nbsp;=&gt;&nbsp;TRUE));<a name="line_80"></a></li>
+<li id="line_81" class="odd"><span class="lineNumber">&nbsp;81&nbsp;</span>&nbsp;&nbsp;$channel['title']&nbsp;=&nbsp;variable_get('site_name',&nbsp;'Drupal')&nbsp;.&nbsp;'&nbsp;-&nbsp;'&nbsp;.&nbsp;$term-&gt;name;<a name="line_81"></a></li>
+<li id="line_82" class="even"><span class="lineNumber">&nbsp;82&nbsp;</span>&nbsp;&nbsp;//&nbsp;Only&nbsp;display&nbsp;the&nbsp;description&nbsp;if&nbsp;we&nbsp;have&nbsp;a&nbsp;single&nbsp;term,&nbsp;to&nbsp;avoid&nbsp;clutter&nbsp;and&nbsp;confusion.<a name="line_82"></a></li>
+<li id="line_83" class="odd"><span class="lineNumber">&nbsp;83&nbsp;</span>&nbsp;&nbsp;//&nbsp;HTML&nbsp;will&nbsp;be&nbsp;removed&nbsp;from&nbsp;feed&nbsp;description.<a name="line_83"></a></li>
+<li id="line_84" class="even"><span class="lineNumber">&nbsp;84&nbsp;</span>&nbsp;&nbsp;$channel['description']&nbsp;=&nbsp;check_markup($term-&gt;description,&nbsp;$term-&gt;format,&nbsp;'',&nbsp;TRUE);<a name="line_84"></a></li>
+<li id="line_85" class="odd"><span class="lineNumber">&nbsp;85&nbsp;</span>&nbsp;&nbsp;$nids&nbsp;=&nbsp;taxonomy_select_nodes($term-&gt;tid,&nbsp;FALSE,&nbsp;variable_get('feed_default_items',&nbsp;10));<a name="line_85"></a></li>
+<li id="line_86" class="even"><span class="lineNumber">&nbsp;86&nbsp;</span><a name="line_86"></a></li>
+<li id="line_87" class="odd"><span class="lineNumber">&nbsp;87&nbsp;</span>&nbsp;&nbsp;node_feed($nids,&nbsp;$channel);<a name="line_87"></a></li>
+<li id="line_88" class="even"><span class="lineNumber">&nbsp;88&nbsp;</span>}<a name="line_88"></a></li>
+<li id="line_89" class="odd"><span class="lineNumber">&nbsp;89&nbsp;</span><a name="line_89"></a></li>
+<li id="line_90" class="even"><span class="lineNumber">&nbsp;90&nbsp;</span>/**<a name="line_90"></a></li>
+<li id="line_91" class="odd"><span class="lineNumber">&nbsp;91&nbsp;</span>&nbsp;*&nbsp;Page&nbsp;callback:&nbsp;Outputs&nbsp;JSON&nbsp;for&nbsp;taxonomy&nbsp;autocomplete&nbsp;suggestions.<a name="line_91"></a></li>
+<li id="line_92" class="even"><span class="lineNumber">&nbsp;92&nbsp;</span>&nbsp;*<a name="line_92"></a></li>
+<li id="line_93" class="odd"><span class="lineNumber">&nbsp;93&nbsp;</span>&nbsp;*&nbsp;Path:&nbsp;taxonomy/autocomplete<a name="line_93"></a></li>
+<li id="line_94" class="even"><span class="lineNumber">&nbsp;94&nbsp;</span>&nbsp;*<a name="line_94"></a></li>
+<li id="line_95" class="odd"><span class="lineNumber">&nbsp;95&nbsp;</span>&nbsp;*&nbsp;This&nbsp;callback&nbsp;outputs&nbsp;term&nbsp;name&nbsp;suggestions&nbsp;in&nbsp;response&nbsp;to&nbsp;Ajax&nbsp;requests<a name="line_95"></a></li>
+<li id="line_96" class="even"><span class="lineNumber">&nbsp;96&nbsp;</span>&nbsp;*&nbsp;made&nbsp;by&nbsp;the&nbsp;taxonomy&nbsp;autocomplete&nbsp;widget&nbsp;for&nbsp;taxonomy&nbsp;term&nbsp;reference<a name="line_96"></a></li>
+<li id="line_97" class="odd"><span class="lineNumber">&nbsp;97&nbsp;</span>&nbsp;*&nbsp;fields.&nbsp;The&nbsp;output&nbsp;is&nbsp;a&nbsp;JSON&nbsp;object&nbsp;of&nbsp;plain-text&nbsp;term&nbsp;suggestions,&nbsp;keyed&nbsp;by<a name="line_97"></a></li>
+<li id="line_98" class="even"><span class="lineNumber">&nbsp;98&nbsp;</span>&nbsp;*&nbsp;the&nbsp;user-entered&nbsp;value&nbsp;with&nbsp;the&nbsp;completed&nbsp;term&nbsp;name&nbsp;appended.&nbsp;&nbsp;Term&nbsp;names<a name="line_98"></a></li>
+<li id="line_99" class="odd"><span class="lineNumber">&nbsp;99&nbsp;</span>&nbsp;*&nbsp;containing&nbsp;commas&nbsp;are&nbsp;wrapped&nbsp;in&nbsp;quotes.<a name="line_99"></a></li>
+<li id="line_100" class="even"><span class="lineNumber">100&nbsp;</span>&nbsp;*<a name="line_100"></a></li>
+<li id="line_101" class="odd"><span class="lineNumber">101&nbsp;</span>&nbsp;*&nbsp;For&nbsp;example,&nbsp;suppose&nbsp;the&nbsp;user&nbsp;has&nbsp;entered&nbsp;the&nbsp;string&nbsp;'red&nbsp;fish,&nbsp;blue'&nbsp;in&nbsp;the<a name="line_101"></a></li>
+<li id="line_102" class="even"><span class="lineNumber">102&nbsp;</span>&nbsp;*&nbsp;field,&nbsp;and&nbsp;there&nbsp;are&nbsp;two&nbsp;taxonomy&nbsp;terms,&nbsp;'blue&nbsp;fish'&nbsp;and&nbsp;'blue&nbsp;moon'.&nbsp;The<a name="line_102"></a></li>
+<li id="line_103" class="odd"><span class="lineNumber">103&nbsp;</span>&nbsp;*&nbsp;JSON&nbsp;output&nbsp;would&nbsp;have&nbsp;the&nbsp;following&nbsp;structure:<a name="line_103"></a></li>
+<li id="line_104" class="even"><span class="lineNumber">104&nbsp;</span>&nbsp;*&nbsp;@code<a name="line_104"></a></li>
+<li id="line_105" class="odd"><span class="lineNumber">105&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;{<a name="line_105"></a></li>
+<li id="line_106" class="even"><span class="lineNumber">106&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"red&nbsp;fish,&nbsp;blue&nbsp;fish":&nbsp;"blue&nbsp;fish",<a name="line_106"></a></li>
+<li id="line_107" class="odd"><span class="lineNumber">107&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"red&nbsp;fish,&nbsp;blue&nbsp;moon":&nbsp;"blue&nbsp;moon",<a name="line_107"></a></li>
+<li id="line_108" class="even"><span class="lineNumber">108&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;};<a name="line_108"></a></li>
+<li id="line_109" class="odd"><span class="lineNumber">109&nbsp;</span>&nbsp;*&nbsp;@endcode<a name="line_109"></a></li>
+<li id="line_110" class="even"><span class="lineNumber">110&nbsp;</span>&nbsp;*<a name="line_110"></a></li>
+<li id="line_111" class="odd"><span class="lineNumber">111&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;$field_name<a name="line_111"></a></li>
+<li id="line_112" class="even"><span class="lineNumber">112&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;term&nbsp;reference&nbsp;field.<a name="line_112"></a></li>
+<li id="line_113" class="odd"><span class="lineNumber">113&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;$tags_typed<a name="line_113"></a></li>
+<li id="line_114" class="even"><span class="lineNumber">114&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;(optional)&nbsp;A&nbsp;comma-separated&nbsp;list&nbsp;of&nbsp;term&nbsp;names&nbsp;entered&nbsp;in&nbsp;the<a name="line_114"></a></li>
+<li id="line_115" class="odd"><span class="lineNumber">115&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;autocomplete&nbsp;form&nbsp;element.&nbsp;Only&nbsp;the&nbsp;last&nbsp;term&nbsp;is&nbsp;used&nbsp;for&nbsp;autocompletion.<a name="line_115"></a></li>
+<li id="line_116" class="even"><span class="lineNumber">116&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;Defaults&nbsp;to&nbsp;''&nbsp;(an&nbsp;empty&nbsp;string).<a name="line_116"></a></li>
+<li id="line_117" class="odd"><span class="lineNumber">117&nbsp;</span>&nbsp;*<a name="line_117"></a></li>
+<li id="line_118" class="even"><span class="lineNumber">118&nbsp;</span>&nbsp;*&nbsp;@see&nbsp;taxonomy_menu()<a name="line_118"></a></li>
+<li id="line_119" class="odd"><span class="lineNumber">119&nbsp;</span>&nbsp;*&nbsp;@see&nbsp;taxonomy_field_widget_info()<a name="line_119"></a></li>
+<li id="line_120" class="even"><span class="lineNumber">120&nbsp;</span>&nbsp;*/<a name="line_120"></a></li>
+<li id="line_121" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">121&nbsp;</span>function&nbsp;taxonomy_autocomplete($field_name&nbsp;=&nbsp;'',&nbsp;$tags_typed&nbsp;=&nbsp;'')&nbsp;{<a name="line_121"></a></li>
+<li id="line_122" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">122&nbsp;</span>&nbsp;&nbsp;//&nbsp;If&nbsp;the&nbsp;request&nbsp;has&nbsp;a&nbsp;'/'&nbsp;in&nbsp;the&nbsp;search&nbsp;text,&nbsp;then&nbsp;the&nbsp;menu&nbsp;system&nbsp;will&nbsp;have<a name="line_122"></a></li>
+<li id="line_123" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">123&nbsp;</span>&nbsp;&nbsp;//&nbsp;split&nbsp;it&nbsp;into&nbsp;multiple&nbsp;arguments,&nbsp;recover&nbsp;the&nbsp;intended&nbsp;$tags_typed.<a name="line_123"></a></li>
+<li id="line_124" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">124&nbsp;</span>&nbsp;&nbsp;$args&nbsp;=&nbsp;func_get_args();<a name="line_124"></a></li>
+<li id="line_125" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">125&nbsp;</span>&nbsp;&nbsp;//&nbsp;Shift&nbsp;off&nbsp;the&nbsp;$field_name&nbsp;argument.<a name="line_125"></a></li>
+<li id="line_126" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">126&nbsp;</span>&nbsp;&nbsp;array_shift($args);<a name="line_126"></a></li>
+<li id="line_127" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">127&nbsp;</span>&nbsp;&nbsp;$tags_typed&nbsp;=&nbsp;implode('/',&nbsp;$args);<a name="line_127"></a></li>
+<li id="line_128" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">128&nbsp;</span><a name="line_128"></a></li>
+<li id="line_129" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">129&nbsp;</span>&nbsp;&nbsp;//&nbsp;Make&nbsp;sure&nbsp;the&nbsp;field&nbsp;exists&nbsp;and&nbsp;is&nbsp;a&nbsp;taxonomy&nbsp;field.<a name="line_129"></a></li>
+<li id="line_130" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">130&nbsp;</span>&nbsp;&nbsp;if&nbsp;(!($field&nbsp;=&nbsp;field_info_field($field_name))&nbsp;||&nbsp;$field['type']&nbsp;!==&nbsp;'taxonomy_term_reference')&nbsp;{<a name="line_130"></a></li>
+<li id="line_131" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">131&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Error&nbsp;string.&nbsp;The&nbsp;JavaScript&nbsp;handler&nbsp;will&nbsp;realize&nbsp;this&nbsp;is&nbsp;not&nbsp;JSON&nbsp;and<a name="line_131"></a></li>
+<li id="line_132" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">132&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;will&nbsp;display&nbsp;it&nbsp;as&nbsp;debugging&nbsp;information.<a name="line_132"></a></li>
+<li id="line_133" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">133&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;t('Taxonomy&nbsp;field&nbsp;@field_name&nbsp;not&nbsp;found.',&nbsp;array('@field_name'&nbsp;=&gt;&nbsp;$field_name));<a name="line_133"></a></li>
+<li id="line_134" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">134&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;exit;<a name="line_134"></a></li>
+<li id="line_135" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">135&nbsp;</span>&nbsp;&nbsp;}<a name="line_135"></a></li>
+<li id="line_136" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">136&nbsp;</span><a name="line_136"></a></li>
+<li id="line_137" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">137&nbsp;</span>&nbsp;&nbsp;//&nbsp;The&nbsp;user&nbsp;enters&nbsp;a&nbsp;comma-separated&nbsp;list&nbsp;of&nbsp;tags.&nbsp;We&nbsp;only&nbsp;autocomplete&nbsp;the&nbsp;last&nbsp;tag.<a name="line_137"></a></li>
+<li id="line_138" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">138&nbsp;</span>&nbsp;&nbsp;$tags_typed&nbsp;=&nbsp;drupal_explode_tags($tags_typed);<a name="line_138"></a></li>
+<li id="line_139" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">139&nbsp;</span>&nbsp;&nbsp;$tag_last&nbsp;=&nbsp;drupal_strtolower(array_pop($tags_typed));<a name="line_139"></a></li>
+<li id="line_140" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">140&nbsp;</span><a name="line_140"></a></li>
+<li id="line_141" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">141&nbsp;</span>&nbsp;&nbsp;$term_matches&nbsp;=&nbsp;array();<a name="line_141"></a></li>
+<li id="line_142" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">142&nbsp;</span>&nbsp;&nbsp;if&nbsp;($tag_last&nbsp;!=&nbsp;'')&nbsp;{<a name="line_142"></a></li>
+<li id="line_143" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">143&nbsp;</span><a name="line_143"></a></li>
+<li id="line_144" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">144&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Part&nbsp;of&nbsp;the&nbsp;criteria&nbsp;for&nbsp;the&nbsp;query&nbsp;come&nbsp;from&nbsp;the&nbsp;field's&nbsp;own&nbsp;settings.<a name="line_144"></a></li>
+<li id="line_145" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">145&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$vids&nbsp;=&nbsp;array();<a name="line_145"></a></li>
+<li id="line_146" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">146&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$vocabularies&nbsp;=&nbsp;taxonomy_vocabulary_get_names();<a name="line_146"></a></li>
+<li id="line_147" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">147&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;($field['settings']['allowed_values']&nbsp;as&nbsp;$tree)&nbsp;{<a name="line_147"></a></li>
+<li id="line_148" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">148&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$vids[]&nbsp;=&nbsp;$vocabularies[$tree['vocabulary']]-&gt;vid;<a name="line_148"></a></li>
+<li id="line_149" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">149&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_149"></a></li>
+<li id="line_150" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">150&nbsp;</span><a name="line_150"></a></li>
+<li id="line_151" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">151&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$query&nbsp;=&nbsp;db_select('taxonomy_term_data',&nbsp;'t');<a name="line_151"></a></li>
+<li id="line_152" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">152&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$query-&gt;addTag('translatable');<a name="line_152"></a></li>
+<li id="line_153" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">153&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$query-&gt;addTag('term_access');<a name="line_153"></a></li>
+<li id="line_154" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">154&nbsp;</span><a name="line_154"></a></li>
+<li id="line_155" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">155&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Do&nbsp;not&nbsp;select&nbsp;already&nbsp;entered&nbsp;terms.<a name="line_155"></a></li>
+<li id="line_156" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">156&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($tags_typed))&nbsp;{<a name="line_156"></a></li>
+<li id="line_157" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">157&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$query-&gt;condition('t.name',&nbsp;$tags_typed,&nbsp;'NOT&nbsp;IN');<a name="line_157"></a></li>
+<li id="line_158" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">158&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_158"></a></li>
+<li id="line_159" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">159&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Select&nbsp;rows&nbsp;that&nbsp;match&nbsp;by&nbsp;term&nbsp;name.<a name="line_159"></a></li>
+<li id="line_160" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">160&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$tags_return&nbsp;=&nbsp;$query<a name="line_160"></a></li>
+<li id="line_161" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">161&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;fields('t',&nbsp;array('tid',&nbsp;'name'))<a name="line_161"></a></li>
+<li id="line_162" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">162&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;condition('t.vid',&nbsp;$vids)<a name="line_162"></a></li>
+<li id="line_163" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">163&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;condition('t.name',&nbsp;'%'&nbsp;.&nbsp;db_like($tag_last)&nbsp;.&nbsp;'%',&nbsp;'LIKE')<a name="line_163"></a></li>
+<li id="line_164" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">164&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;range(0,&nbsp;10)<a name="line_164"></a></li>
+<li id="line_165" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">165&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;execute()<a name="line_165"></a></li>
+<li id="line_166" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">166&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;fetchAllKeyed();<a name="line_166"></a></li>
+<li id="line_167" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">167&nbsp;</span><a name="line_167"></a></li>
+<li id="line_168" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">168&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$prefix&nbsp;=&nbsp;count($tags_typed)&nbsp;?&nbsp;drupal_implode_tags($tags_typed)&nbsp;.&nbsp;',&nbsp;'&nbsp;:&nbsp;'';<a name="line_168"></a></li>
+<li id="line_169" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">169&nbsp;</span><a name="line_169"></a></li>
+<li id="line_170" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">170&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;($tags_return&nbsp;as&nbsp;$tid&nbsp;=&gt;&nbsp;$name)&nbsp;{<a name="line_170"></a></li>
+<li id="line_171" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">171&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$n&nbsp;=&nbsp;$name;<a name="line_171"></a></li>
+<li id="line_172" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">172&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Term&nbsp;names&nbsp;containing&nbsp;commas&nbsp;or&nbsp;quotes&nbsp;must&nbsp;be&nbsp;wrapped&nbsp;in&nbsp;quotes.<a name="line_172"></a></li>
+<li id="line_173" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">173&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(strpos($name,&nbsp;',')&nbsp;!==&nbsp;FALSE&nbsp;||&nbsp;strpos($name,&nbsp;'"')&nbsp;!==&nbsp;FALSE)&nbsp;{<a name="line_173"></a></li>
+<li id="line_174" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">174&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$n&nbsp;=&nbsp;'"'&nbsp;.&nbsp;str_replace('"',&nbsp;'""',&nbsp;$name)&nbsp;.&nbsp;'"';<a name="line_174"></a></li>
+<li id="line_175" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">175&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_175"></a></li>
+<li id="line_176" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">176&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$term_matches[$prefix&nbsp;.&nbsp;$n]&nbsp;=&nbsp;check_plain($name);<a name="line_176"></a></li>
+<li id="line_177" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">177&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_177"></a></li>
+<li id="line_178" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">178&nbsp;</span>&nbsp;&nbsp;}<a name="line_178"></a></li>
+<li id="line_179" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">179&nbsp;</span><a name="line_179"></a></li>
+<li id="line_180" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">180&nbsp;</span>&nbsp;&nbsp;drupal_json_output($term_matches);<a name="line_180"></a></li>
+<li id="line_181" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">181&nbsp;</span>}<a name="line_181"></a></li></ol></div></body></html>
+            
+            <div id="sidebar">
+                <table cellpadding="3">
+                    <thead>
+                        <tr>
+                            <th width="40px" align="center">
+                                <strong>start</strong>
+                            </th>
+                            <th width="40px" align="center">
+                                <strong>end</strong>
+                            </th>
+                            <th>
+                                <strong>comment</strong>
+                            </th>
+                            <th width="120px">
+                                <strong>type of error</strong>
+                            </th>
+                            <th width="60px">
+                                <strong>severity</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr class="PMD">
+                            <td align="center">
+                                <a href="#line_121" onclick="switchLine('line_121')">
+                                121</a>
+                            </td>
+                            <td align="center">
+                                <a href="#line_181" onclick="switchLine('line_121'); new Effect.Highlight('line_121-181', {duration: 1.5}); return false">
+                                181</a>
+                            </td>
+                            <td>
+                                <a href="#line_121" onclick="switchLine('line_121'); new Effect.Highlight('line_121-181', {duration: 1.5}); return false">
+                                
+      The function taxonomy_autocomplete() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </a>
+                            </td>
+                            <td>
+                                PMD                            </td>
+                            <td>
+                                error                            </td>
+                        </tr>
+                                            </tbody>
+                </table>
+            </div>
+            <script type="text/javascript" language="javascript">
+                $(initReview);
+            </script>
+                    </div>
+    </body>
+</html>

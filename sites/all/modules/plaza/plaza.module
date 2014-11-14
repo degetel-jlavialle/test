@@ -1,0 +1,11 @@
+<?php
+
+
+function test_echo($string){
+    return $string;
+    if($string == "toto")
+        $is_empty = TRUE;
+    if($string == "titi")
+        $is_empty = FALSE;
+
+}

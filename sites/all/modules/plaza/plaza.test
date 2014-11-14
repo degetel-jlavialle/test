@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Test Folder creation
+ */
+class PlazaFolder3TestCase extends DrupalWebTestCase {
+  public static function getInfo() {
+    return array(
+      'name' => 'Testing Date',
+      'description' => "This test will check SimpleTest's treatment of hook_install during setUp.  Image module is used for test.",
+      'group' => 'Plaza',
+    );
+  }
+
+  function setUp() {
+    return parent::setUp('image');
+  }
+
+  function testEmptyMySQLDate() {
+
+  $result = test_echo('toto');
+  // Note: Test output messages should not be translated.
+  $message = 'A toto value should return TRUE.';
+  $this->assertTrue($result, $message);
+
+  $result = test_echo('titi');
+  // Note: Test output messages should not be translated.
+  $message = 'A NULL value should return FALSE.';
+  $this->assertFalse($result, $message);
+
+
+}
+}

@@ -1,0 +1,1952 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>
+            Mayflower Code Browser - Source Code
+        </title>
+        <link rel="stylesheet" type="text/css" href="../js/jquery.sidebar/css/codebrowser/sidebar.css" />
+        <link rel="stylesheet" type="text/css" href="../css/global.css" />
+        <link rel="stylesheet" type="text/css" href="../css/cruisecontrol.css" />
+        <link rel="stylesheet" type="text/css" href="../css/review.css" />
+
+        <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.sidebar/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.sidebar/jquery.sidebar.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/lib/jquery.hoverIntent.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/lib/jquery.bgiframe.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/jquery.cluetip.min.js"></script>
+
+        <script type="text/javascript" src="../js/review.js"></script>
+    </head>
+    <body class="codebrowser">
+        <div class="header">
+            <a href="./../index.html">Go back to index</a> |
+            <a href="http://github.com/mayflowergmbh/PHP_CodeBrowser">PHP CodeBrowser</a>
+        </div>
+        <hr/>
+        <div id="review">
+            <div class="filepath">
+                modules/update/update.report.inc            </div>
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div class="code"><ol class="code"><li id="line_1" class="odd"><span class="lineNumber">&nbsp;&nbsp;1&nbsp;</span>&lt;?php<a name="line_1"></a></li>
+<li id="line_2" class="even"><span class="lineNumber">&nbsp;&nbsp;2&nbsp;</span><a name="line_2"></a></li>
+<li id="line_3" class="odd"><span class="lineNumber">&nbsp;&nbsp;3&nbsp;</span>/**<a name="line_3"></a></li>
+<li id="line_4" class="even"><span class="lineNumber">&nbsp;&nbsp;4&nbsp;</span>&nbsp;*&nbsp;@file<a name="line_4"></a></li>
+<li id="line_5" class="odd"><span class="lineNumber">&nbsp;&nbsp;5&nbsp;</span>&nbsp;*&nbsp;Code&nbsp;required&nbsp;only&nbsp;when&nbsp;rendering&nbsp;the&nbsp;available&nbsp;updates&nbsp;report.<a name="line_5"></a></li>
+<li id="line_6" class="even"><span class="lineNumber">&nbsp;&nbsp;6&nbsp;</span>&nbsp;*/<a name="line_6"></a></li>
+<li id="line_7" class="odd"><span class="lineNumber">&nbsp;&nbsp;7&nbsp;</span><a name="line_7"></a></li>
+<li id="line_8" class="even"><span class="lineNumber">&nbsp;&nbsp;8&nbsp;</span>/**<a name="line_8"></a></li>
+<li id="line_9" class="odd"><span class="lineNumber">&nbsp;&nbsp;9&nbsp;</span>&nbsp;*&nbsp;Page&nbsp;callback:&nbsp;Generates&nbsp;a&nbsp;page&nbsp;about&nbsp;the&nbsp;update&nbsp;status&nbsp;of&nbsp;projects.<a name="line_9"></a></li>
+<li id="line_10" class="even"><span class="lineNumber">&nbsp;10&nbsp;</span>&nbsp;*<a name="line_10"></a></li>
+<li id="line_11" class="odd"><span class="lineNumber">&nbsp;11&nbsp;</span>&nbsp;*&nbsp;@see&nbsp;update_menu()<a name="line_11"></a></li>
+<li id="line_12" class="even"><span class="lineNumber">&nbsp;12&nbsp;</span>&nbsp;*/<a name="line_12"></a></li>
+<li id="line_13" class="odd"><span class="lineNumber">&nbsp;13&nbsp;</span>function&nbsp;update_status()&nbsp;{<a name="line_13"></a></li>
+<li id="line_14" class="even"><span class="lineNumber">&nbsp;14&nbsp;</span>&nbsp;&nbsp;if&nbsp;($available&nbsp;=&nbsp;update_get_available(TRUE))&nbsp;{<a name="line_14"></a></li>
+<li id="line_15" class="odd"><span class="lineNumber">&nbsp;15&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;module_load_include('inc',&nbsp;'update',&nbsp;'update.compare');<a name="line_15"></a></li>
+<li id="line_16" class="even"><span class="lineNumber">&nbsp;16&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$data&nbsp;=&nbsp;update_calculate_project_data($available);<a name="line_16"></a></li>
+<li id="line_17" class="odd"><span class="lineNumber">&nbsp;17&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;theme('update_report',&nbsp;array('data'&nbsp;=&gt;&nbsp;$data));<a name="line_17"></a></li>
+<li id="line_18" class="even"><span class="lineNumber">&nbsp;18&nbsp;</span>&nbsp;&nbsp;}<a name="line_18"></a></li>
+<li id="line_19" class="odd"><span class="lineNumber">&nbsp;19&nbsp;</span>&nbsp;&nbsp;else&nbsp;{<a name="line_19"></a></li>
+<li id="line_20" class="even"><span class="lineNumber">&nbsp;20&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;theme('update_report',&nbsp;array('data'&nbsp;=&gt;&nbsp;_update_no_data()));<a name="line_20"></a></li>
+<li id="line_21" class="odd"><span class="lineNumber">&nbsp;21&nbsp;</span>&nbsp;&nbsp;}<a name="line_21"></a></li>
+<li id="line_22" class="even"><span class="lineNumber">&nbsp;22&nbsp;</span>}<a name="line_22"></a></li>
+<li id="line_23" class="odd"><span class="lineNumber">&nbsp;23&nbsp;</span><a name="line_23"></a></li>
+<li id="line_24" class="even"><span class="lineNumber">&nbsp;24&nbsp;</span>/**<a name="line_24"></a></li>
+<li id="line_25" class="odd"><span class="lineNumber">&nbsp;25&nbsp;</span>&nbsp;*&nbsp;Returns&nbsp;HTML&nbsp;for&nbsp;the&nbsp;project&nbsp;status&nbsp;report.<a name="line_25"></a></li>
+<li id="line_26" class="even"><span class="lineNumber">&nbsp;26&nbsp;</span>&nbsp;*<a name="line_26"></a></li>
+<li id="line_27" class="odd"><span class="lineNumber">&nbsp;27&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;array&nbsp;$variables<a name="line_27"></a></li>
+<li id="line_28" class="even"><span class="lineNumber">&nbsp;28&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;An&nbsp;associative&nbsp;array&nbsp;containing:<a name="line_28"></a></li>
+<li id="line_29" class="odd"><span class="lineNumber">&nbsp;29&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;-&nbsp;data:&nbsp;An&nbsp;array&nbsp;of&nbsp;data&nbsp;about&nbsp;each&nbsp;project's&nbsp;status.<a name="line_29"></a></li>
+<li id="line_30" class="even"><span class="lineNumber">&nbsp;30&nbsp;</span>&nbsp;*<a name="line_30"></a></li>
+<li id="line_31" class="odd"><span class="lineNumber">&nbsp;31&nbsp;</span>&nbsp;*&nbsp;@ingroup&nbsp;themeable<a name="line_31"></a></li>
+<li id="line_32" class="even"><span class="lineNumber">&nbsp;32&nbsp;</span>&nbsp;*/<a name="line_32"></a></li>
+<li id="line_33" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;33&nbsp;</span>function&nbsp;theme_update_report($variables)&nbsp;{<a name="line_33"></a></li>
+<li id="line_34" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;34&nbsp;</span>&nbsp;&nbsp;$data&nbsp;=&nbsp;$variables['data'];<a name="line_34"></a></li>
+<li id="line_35" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;35&nbsp;</span><a name="line_35"></a></li>
+<li id="line_36" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;36&nbsp;</span>&nbsp;&nbsp;$last&nbsp;=&nbsp;variable_get('update_last_check',&nbsp;0);<a name="line_36"></a></li>
+<li id="line_37" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;37&nbsp;</span>&nbsp;&nbsp;$output&nbsp;=&nbsp;theme('update_last_check',&nbsp;array('last'&nbsp;=&gt;&nbsp;$last));<a name="line_37"></a></li>
+<li id="line_38" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;38&nbsp;</span><a name="line_38"></a></li>
+<li id="line_39" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;39&nbsp;</span>&nbsp;&nbsp;if&nbsp;(!is_array($data))&nbsp;{<a name="line_39"></a></li>
+<li id="line_40" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;40&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$output&nbsp;.=&nbsp;'&lt;p&gt;'&nbsp;.&nbsp;$data&nbsp;.&nbsp;'&lt;/p&gt;';<a name="line_40"></a></li>
+<li id="line_41" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;41&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$output;<a name="line_41"></a></li>
+<li id="line_42" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;42&nbsp;</span>&nbsp;&nbsp;}<a name="line_42"></a></li>
+<li id="line_43" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;43&nbsp;</span><a name="line_43"></a></li>
+<li id="line_44" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;44&nbsp;</span>&nbsp;&nbsp;$header&nbsp;=&nbsp;array();<a name="line_44"></a></li>
+<li id="line_45" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;45&nbsp;</span>&nbsp;&nbsp;$rows&nbsp;=&nbsp;array();<a name="line_45"></a></li>
+<li id="line_46" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;46&nbsp;</span><a name="line_46"></a></li>
+<li id="line_47" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;47&nbsp;</span>&nbsp;&nbsp;$notification_level&nbsp;=&nbsp;variable_get('update_notification_threshold',&nbsp;'all');<a name="line_47"></a></li>
+<li id="line_48" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;48&nbsp;</span><a name="line_48"></a></li>
+<li id="line_49" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;49&nbsp;</span>&nbsp;&nbsp;//&nbsp;Create&nbsp;an&nbsp;array&nbsp;of&nbsp;status&nbsp;values&nbsp;keyed&nbsp;by&nbsp;module&nbsp;or&nbsp;theme&nbsp;name,&nbsp;since<a name="line_49"></a></li>
+<li id="line_50" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;50&nbsp;</span>&nbsp;&nbsp;//&nbsp;we'll&nbsp;need&nbsp;this&nbsp;while&nbsp;generating&nbsp;the&nbsp;report&nbsp;if&nbsp;we&nbsp;have&nbsp;to&nbsp;cross&nbsp;reference<a name="line_50"></a></li>
+<li id="line_51" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;51&nbsp;</span>&nbsp;&nbsp;//&nbsp;anything&nbsp;(e.g.&nbsp;subthemes&nbsp;which&nbsp;have&nbsp;base&nbsp;themes&nbsp;missing&nbsp;an&nbsp;update).<a name="line_51"></a></li>
+<li id="line_52" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;52&nbsp;</span>&nbsp;&nbsp;foreach&nbsp;($data&nbsp;as&nbsp;$project)&nbsp;{<a name="line_52"></a></li>
+<li id="line_53" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;53&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;($project['includes']&nbsp;as&nbsp;$key&nbsp;=&gt;&nbsp;$name)&nbsp;{<a name="line_53"></a></li>
+<li id="line_54" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;54&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$status[$key]&nbsp;=&nbsp;$project['status'];<a name="line_54"></a></li>
+<li id="line_55" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;55&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_55"></a></li>
+<li id="line_56" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;56&nbsp;</span>&nbsp;&nbsp;}<a name="line_56"></a></li>
+<li id="line_57" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;57&nbsp;</span><a name="line_57"></a></li>
+<li id="line_58" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;58&nbsp;</span>&nbsp;&nbsp;foreach&nbsp;($data&nbsp;as&nbsp;$project)&nbsp;{<a name="line_58"></a></li>
+<li id="line_59" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;59&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;($project['status'])&nbsp;{<a name="line_59"></a></li>
+<li id="line_60" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;60&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_CURRENT:<a name="line_60"></a></li>
+<li id="line_61" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;61&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$class&nbsp;=&nbsp;'ok';<a name="line_61"></a></li>
+<li id="line_62" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;62&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$icon&nbsp;=&nbsp;theme('image',&nbsp;array('path'&nbsp;=&gt;&nbsp;'misc/watchdog-ok.png',&nbsp;'width'&nbsp;=&gt;&nbsp;18,&nbsp;'height'&nbsp;=&gt;&nbsp;18,&nbsp;'alt'&nbsp;=&gt;&nbsp;t('ok'),&nbsp;'title'&nbsp;=&gt;&nbsp;t('ok')));<a name="line_62"></a></li>
+<li id="line_63" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;63&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<a name="line_63"></a></li>
+<li id="line_64" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;64&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_UNKNOWN:<a name="line_64"></a></li>
+<li id="line_65" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;65&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_FETCH_PENDING:<a name="line_65"></a></li>
+<li id="line_66" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;66&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_NOT_FETCHED:<a name="line_66"></a></li>
+<li id="line_67" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;67&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$class&nbsp;=&nbsp;'unknown';<a name="line_67"></a></li>
+<li id="line_68" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;68&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$icon&nbsp;=&nbsp;theme('image',&nbsp;array('path'&nbsp;=&gt;&nbsp;'misc/watchdog-warning.png',&nbsp;'width'&nbsp;=&gt;&nbsp;18,&nbsp;'height'&nbsp;=&gt;&nbsp;18,&nbsp;'alt'&nbsp;=&gt;&nbsp;t('warning'),&nbsp;'title'&nbsp;=&gt;&nbsp;t('warning')));<a name="line_68"></a></li>
+<li id="line_69" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;69&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<a name="line_69"></a></li>
+<li id="line_70" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;70&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_NOT_SECURE:<a name="line_70"></a></li>
+<li id="line_71" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;71&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_REVOKED:<a name="line_71"></a></li>
+<li id="line_72" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;72&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_NOT_SUPPORTED:<a name="line_72"></a></li>
+<li id="line_73" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;73&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$class&nbsp;=&nbsp;'error';<a name="line_73"></a></li>
+<li id="line_74" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;74&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$icon&nbsp;=&nbsp;theme('image',&nbsp;array('path'&nbsp;=&gt;&nbsp;'misc/watchdog-error.png',&nbsp;'width'&nbsp;=&gt;&nbsp;18,&nbsp;'height'&nbsp;=&gt;&nbsp;18,&nbsp;'alt'&nbsp;=&gt;&nbsp;t('error'),&nbsp;'title'&nbsp;=&gt;&nbsp;t('error')));<a name="line_74"></a></li>
+<li id="line_75" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;75&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<a name="line_75"></a></li>
+<li id="line_76" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;76&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_NOT_CHECKED:<a name="line_76"></a></li>
+<li id="line_77" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;77&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_NOT_CURRENT:<a name="line_77"></a></li>
+<li id="line_78" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;78&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<a name="line_78"></a></li>
+<li id="line_79" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;79&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$class&nbsp;=&nbsp;'warning';<a name="line_79"></a></li>
+<li id="line_80" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;80&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$icon&nbsp;=&nbsp;theme('image',&nbsp;array('path'&nbsp;=&gt;&nbsp;'misc/watchdog-warning.png',&nbsp;'width'&nbsp;=&gt;&nbsp;18,&nbsp;'height'&nbsp;=&gt;&nbsp;18,&nbsp;'alt'&nbsp;=&gt;&nbsp;t('warning'),&nbsp;'title'&nbsp;=&gt;&nbsp;t('warning')));<a name="line_80"></a></li>
+<li id="line_81" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;81&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<a name="line_81"></a></li>
+<li id="line_82" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;82&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_82"></a></li>
+<li id="line_83" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;83&nbsp;</span><a name="line_83"></a></li>
+<li id="line_84" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;84&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;=&nbsp;'&lt;div&nbsp;class="version-status"&gt;';<a name="line_84"></a></li>
+<li id="line_85" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;85&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$status_label&nbsp;=&nbsp;theme('update_status_label',&nbsp;array('status'&nbsp;=&gt;&nbsp;$project['status']));<a name="line_85"></a></li>
+<li id="line_86" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;86&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;!empty($status_label)&nbsp;?&nbsp;$status_label&nbsp;:&nbsp;check_plain($project['reason']);<a name="line_86"></a></li>
+<li id="line_87" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;87&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;'&lt;span&nbsp;class="icon"&gt;'&nbsp;.&nbsp;$icon&nbsp;.&nbsp;'&lt;/span&gt;';<a name="line_87"></a></li>
+<li id="line_88" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;88&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;"&lt;/div&gt;\n";<a name="line_88"></a></li>
+<li id="line_89" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;89&nbsp;</span><a name="line_89"></a></li>
+<li id="line_90" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;90&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;'&lt;div&nbsp;class="project"&gt;';<a name="line_90"></a></li>
+<li id="line_91" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;91&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(isset($project['title']))&nbsp;{<a name="line_91"></a></li>
+<li id="line_92" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;92&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(isset($project['link']))&nbsp;{<a name="line_92"></a></li>
+<li id="line_93" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;93&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;l($project['title'],&nbsp;$project['link']);<a name="line_93"></a></li>
+<li id="line_94" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;94&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_94"></a></li>
+<li id="line_95" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;95&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_95"></a></li>
+<li id="line_96" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;96&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;check_plain($project['title']);<a name="line_96"></a></li>
+<li id="line_97" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;97&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_97"></a></li>
+<li id="line_98" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;98&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_98"></a></li>
+<li id="line_99" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;99&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_99"></a></li>
+<li id="line_100" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">100&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;check_plain($project['name']);<a name="line_100"></a></li>
+<li id="line_101" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">101&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_101"></a></li>
+<li id="line_102" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">102&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;'&nbsp;'&nbsp;.&nbsp;check_plain($project['existing_version']);<a name="line_102"></a></li>
+<li id="line_103" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">103&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($project['install_type']&nbsp;==&nbsp;'dev'&nbsp;&amp;&amp;&nbsp;!empty($project['datestamp']))&nbsp;{<a name="line_103"></a></li>
+<li id="line_104" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">104&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;'&nbsp;&lt;span&nbsp;class="version-date"&gt;('&nbsp;.&nbsp;format_date($project['datestamp'],&nbsp;'custom',&nbsp;'Y-M-d')&nbsp;.&nbsp;')&lt;/span&gt;';<a name="line_104"></a></li>
+<li id="line_105" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">105&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_105"></a></li>
+<li id="line_106" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">106&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;"&lt;/div&gt;\n";<a name="line_106"></a></li>
+<li id="line_107" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">107&nbsp;</span><a name="line_107"></a></li>
+<li id="line_108" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">108&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$versions_inner&nbsp;=&nbsp;'';<a name="line_108"></a></li>
+<li id="line_109" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">109&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$security_class&nbsp;=&nbsp;array();<a name="line_109"></a></li>
+<li id="line_110" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">110&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$version_class&nbsp;=&nbsp;array();<a name="line_110"></a></li>
+<li id="line_111" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">111&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(isset($project['recommended']))&nbsp;{<a name="line_111"></a></li>
+<li id="line_112" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">112&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($project['status']&nbsp;!=&nbsp;UPDATE_CURRENT&nbsp;||&nbsp;$project['existing_version']&nbsp;!==&nbsp;$project['recommended'])&nbsp;{<a name="line_112"></a></li>
+<li id="line_113" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">113&nbsp;</span><a name="line_113"></a></li>
+<li id="line_114" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">114&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;First,&nbsp;figure&nbsp;out&nbsp;what&nbsp;to&nbsp;recommend.<a name="line_114"></a></li>
+<li id="line_115" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">115&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;there's&nbsp;only&nbsp;1&nbsp;security&nbsp;update&nbsp;and&nbsp;it&nbsp;has&nbsp;the&nbsp;same&nbsp;version&nbsp;we're<a name="line_115"></a></li>
+<li id="line_116" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">116&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;recommending,&nbsp;give&nbsp;it&nbsp;the&nbsp;same&nbsp;CSS&nbsp;class&nbsp;as&nbsp;if&nbsp;it&nbsp;was&nbsp;recommended,<a name="line_116"></a></li>
+<li id="line_117" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">117&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;but&nbsp;don't&nbsp;print&nbsp;out&nbsp;a&nbsp;separate&nbsp;"Recommended"&nbsp;line&nbsp;for&nbsp;this&nbsp;project.<a name="line_117"></a></li>
+<li id="line_118" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">118&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($project['security&nbsp;updates'])&nbsp;&amp;&amp;&nbsp;count($project['security&nbsp;updates'])&nbsp;==&nbsp;1&nbsp;&amp;&amp;&nbsp;$project['security&nbsp;updates'][0]['version']&nbsp;===&nbsp;$project['recommended'])&nbsp;{<a name="line_118"></a></li>
+<li id="line_119" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">119&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$security_class[]&nbsp;=&nbsp;'version-recommended';<a name="line_119"></a></li>
+<li id="line_120" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">120&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$security_class[]&nbsp;=&nbsp;'version-recommended-strong';<a name="line_120"></a></li>
+<li id="line_121" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">121&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_121"></a></li>
+<li id="line_122" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">122&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_122"></a></li>
+<li id="line_123" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">123&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$version_class[]&nbsp;=&nbsp;'version-recommended';<a name="line_123"></a></li>
+<li id="line_124" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">124&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Apply&nbsp;an&nbsp;extra&nbsp;class&nbsp;if&nbsp;we're&nbsp;displaying&nbsp;both&nbsp;a&nbsp;recommended<a name="line_124"></a></li>
+<li id="line_125" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">125&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;version&nbsp;and&nbsp;anything&nbsp;else&nbsp;for&nbsp;an&nbsp;extra&nbsp;visual&nbsp;hint.<a name="line_125"></a></li>
+<li id="line_126" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">126&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($project['recommended']&nbsp;!==&nbsp;$project['latest_version']<a name="line_126"></a></li>
+<li id="line_127" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">127&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;!empty($project['also'])<a name="line_127"></a></li>
+<li id="line_128" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">128&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;($project['install_type']&nbsp;==&nbsp;'dev'<a name="line_128"></a></li>
+<li id="line_129" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">129&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;&nbsp;isset($project['dev_version'])<a name="line_129"></a></li>
+<li id="line_130" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">130&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;&nbsp;$project['latest_version']&nbsp;!==&nbsp;$project['dev_version']<a name="line_130"></a></li>
+<li id="line_131" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">131&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;&nbsp;$project['recommended']&nbsp;!==&nbsp;$project['dev_version'])<a name="line_131"></a></li>
+<li id="line_132" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">132&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;(isset($project['security&nbsp;updates'][0])<a name="line_132"></a></li>
+<li id="line_133" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">133&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;&nbsp;$project['recommended']&nbsp;!==&nbsp;$project['security&nbsp;updates'][0])<a name="line_133"></a></li>
+<li id="line_134" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">134&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;{<a name="line_134"></a></li>
+<li id="line_135" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">135&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$version_class[]&nbsp;=&nbsp;'version-recommended-strong';<a name="line_135"></a></li>
+<li id="line_136" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">136&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_136"></a></li>
+<li id="line_137" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">137&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$versions_inner&nbsp;.=&nbsp;theme('update_version',&nbsp;array('version'&nbsp;=&gt;&nbsp;$project['releases'][$project['recommended']],&nbsp;'tag'&nbsp;=&gt;&nbsp;t('Recommended&nbsp;version:'),&nbsp;'class'&nbsp;=&gt;&nbsp;$version_class));<a name="line_137"></a></li>
+<li id="line_138" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">138&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_138"></a></li>
+<li id="line_139" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">139&nbsp;</span><a name="line_139"></a></li>
+<li id="line_140" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">140&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Now,&nbsp;print&nbsp;any&nbsp;security&nbsp;updates.<a name="line_140"></a></li>
+<li id="line_141" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">141&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($project['security&nbsp;updates']))&nbsp;{<a name="line_141"></a></li>
+<li id="line_142" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">142&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$security_class[]&nbsp;=&nbsp;'version-security';<a name="line_142"></a></li>
+<li id="line_143" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">143&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;($project['security&nbsp;updates']&nbsp;as&nbsp;$security_update)&nbsp;{<a name="line_143"></a></li>
+<li id="line_144" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">144&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$versions_inner&nbsp;.=&nbsp;theme('update_version',&nbsp;array('version'&nbsp;=&gt;&nbsp;$security_update,&nbsp;'tag'&nbsp;=&gt;&nbsp;t('Security&nbsp;update:'),&nbsp;'class'&nbsp;=&gt;&nbsp;$security_class));<a name="line_144"></a></li>
+<li id="line_145" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">145&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_145"></a></li>
+<li id="line_146" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">146&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_146"></a></li>
+<li id="line_147" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">147&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_147"></a></li>
+<li id="line_148" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">148&nbsp;</span><a name="line_148"></a></li>
+<li id="line_149" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">149&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($project['recommended']&nbsp;!==&nbsp;$project['latest_version'])&nbsp;{<a name="line_149"></a></li>
+<li id="line_150" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">150&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$versions_inner&nbsp;.=&nbsp;theme('update_version',&nbsp;array('version'&nbsp;=&gt;&nbsp;$project['releases'][$project['latest_version']],&nbsp;'tag'&nbsp;=&gt;&nbsp;t('Latest&nbsp;version:'),&nbsp;'class'&nbsp;=&gt;&nbsp;array('version-latest')));<a name="line_150"></a></li>
+<li id="line_151" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">151&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_151"></a></li>
+<li id="line_152" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">152&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($project['install_type']&nbsp;==&nbsp;'dev'<a name="line_152"></a></li>
+<li id="line_153" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">153&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;&nbsp;$project['status']&nbsp;!=&nbsp;UPDATE_CURRENT<a name="line_153"></a></li>
+<li id="line_154" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">154&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;&nbsp;isset($project['dev_version'])<a name="line_154"></a></li>
+<li id="line_155" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">155&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;&nbsp;$project['recommended']&nbsp;!==&nbsp;$project['dev_version'])&nbsp;{<a name="line_155"></a></li>
+<li id="line_156" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">156&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$versions_inner&nbsp;.=&nbsp;theme('update_version',&nbsp;array('version'&nbsp;=&gt;&nbsp;$project['releases'][$project['dev_version']],&nbsp;'tag'&nbsp;=&gt;&nbsp;t('Development&nbsp;version:'),&nbsp;'class'&nbsp;=&gt;&nbsp;array('version-latest')));<a name="line_156"></a></li>
+<li id="line_157" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">157&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_157"></a></li>
+<li id="line_158" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">158&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_158"></a></li>
+<li id="line_159" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">159&nbsp;</span><a name="line_159"></a></li>
+<li id="line_160" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">160&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(isset($project['also']))&nbsp;{<a name="line_160"></a></li>
+<li id="line_161" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">161&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;($project['also']&nbsp;as&nbsp;$also)&nbsp;{<a name="line_161"></a></li>
+<li id="line_162" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">162&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$versions_inner&nbsp;.=&nbsp;theme('update_version',&nbsp;array('version'&nbsp;=&gt;&nbsp;$project['releases'][$also],&nbsp;'tag'&nbsp;=&gt;&nbsp;t('Also&nbsp;available:'),&nbsp;'class'&nbsp;=&gt;&nbsp;array('version-also-available')));<a name="line_162"></a></li>
+<li id="line_163" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">163&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_163"></a></li>
+<li id="line_164" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">164&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_164"></a></li>
+<li id="line_165" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">165&nbsp;</span><a name="line_165"></a></li>
+<li id="line_166" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">166&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($versions_inner))&nbsp;{<a name="line_166"></a></li>
+<li id="line_167" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">167&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;"&lt;div&nbsp;class=\"versions\"&gt;\n"&nbsp;.&nbsp;$versions_inner&nbsp;.&nbsp;"&lt;/div&gt;\n";<a name="line_167"></a></li>
+<li id="line_168" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">168&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_168"></a></li>
+<li id="line_169" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">169&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;"&lt;div&nbsp;class=\"info\"&gt;\n";<a name="line_169"></a></li>
+<li id="line_170" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">170&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($project['extra']))&nbsp;{<a name="line_170"></a></li>
+<li id="line_171" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">171&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;'&lt;div&nbsp;class="extra"&gt;'&nbsp;.&nbsp;"\n";<a name="line_171"></a></li>
+<li id="line_172" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">172&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;($project['extra']&nbsp;as&nbsp;$key&nbsp;=&gt;&nbsp;$value)&nbsp;{<a name="line_172"></a></li>
+<li id="line_173" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">173&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;'&lt;div&nbsp;class="'&nbsp;.&nbsp;implode('&nbsp;',&nbsp;$value['class'])&nbsp;.&nbsp;'"&gt;';<a name="line_173"></a></li>
+<li id="line_174" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">174&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;check_plain($value['label'])&nbsp;.&nbsp;':&nbsp;';<a name="line_174"></a></li>
+<li id="line_175" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">175&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;drupal_placeholder($value['data']);<a name="line_175"></a></li>
+<li id="line_176" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">176&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;"&lt;/div&gt;\n";<a name="line_176"></a></li>
+<li id="line_177" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">177&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_177"></a></li>
+<li id="line_178" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">178&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;"&lt;/div&gt;\n";&nbsp;&nbsp;//&nbsp;extra&nbsp;div.<a name="line_178"></a></li>
+<li id="line_179" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">179&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_179"></a></li>
+<li id="line_180" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">180&nbsp;</span><a name="line_180"></a></li>
+<li id="line_181" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">181&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;'&lt;div&nbsp;class="includes"&gt;';<a name="line_181"></a></li>
+<li id="line_182" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">182&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;sort($project['includes']);<a name="line_182"></a></li>
+<li id="line_183" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">183&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($project['disabled']))&nbsp;{<a name="line_183"></a></li>
+<li id="line_184" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">184&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sort($project['disabled']);<a name="line_184"></a></li>
+<li id="line_185" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">185&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Make&nbsp;sure&nbsp;we&nbsp;start&nbsp;with&nbsp;a&nbsp;clean&nbsp;slate&nbsp;for&nbsp;each&nbsp;project&nbsp;in&nbsp;the&nbsp;report.<a name="line_185"></a></li>
+<li id="line_186" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">186&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$includes_items&nbsp;=&nbsp;array();<a name="line_186"></a></li>
+<li id="line_187" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">187&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;t('Includes:');<a name="line_187"></a></li>
+<li id="line_188" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">188&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$includes_items[]&nbsp;=&nbsp;t('Enabled:&nbsp;%includes',&nbsp;array('%includes'&nbsp;=&gt;&nbsp;implode(',&nbsp;',&nbsp;$project['includes'])));<a name="line_188"></a></li>
+<li id="line_189" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">189&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$includes_items[]&nbsp;=&nbsp;t('Disabled:&nbsp;%disabled',&nbsp;array('%disabled'&nbsp;=&gt;&nbsp;implode(',&nbsp;',&nbsp;$project['disabled'])));<a name="line_189"></a></li>
+<li id="line_190" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">190&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;theme('item_list',&nbsp;array('items'&nbsp;=&gt;&nbsp;$includes_items));<a name="line_190"></a></li>
+<li id="line_191" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">191&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_191"></a></li>
+<li id="line_192" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">192&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_192"></a></li>
+<li id="line_193" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">193&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;t('Includes:&nbsp;%includes',&nbsp;array('%includes'&nbsp;=&gt;&nbsp;implode(',&nbsp;',&nbsp;$project['includes'])));<a name="line_193"></a></li>
+<li id="line_194" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">194&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_194"></a></li>
+<li id="line_195" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">195&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;"&lt;/div&gt;\n";<a name="line_195"></a></li>
+<li id="line_196" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">196&nbsp;</span><a name="line_196"></a></li>
+<li id="line_197" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">197&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($project['base_themes']))&nbsp;{<a name="line_197"></a></li>
+<li id="line_198" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">198&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;'&lt;div&nbsp;class="basethemes"&gt;';<a name="line_198"></a></li>
+<li id="line_199" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">199&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asort($project['base_themes']);<a name="line_199"></a></li>
+<li id="line_200" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">200&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$base_themes&nbsp;=&nbsp;array();<a name="line_200"></a></li>
+<li id="line_201" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">201&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;($project['base_themes']&nbsp;as&nbsp;$base_key&nbsp;=&gt;&nbsp;$base_theme)&nbsp;{<a name="line_201"></a></li>
+<li id="line_202" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">202&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;($status[$base_key])&nbsp;{<a name="line_202"></a></li>
+<li id="line_203" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">203&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_NOT_SECURE:<a name="line_203"></a></li>
+<li id="line_204" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">204&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_REVOKED:<a name="line_204"></a></li>
+<li id="line_205" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">205&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_NOT_SUPPORTED:<a name="line_205"></a></li>
+<li id="line_206" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">206&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$base_themes[]&nbsp;=&nbsp;t('%base_theme&nbsp;(!base_label)',&nbsp;array('%base_theme'&nbsp;=&gt;&nbsp;$base_theme,&nbsp;'!base_label'&nbsp;=&gt;&nbsp;theme('update_status_label',&nbsp;array('status'&nbsp;=&gt;&nbsp;$status[$base_key]))));<a name="line_206"></a></li>
+<li id="line_207" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">207&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<a name="line_207"></a></li>
+<li id="line_208" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">208&nbsp;</span><a name="line_208"></a></li>
+<li id="line_209" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">209&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<a name="line_209"></a></li>
+<li id="line_210" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">210&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$base_themes[]&nbsp;=&nbsp;drupal_placeholder($base_theme);<a name="line_210"></a></li>
+<li id="line_211" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">211&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_211"></a></li>
+<li id="line_212" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">212&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_212"></a></li>
+<li id="line_213" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">213&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;t('Depends&nbsp;on:&nbsp;!basethemes',&nbsp;array('!basethemes'&nbsp;=&gt;&nbsp;implode(',&nbsp;',&nbsp;$base_themes)));<a name="line_213"></a></li>
+<li id="line_214" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">214&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;"&lt;/div&gt;\n";<a name="line_214"></a></li>
+<li id="line_215" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">215&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_215"></a></li>
+<li id="line_216" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">216&nbsp;</span><a name="line_216"></a></li>
+<li id="line_217" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">217&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($project['sub_themes']))&nbsp;{<a name="line_217"></a></li>
+<li id="line_218" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">218&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;'&lt;div&nbsp;class="subthemes"&gt;';<a name="line_218"></a></li>
+<li id="line_219" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">219&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sort($project['sub_themes']);<a name="line_219"></a></li>
+<li id="line_220" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">220&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;t('Required&nbsp;by:&nbsp;%subthemes',&nbsp;array('%subthemes'&nbsp;=&gt;&nbsp;implode(',&nbsp;',&nbsp;$project['sub_themes'])));<a name="line_220"></a></li>
+<li id="line_221" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">221&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;"&lt;/div&gt;\n";<a name="line_221"></a></li>
+<li id="line_222" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">222&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_222"></a></li>
+<li id="line_223" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">223&nbsp;</span><a name="line_223"></a></li>
+<li id="line_224" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">224&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;.=&nbsp;"&lt;/div&gt;\n";&nbsp;//&nbsp;info&nbsp;div.<a name="line_224"></a></li>
+<li id="line_225" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">225&nbsp;</span><a name="line_225"></a></li>
+<li id="line_226" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">226&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!isset($rows[$project['project_type']]))&nbsp;{<a name="line_226"></a></li>
+<li id="line_227" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">227&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$rows[$project['project_type']]&nbsp;=&nbsp;array();<a name="line_227"></a></li>
+<li id="line_228" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">228&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_228"></a></li>
+<li id="line_229" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">229&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$row_key&nbsp;=&nbsp;isset($project['title'])&nbsp;?&nbsp;drupal_strtolower($project['title'])&nbsp;:&nbsp;drupal_strtolower($project['name']);<a name="line_229"></a></li>
+<li id="line_230" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">230&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$rows[$project['project_type']][$row_key]&nbsp;=&nbsp;array(<a name="line_230"></a></li>
+<li id="line_231" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">231&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'class'&nbsp;=&gt;&nbsp;array($class),<a name="line_231"></a></li>
+<li id="line_232" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">232&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'data'&nbsp;=&gt;&nbsp;array($row),<a name="line_232"></a></li>
+<li id="line_233" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">233&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;);<a name="line_233"></a></li>
+<li id="line_234" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">234&nbsp;</span>&nbsp;&nbsp;}<a name="line_234"></a></li>
+<li id="line_235" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">235&nbsp;</span><a name="line_235"></a></li>
+<li id="line_236" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">236&nbsp;</span>&nbsp;&nbsp;$project_types&nbsp;=&nbsp;array(<a name="line_236"></a></li>
+<li id="line_237" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">237&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'core'&nbsp;=&gt;&nbsp;t('Drupal&nbsp;core'),<a name="line_237"></a></li>
+<li id="line_238" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">238&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'module'&nbsp;=&gt;&nbsp;t('Modules'),<a name="line_238"></a></li>
+<li id="line_239" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">239&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'theme'&nbsp;=&gt;&nbsp;t('Themes'),<a name="line_239"></a></li>
+<li id="line_240" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">240&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'module-disabled'&nbsp;=&gt;&nbsp;t('Disabled&nbsp;modules'),<a name="line_240"></a></li>
+<li id="line_241" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">241&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'theme-disabled'&nbsp;=&gt;&nbsp;t('Disabled&nbsp;themes'),<a name="line_241"></a></li>
+<li id="line_242" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">242&nbsp;</span>&nbsp;&nbsp;);<a name="line_242"></a></li>
+<li id="line_243" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">243&nbsp;</span>&nbsp;&nbsp;foreach&nbsp;($project_types&nbsp;as&nbsp;$type_name&nbsp;=&gt;&nbsp;$type_label)&nbsp;{<a name="line_243"></a></li>
+<li id="line_244" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">244&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($rows[$type_name]))&nbsp;{<a name="line_244"></a></li>
+<li id="line_245" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">245&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ksort($rows[$type_name]);<a name="line_245"></a></li>
+<li id="line_246" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">246&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$output&nbsp;.=&nbsp;"\n&lt;h3&gt;"&nbsp;.&nbsp;$type_label&nbsp;.&nbsp;"&lt;/h3&gt;\n";<a name="line_246"></a></li>
+<li id="line_247" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">247&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$output&nbsp;.=&nbsp;theme('table',&nbsp;array('header'&nbsp;=&gt;&nbsp;$header,&nbsp;'rows'&nbsp;=&gt;&nbsp;$rows[$type_name],&nbsp;'attributes'&nbsp;=&gt;&nbsp;array('class'&nbsp;=&gt;&nbsp;array('update'))));<a name="line_247"></a></li>
+<li id="line_248" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">248&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_248"></a></li>
+<li id="line_249" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">249&nbsp;</span>&nbsp;&nbsp;}<a name="line_249"></a></li>
+<li id="line_250" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">250&nbsp;</span>&nbsp;&nbsp;drupal_add_css(drupal_get_path('module',&nbsp;'update')&nbsp;.&nbsp;'/update.css');<a name="line_250"></a></li>
+<li id="line_251" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">251&nbsp;</span>&nbsp;&nbsp;return&nbsp;$output;<a name="line_251"></a></li>
+<li id="line_252" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">252&nbsp;</span>}<a name="line_252"></a></li>
+<li id="line_253" class="odd"><span class="lineNumber">253&nbsp;</span><a name="line_253"></a></li>
+<li id="line_254" class="even"><span class="lineNumber">254&nbsp;</span>/**<a name="line_254"></a></li>
+<li id="line_255" class="odd"><span class="lineNumber">255&nbsp;</span>&nbsp;*&nbsp;Returns&nbsp;HTML&nbsp;for&nbsp;a&nbsp;label&nbsp;to&nbsp;display&nbsp;for&nbsp;a&nbsp;project's&nbsp;update&nbsp;status.<a name="line_255"></a></li>
+<li id="line_256" class="even"><span class="lineNumber">256&nbsp;</span>&nbsp;*<a name="line_256"></a></li>
+<li id="line_257" class="odd"><span class="lineNumber">257&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;array&nbsp;$variables<a name="line_257"></a></li>
+<li id="line_258" class="even"><span class="lineNumber">258&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;An&nbsp;associative&nbsp;array&nbsp;containing:<a name="line_258"></a></li>
+<li id="line_259" class="odd"><span class="lineNumber">259&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;-&nbsp;status:&nbsp;The&nbsp;integer&nbsp;code&nbsp;for&nbsp;a&nbsp;project's&nbsp;current&nbsp;update&nbsp;status.<a name="line_259"></a></li>
+<li id="line_260" class="even"><span class="lineNumber">260&nbsp;</span>&nbsp;*<a name="line_260"></a></li>
+<li id="line_261" class="odd"><span class="lineNumber">261&nbsp;</span>&nbsp;*&nbsp;@see&nbsp;update_calculate_project_data()<a name="line_261"></a></li>
+<li id="line_262" class="even"><span class="lineNumber">262&nbsp;</span>&nbsp;*&nbsp;@ingroup&nbsp;themeable<a name="line_262"></a></li>
+<li id="line_263" class="odd"><span class="lineNumber">263&nbsp;</span>&nbsp;*/<a name="line_263"></a></li>
+<li id="line_264" class="even"><span class="lineNumber">264&nbsp;</span>function&nbsp;theme_update_status_label($variables)&nbsp;{<a name="line_264"></a></li>
+<li id="line_265" class="odd"><span class="lineNumber">265&nbsp;</span>&nbsp;&nbsp;switch&nbsp;($variables['status'])&nbsp;{<a name="line_265"></a></li>
+<li id="line_266" class="even"><span class="lineNumber">266&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_NOT_SECURE:<a name="line_266"></a></li>
+<li id="line_267" class="odd"><span class="lineNumber">267&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'&lt;span&nbsp;class="security-error"&gt;'&nbsp;.&nbsp;t('Security&nbsp;update&nbsp;required!')&nbsp;.&nbsp;'&lt;/span&gt;';<a name="line_267"></a></li>
+<li id="line_268" class="even"><span class="lineNumber">268&nbsp;</span><a name="line_268"></a></li>
+<li id="line_269" class="odd"><span class="lineNumber">269&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_REVOKED:<a name="line_269"></a></li>
+<li id="line_270" class="even"><span class="lineNumber">270&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'&lt;span&nbsp;class="revoked"&gt;'&nbsp;.&nbsp;t('Revoked!')&nbsp;.&nbsp;'&lt;/span&gt;';<a name="line_270"></a></li>
+<li id="line_271" class="odd"><span class="lineNumber">271&nbsp;</span><a name="line_271"></a></li>
+<li id="line_272" class="even"><span class="lineNumber">272&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_NOT_SUPPORTED:<a name="line_272"></a></li>
+<li id="line_273" class="odd"><span class="lineNumber">273&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'&lt;span&nbsp;class="not-supported"&gt;'&nbsp;.&nbsp;t('Not&nbsp;supported!')&nbsp;.&nbsp;'&lt;/span&gt;';<a name="line_273"></a></li>
+<li id="line_274" class="even"><span class="lineNumber">274&nbsp;</span><a name="line_274"></a></li>
+<li id="line_275" class="odd"><span class="lineNumber">275&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_NOT_CURRENT:<a name="line_275"></a></li>
+<li id="line_276" class="even"><span class="lineNumber">276&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'&lt;span&nbsp;class="not-current"&gt;'&nbsp;.&nbsp;t('Update&nbsp;available')&nbsp;.&nbsp;'&lt;/span&gt;';<a name="line_276"></a></li>
+<li id="line_277" class="odd"><span class="lineNumber">277&nbsp;</span><a name="line_277"></a></li>
+<li id="line_278" class="even"><span class="lineNumber">278&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UPDATE_CURRENT:<a name="line_278"></a></li>
+<li id="line_279" class="odd"><span class="lineNumber">279&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'&lt;span&nbsp;class="current"&gt;'&nbsp;.&nbsp;t('Up&nbsp;to&nbsp;date')&nbsp;.&nbsp;'&lt;/span&gt;';<a name="line_279"></a></li>
+<li id="line_280" class="even"><span class="lineNumber">280&nbsp;</span><a name="line_280"></a></li>
+<li id="line_281" class="odd"><span class="lineNumber">281&nbsp;</span>&nbsp;&nbsp;}<a name="line_281"></a></li>
+<li id="line_282" class="even"><span class="lineNumber">282&nbsp;</span>}<a name="line_282"></a></li>
+<li id="line_283" class="odd"><span class="lineNumber">283&nbsp;</span><a name="line_283"></a></li>
+<li id="line_284" class="even"><span class="lineNumber">284&nbsp;</span>/**<a name="line_284"></a></li>
+<li id="line_285" class="odd"><span class="lineNumber">285&nbsp;</span>&nbsp;*&nbsp;Returns&nbsp;HTML&nbsp;for&nbsp;the&nbsp;version&nbsp;display&nbsp;of&nbsp;a&nbsp;project.<a name="line_285"></a></li>
+<li id="line_286" class="even"><span class="lineNumber">286&nbsp;</span>&nbsp;*<a name="line_286"></a></li>
+<li id="line_287" class="odd"><span class="lineNumber">287&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;array&nbsp;$variables<a name="line_287"></a></li>
+<li id="line_288" class="even"><span class="lineNumber">288&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;An&nbsp;associative&nbsp;array&nbsp;containing:<a name="line_288"></a></li>
+<li id="line_289" class="odd"><span class="lineNumber">289&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;-&nbsp;version:&nbsp;An&nbsp;array&nbsp;of&nbsp;data&nbsp;about&nbsp;the&nbsp;latest&nbsp;released&nbsp;version,&nbsp;containing:<a name="line_289"></a></li>
+<li id="line_290" class="even"><span class="lineNumber">290&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;version:&nbsp;The&nbsp;version&nbsp;number.<a name="line_290"></a></li>
+<li id="line_291" class="odd"><span class="lineNumber">291&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;release_link:&nbsp;The&nbsp;URL&nbsp;for&nbsp;the&nbsp;release&nbsp;notes.<a name="line_291"></a></li>
+<li id="line_292" class="even"><span class="lineNumber">292&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;date:&nbsp;The&nbsp;date&nbsp;of&nbsp;the&nbsp;release.<a name="line_292"></a></li>
+<li id="line_293" class="odd"><span class="lineNumber">293&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;download_link:&nbsp;The&nbsp;URL&nbsp;for&nbsp;the&nbsp;downloadable&nbsp;file.<a name="line_293"></a></li>
+<li id="line_294" class="even"><span class="lineNumber">294&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;-&nbsp;tag:&nbsp;The&nbsp;title&nbsp;of&nbsp;the&nbsp;project.<a name="line_294"></a></li>
+<li id="line_295" class="odd"><span class="lineNumber">295&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;-&nbsp;class:&nbsp;A&nbsp;string&nbsp;containing&nbsp;extra&nbsp;classes&nbsp;for&nbsp;the&nbsp;wrapping&nbsp;table.<a name="line_295"></a></li>
+<li id="line_296" class="even"><span class="lineNumber">296&nbsp;</span>&nbsp;*<a name="line_296"></a></li>
+<li id="line_297" class="odd"><span class="lineNumber">297&nbsp;</span>&nbsp;*&nbsp;@ingroup&nbsp;themeable<a name="line_297"></a></li>
+<li id="line_298" class="even"><span class="lineNumber">298&nbsp;</span>&nbsp;*/<a name="line_298"></a></li>
+<li id="line_299" class="odd"><span class="lineNumber">299&nbsp;</span>function&nbsp;theme_update_version($variables)&nbsp;{<a name="line_299"></a></li>
+<li id="line_300" class="even"><span class="lineNumber">300&nbsp;</span>&nbsp;&nbsp;$version&nbsp;=&nbsp;$variables['version'];<a name="line_300"></a></li>
+<li id="line_301" class="odd"><span class="lineNumber">301&nbsp;</span>&nbsp;&nbsp;$tag&nbsp;=&nbsp;$variables['tag'];<a name="line_301"></a></li>
+<li id="line_302" class="even"><span class="lineNumber">302&nbsp;</span>&nbsp;&nbsp;$class&nbsp;=&nbsp;implode('&nbsp;',&nbsp;$variables['class']);<a name="line_302"></a></li>
+<li id="line_303" class="odd"><span class="lineNumber">303&nbsp;</span><a name="line_303"></a></li>
+<li id="line_304" class="even"><span class="lineNumber">304&nbsp;</span>&nbsp;&nbsp;$output&nbsp;=&nbsp;'';<a name="line_304"></a></li>
+<li id="line_305" class="odd"><span class="lineNumber">305&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;'&lt;table&nbsp;class="version&nbsp;'&nbsp;.&nbsp;$class&nbsp;.&nbsp;'"&gt;';<a name="line_305"></a></li>
+<li id="line_306" class="even"><span class="lineNumber">306&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;'&lt;tr&gt;';<a name="line_306"></a></li>
+<li id="line_307" class="odd"><span class="lineNumber">307&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;'&lt;td&nbsp;class="version-title"&gt;'&nbsp;.&nbsp;$tag&nbsp;.&nbsp;"&lt;/td&gt;\n";<a name="line_307"></a></li>
+<li id="line_308" class="even"><span class="lineNumber">308&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;'&lt;td&nbsp;class="version-details"&gt;';<a name="line_308"></a></li>
+<li id="line_309" class="odd"><span class="lineNumber">309&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;l($version['version'],&nbsp;$version['release_link']);<a name="line_309"></a></li>
+<li id="line_310" class="even"><span class="lineNumber">310&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;'&nbsp;&lt;span&nbsp;class="version-date"&gt;('&nbsp;.&nbsp;format_date($version['date'],&nbsp;'custom',&nbsp;'Y-M-d')&nbsp;.&nbsp;')&lt;/span&gt;';<a name="line_310"></a></li>
+<li id="line_311" class="odd"><span class="lineNumber">311&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;"&lt;/td&gt;\n";<a name="line_311"></a></li>
+<li id="line_312" class="even"><span class="lineNumber">312&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;'&lt;td&nbsp;class="version-links"&gt;';<a name="line_312"></a></li>
+<li id="line_313" class="odd"><span class="lineNumber">313&nbsp;</span>&nbsp;&nbsp;$links&nbsp;=&nbsp;array();<a name="line_313"></a></li>
+<li id="line_314" class="even"><span class="lineNumber">314&nbsp;</span>&nbsp;&nbsp;$links['update-download']&nbsp;=&nbsp;array(<a name="line_314"></a></li>
+<li id="line_315" class="odd"><span class="lineNumber">315&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'title'&nbsp;=&gt;&nbsp;t('Download'),<a name="line_315"></a></li>
+<li id="line_316" class="even"><span class="lineNumber">316&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'href'&nbsp;=&gt;&nbsp;$version['download_link'],<a name="line_316"></a></li>
+<li id="line_317" class="odd"><span class="lineNumber">317&nbsp;</span>&nbsp;&nbsp;);<a name="line_317"></a></li>
+<li id="line_318" class="even"><span class="lineNumber">318&nbsp;</span>&nbsp;&nbsp;$links['update-release-notes']&nbsp;=&nbsp;array(<a name="line_318"></a></li>
+<li id="line_319" class="odd"><span class="lineNumber">319&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'title'&nbsp;=&gt;&nbsp;t('Release&nbsp;notes'),<a name="line_319"></a></li>
+<li id="line_320" class="even"><span class="lineNumber">320&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;'href'&nbsp;=&gt;&nbsp;$version['release_link'],<a name="line_320"></a></li>
+<li id="line_321" class="odd"><span class="lineNumber">321&nbsp;</span>&nbsp;&nbsp;);<a name="line_321"></a></li>
+<li id="line_322" class="even"><span class="lineNumber">322&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;theme('links__update_version',&nbsp;array('links'&nbsp;=&gt;&nbsp;$links));<a name="line_322"></a></li>
+<li id="line_323" class="odd"><span class="lineNumber">323&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;'&lt;/td&gt;';<a name="line_323"></a></li>
+<li id="line_324" class="even"><span class="lineNumber">324&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;'&lt;/tr&gt;';<a name="line_324"></a></li>
+<li id="line_325" class="odd"><span class="lineNumber">325&nbsp;</span>&nbsp;&nbsp;$output&nbsp;.=&nbsp;"&lt;/table&gt;\n";<a name="line_325"></a></li>
+<li id="line_326" class="even"><span class="lineNumber">326&nbsp;</span>&nbsp;&nbsp;return&nbsp;$output;<a name="line_326"></a></li>
+<li id="line_327" class="odd"><span class="lineNumber">327&nbsp;</span>}<a name="line_327"></a></li></ol></div></body></html>
+            
+            <div id="sidebar">
+                <table cellpadding="3">
+                    <thead>
+                        <tr>
+                            <th width="40px" align="center">
+                                <strong>start</strong>
+                            </th>
+                            <th width="40px" align="center">
+                                <strong>end</strong>
+                            </th>
+                            <th>
+                                <strong>comment</strong>
+                            </th>
+                            <th width="120px">
+                                <strong>type of error</strong>
+                            </th>
+                            <th width="60px">
+                                <strong>severity</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr class="PMD">
+                            <td align="center">
+                                <a href="#line_33" onclick="switchLine('line_33')">
+                                33</a>
+                            </td>
+                            <td align="center">
+                                <a href="#line_252" onclick="switchLine('line_33'); new Effect.Highlight('line_33-252', {duration: 1.5}); return false">
+                                252</a>
+                            </td>
+                            <td>
+                                <a href="#line_33" onclick="switchLine('line_33'); new Effect.Highlight('line_33-252', {duration: 1.5}); return false">
+                                
+      The function theme_update_report() has a Cyclomatic Complexity of 56. The configured cyclomatic complexity threshold is 10.
+    </a>
+                            </td>
+                            <td>
+                                PMD                            </td>
+                            <td>
+                                error                            </td>
+                        </tr>
+                                            </tbody>
+                </table>
+            </div>
+            <script type="text/javascript" language="javascript">
+                $(initReview);
+            </script>
+                    </div>
+    </body>
+</html>

@@ -1,0 +1,705 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>
+            Mayflower Code Browser - Source Code
+        </title>
+        <link rel="stylesheet" type="text/css" href="../js/jquery.sidebar/css/codebrowser/sidebar.css" />
+        <link rel="stylesheet" type="text/css" href="../css/global.css" />
+        <link rel="stylesheet" type="text/css" href="../css/cruisecontrol.css" />
+        <link rel="stylesheet" type="text/css" href="../css/review.css" />
+
+        <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.sidebar/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.sidebar/jquery.sidebar.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/lib/jquery.hoverIntent.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/lib/jquery.bgiframe.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.cluetip/jquery.cluetip.min.js"></script>
+
+        <script type="text/javascript" src="../js/review.js"></script>
+    </head>
+    <body class="codebrowser">
+        <div class="header">
+            <a href="./../index.html">Go back to index</a> |
+            <a href="http://github.com/mayflowergmbh/PHP_CodeBrowser">PHP CodeBrowser</a>
+        </div>
+        <hr/>
+        <div id="review">
+            <div class="filepath">
+                modules/comment/comment.pages.inc            </div>
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div class="code"><ol class="code"><li id="line_1" class="odd"><span class="lineNumber">&nbsp;&nbsp;1&nbsp;</span>&lt;?php<a name="line_1"></a></li>
+<li id="line_2" class="even"><span class="lineNumber">&nbsp;&nbsp;2&nbsp;</span><a name="line_2"></a></li>
+<li id="line_3" class="odd"><span class="lineNumber">&nbsp;&nbsp;3&nbsp;</span>/**<a name="line_3"></a></li>
+<li id="line_4" class="even"><span class="lineNumber">&nbsp;&nbsp;4&nbsp;</span>&nbsp;*&nbsp;@file<a name="line_4"></a></li>
+<li id="line_5" class="odd"><span class="lineNumber">&nbsp;&nbsp;5&nbsp;</span>&nbsp;*&nbsp;User&nbsp;page&nbsp;callbacks&nbsp;for&nbsp;the&nbsp;comment&nbsp;module.<a name="line_5"></a></li>
+<li id="line_6" class="even"><span class="lineNumber">&nbsp;&nbsp;6&nbsp;</span>&nbsp;*/<a name="line_6"></a></li>
+<li id="line_7" class="odd"><span class="lineNumber">&nbsp;&nbsp;7&nbsp;</span><a name="line_7"></a></li>
+<li id="line_8" class="even"><span class="lineNumber">&nbsp;&nbsp;8&nbsp;</span>/**<a name="line_8"></a></li>
+<li id="line_9" class="odd"><span class="lineNumber">&nbsp;&nbsp;9&nbsp;</span>&nbsp;*&nbsp;This&nbsp;function&nbsp;is&nbsp;responsible&nbsp;for&nbsp;generating&nbsp;a&nbsp;comment&nbsp;reply&nbsp;form.<a name="line_9"></a></li>
+<li id="line_10" class="even"><span class="lineNumber">&nbsp;10&nbsp;</span>&nbsp;*&nbsp;There&nbsp;are&nbsp;several&nbsp;cases&nbsp;that&nbsp;have&nbsp;to&nbsp;be&nbsp;handled,&nbsp;including:<a name="line_10"></a></li>
+<li id="line_11" class="odd"><span class="lineNumber">&nbsp;11&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;-&nbsp;replies&nbsp;to&nbsp;comments<a name="line_11"></a></li>
+<li id="line_12" class="even"><span class="lineNumber">&nbsp;12&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;-&nbsp;replies&nbsp;to&nbsp;nodes<a name="line_12"></a></li>
+<li id="line_13" class="odd"><span class="lineNumber">&nbsp;13&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;-&nbsp;attempts&nbsp;to&nbsp;reply&nbsp;to&nbsp;nodes&nbsp;that&nbsp;can&nbsp;no&nbsp;longer&nbsp;accept&nbsp;comments<a name="line_13"></a></li>
+<li id="line_14" class="even"><span class="lineNumber">&nbsp;14&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;-&nbsp;respecting&nbsp;access&nbsp;permissions&nbsp;('access&nbsp;comments',&nbsp;'post&nbsp;comments',&nbsp;etc.)<a name="line_14"></a></li>
+<li id="line_15" class="odd"><span class="lineNumber">&nbsp;15&nbsp;</span>&nbsp;*<a name="line_15"></a></li>
+<li id="line_16" class="even"><span class="lineNumber">&nbsp;16&nbsp;</span>&nbsp;*&nbsp;The&nbsp;node&nbsp;or&nbsp;comment&nbsp;that&nbsp;is&nbsp;being&nbsp;replied&nbsp;to&nbsp;must&nbsp;appear&nbsp;above&nbsp;the&nbsp;comment<a name="line_16"></a></li>
+<li id="line_17" class="odd"><span class="lineNumber">&nbsp;17&nbsp;</span>&nbsp;*&nbsp;form&nbsp;to&nbsp;provide&nbsp;the&nbsp;user&nbsp;context&nbsp;while&nbsp;authoring&nbsp;the&nbsp;comment.<a name="line_17"></a></li>
+<li id="line_18" class="even"><span class="lineNumber">&nbsp;18&nbsp;</span>&nbsp;*<a name="line_18"></a></li>
+<li id="line_19" class="odd"><span class="lineNumber">&nbsp;19&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;$node<a name="line_19"></a></li>
+<li id="line_20" class="even"><span class="lineNumber">&nbsp;20&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;Every&nbsp;comment&nbsp;belongs&nbsp;to&nbsp;a&nbsp;node.&nbsp;This&nbsp;is&nbsp;that&nbsp;node.<a name="line_20"></a></li>
+<li id="line_21" class="odd"><span class="lineNumber">&nbsp;21&nbsp;</span>&nbsp;*<a name="line_21"></a></li>
+<li id="line_22" class="even"><span class="lineNumber">&nbsp;22&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;$pid<a name="line_22"></a></li>
+<li id="line_23" class="odd"><span class="lineNumber">&nbsp;23&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;Some&nbsp;comments&nbsp;are&nbsp;replies&nbsp;to&nbsp;other&nbsp;comments.&nbsp;In&nbsp;those&nbsp;cases,&nbsp;$pid&nbsp;is&nbsp;the&nbsp;parent<a name="line_23"></a></li>
+<li id="line_24" class="even"><span class="lineNumber">&nbsp;24&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;comment's&nbsp;cid.<a name="line_24"></a></li>
+<li id="line_25" class="odd"><span class="lineNumber">&nbsp;25&nbsp;</span>&nbsp;*<a name="line_25"></a></li>
+<li id="line_26" class="even"><span class="lineNumber">&nbsp;26&nbsp;</span>&nbsp;*&nbsp;@return&nbsp;array<a name="line_26"></a></li>
+<li id="line_27" class="odd"><span class="lineNumber">&nbsp;27&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;An&nbsp;associative&nbsp;array&nbsp;containing:<a name="line_27"></a></li>
+<li id="line_28" class="even"><span class="lineNumber">&nbsp;28&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;-&nbsp;An&nbsp;array&nbsp;for&nbsp;rendering&nbsp;the&nbsp;node&nbsp;or&nbsp;parent&nbsp;comment.<a name="line_28"></a></li>
+<li id="line_29" class="odd"><span class="lineNumber">&nbsp;29&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;comment_node:&nbsp;If&nbsp;the&nbsp;comment&nbsp;is&nbsp;a&nbsp;reply&nbsp;to&nbsp;the&nbsp;node.<a name="line_29"></a></li>
+<li id="line_30" class="even"><span class="lineNumber">&nbsp;30&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;comment_parent:&nbsp;If&nbsp;the&nbsp;comment&nbsp;is&nbsp;a&nbsp;reply&nbsp;to&nbsp;another&nbsp;comment.<a name="line_30"></a></li>
+<li id="line_31" class="odd"><span class="lineNumber">&nbsp;31&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;-&nbsp;comment_form:&nbsp;The&nbsp;comment&nbsp;form&nbsp;as&nbsp;a&nbsp;renderable&nbsp;array.<a name="line_31"></a></li>
+<li id="line_32" class="even"><span class="lineNumber">&nbsp;32&nbsp;</span>&nbsp;*/<a name="line_32"></a></li>
+<li id="line_33" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;33&nbsp;</span>function&nbsp;comment_reply($node,&nbsp;$pid&nbsp;=&nbsp;NULL)&nbsp;{<a name="line_33"></a></li>
+<li id="line_34" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;34&nbsp;</span>&nbsp;&nbsp;//&nbsp;Set&nbsp;the&nbsp;breadcrumb&nbsp;trail.<a name="line_34"></a></li>
+<li id="line_35" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;35&nbsp;</span>&nbsp;&nbsp;drupal_set_breadcrumb(array(l(t('Home'),&nbsp;NULL),&nbsp;l($node-&gt;title,&nbsp;'node/'&nbsp;.&nbsp;$node-&gt;nid)));<a name="line_35"></a></li>
+<li id="line_36" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;36&nbsp;</span>&nbsp;&nbsp;$op&nbsp;=&nbsp;isset($_POST['op'])&nbsp;?&nbsp;$_POST['op']&nbsp;:&nbsp;'';<a name="line_36"></a></li>
+<li id="line_37" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;37&nbsp;</span>&nbsp;&nbsp;$build&nbsp;=&nbsp;array();<a name="line_37"></a></li>
+<li id="line_38" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;38&nbsp;</span><a name="line_38"></a></li>
+<li id="line_39" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;39&nbsp;</span>&nbsp;&nbsp;//&nbsp;The&nbsp;user&nbsp;is&nbsp;previewing&nbsp;a&nbsp;comment&nbsp;prior&nbsp;to&nbsp;submitting&nbsp;it.<a name="line_39"></a></li>
+<li id="line_40" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;40&nbsp;</span>&nbsp;&nbsp;if&nbsp;($op&nbsp;==&nbsp;t('Preview'))&nbsp;{<a name="line_40"></a></li>
+<li id="line_41" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;41&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(user_access('post&nbsp;comments'))&nbsp;{<a name="line_41"></a></li>
+<li id="line_42" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;42&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$build['comment_form']&nbsp;=&nbsp;drupal_get_form("comment_node_{$node-&gt;type}_form",&nbsp;(object)&nbsp;array('pid'&nbsp;=&gt;&nbsp;$pid,&nbsp;'nid'&nbsp;=&gt;&nbsp;$node-&gt;nid));<a name="line_42"></a></li>
+<li id="line_43" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;43&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_43"></a></li>
+<li id="line_44" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;44&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_44"></a></li>
+<li id="line_45" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;45&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_set_message(t('You&nbsp;are&nbsp;not&nbsp;authorized&nbsp;to&nbsp;post&nbsp;comments.'),&nbsp;'error');<a name="line_45"></a></li>
+<li id="line_46" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;46&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_goto("node/$node-&gt;nid");<a name="line_46"></a></li>
+<li id="line_47" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;47&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_47"></a></li>
+<li id="line_48" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;48&nbsp;</span>&nbsp;&nbsp;}<a name="line_48"></a></li>
+<li id="line_49" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;49&nbsp;</span>&nbsp;&nbsp;else&nbsp;{<a name="line_49"></a></li>
+<li id="line_50" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;50&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;$pid&nbsp;indicates&nbsp;that&nbsp;this&nbsp;is&nbsp;a&nbsp;reply&nbsp;to&nbsp;a&nbsp;comment.<a name="line_50"></a></li>
+<li id="line_51" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;51&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($pid)&nbsp;{<a name="line_51"></a></li>
+<li id="line_52" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;52&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(user_access('access&nbsp;comments'))&nbsp;{<a name="line_52"></a></li>
+<li id="line_53" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;53&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Load&nbsp;the&nbsp;comment&nbsp;whose&nbsp;cid&nbsp;=&nbsp;$pid<a name="line_53"></a></li>
+<li id="line_54" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;54&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$comment&nbsp;=&nbsp;db_query('SELECT&nbsp;c.*,&nbsp;u.uid,&nbsp;u.name&nbsp;AS&nbsp;registered_name,&nbsp;u.signature,&nbsp;u.signature_format,&nbsp;u.picture,&nbsp;u.data&nbsp;FROM&nbsp;{comment}&nbsp;c&nbsp;INNER&nbsp;JOIN&nbsp;{users}&nbsp;u&nbsp;ON&nbsp;c.uid&nbsp;=&nbsp;u.uid&nbsp;WHERE&nbsp;c.cid&nbsp;=&nbsp;:cid&nbsp;AND&nbsp;c.status&nbsp;=&nbsp;:status',&nbsp;array(<a name="line_54"></a></li>
+<li id="line_55" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;55&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;':cid'&nbsp;=&gt;&nbsp;$pid,<a name="line_55"></a></li>
+<li id="line_56" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;56&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;':status'&nbsp;=&gt;&nbsp;COMMENT_PUBLISHED,<a name="line_56"></a></li>
+<li id="line_57" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;57&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;))-&gt;fetchObject();<a name="line_57"></a></li>
+<li id="line_58" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;58&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($comment)&nbsp;{<a name="line_58"></a></li>
+<li id="line_59" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;59&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;that&nbsp;comment&nbsp;exists,&nbsp;make&nbsp;sure&nbsp;that&nbsp;the&nbsp;current&nbsp;comment&nbsp;and&nbsp;the<a name="line_59"></a></li>
+<li id="line_60" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;60&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;parent&nbsp;comment&nbsp;both&nbsp;belong&nbsp;to&nbsp;the&nbsp;same&nbsp;parent&nbsp;node.<a name="line_60"></a></li>
+<li id="line_61" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;61&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($comment-&gt;nid&nbsp;!=&nbsp;$node-&gt;nid)&nbsp;{<a name="line_61"></a></li>
+<li id="line_62" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;62&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Attempting&nbsp;to&nbsp;reply&nbsp;to&nbsp;a&nbsp;comment&nbsp;not&nbsp;belonging&nbsp;to&nbsp;the&nbsp;current&nbsp;nid.<a name="line_62"></a></li>
+<li id="line_63" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;63&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_set_message(t('The&nbsp;comment&nbsp;you&nbsp;are&nbsp;replying&nbsp;to&nbsp;does&nbsp;not&nbsp;exist.'),&nbsp;'error');<a name="line_63"></a></li>
+<li id="line_64" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;64&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_goto("node/$node-&gt;nid");<a name="line_64"></a></li>
+<li id="line_65" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;65&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_65"></a></li>
+<li id="line_66" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;66&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Display&nbsp;the&nbsp;parent&nbsp;comment<a name="line_66"></a></li>
+<li id="line_67" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;67&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$comment-&gt;node_type&nbsp;=&nbsp;'comment_node_'&nbsp;.&nbsp;$node-&gt;type;<a name="line_67"></a></li>
+<li id="line_68" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;68&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_attach_load('comment',&nbsp;array($comment-&gt;cid&nbsp;=&gt;&nbsp;$comment));<a name="line_68"></a></li>
+<li id="line_69" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;69&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$comment-&gt;name&nbsp;=&nbsp;$comment-&gt;uid&nbsp;?&nbsp;$comment-&gt;registered_name&nbsp;:&nbsp;$comment-&gt;name;<a name="line_69"></a></li>
+<li id="line_70" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;70&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$build['comment_parent']&nbsp;=&nbsp;comment_view($comment,&nbsp;$node);<a name="line_70"></a></li>
+<li id="line_71" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;71&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_71"></a></li>
+<li id="line_72" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;72&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_72"></a></li>
+<li id="line_73" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;73&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_set_message(t('The&nbsp;comment&nbsp;you&nbsp;are&nbsp;replying&nbsp;to&nbsp;does&nbsp;not&nbsp;exist.'),&nbsp;'error');<a name="line_73"></a></li>
+<li id="line_74" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;74&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_goto("node/$node-&gt;nid");<a name="line_74"></a></li>
+<li id="line_75" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;75&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_75"></a></li>
+<li id="line_76" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;76&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_76"></a></li>
+<li id="line_77" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;77&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_77"></a></li>
+<li id="line_78" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;78&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_set_message(t('You&nbsp;are&nbsp;not&nbsp;authorized&nbsp;to&nbsp;view&nbsp;comments.'),&nbsp;'error');<a name="line_78"></a></li>
+<li id="line_79" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;79&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_goto("node/$node-&gt;nid");<a name="line_79"></a></li>
+<li id="line_80" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;80&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_80"></a></li>
+<li id="line_81" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;81&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_81"></a></li>
+<li id="line_82" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;82&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;This&nbsp;is&nbsp;the&nbsp;case&nbsp;where&nbsp;the&nbsp;comment&nbsp;is&nbsp;in&nbsp;response&nbsp;to&nbsp;a&nbsp;node.&nbsp;Display&nbsp;the&nbsp;node.<a name="line_82"></a></li>
+<li id="line_83" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;83&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;(user_access('access&nbsp;content'))&nbsp;{<a name="line_83"></a></li>
+<li id="line_84" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;84&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$build['comment_node']&nbsp;=&nbsp;node_view($node);<a name="line_84"></a></li>
+<li id="line_85" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;85&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_85"></a></li>
+<li id="line_86" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;86&nbsp;</span><a name="line_86"></a></li>
+<li id="line_87" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;87&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Should&nbsp;we&nbsp;show&nbsp;the&nbsp;reply&nbsp;box?<a name="line_87"></a></li>
+<li id="line_88" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;88&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($node-&gt;comment&nbsp;!=&nbsp;COMMENT_NODE_OPEN)&nbsp;{<a name="line_88"></a></li>
+<li id="line_89" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;89&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_set_message(t("This&nbsp;discussion&nbsp;is&nbsp;closed:&nbsp;you&nbsp;can't&nbsp;post&nbsp;new&nbsp;comments."),&nbsp;'error');<a name="line_89"></a></li>
+<li id="line_90" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;90&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_goto("node/$node-&gt;nid");<a name="line_90"></a></li>
+<li id="line_91" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;91&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_91"></a></li>
+<li id="line_92" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;92&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;(user_access('post&nbsp;comments'))&nbsp;{<a name="line_92"></a></li>
+<li id="line_93" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;93&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$edit&nbsp;=&nbsp;array('nid'&nbsp;=&gt;&nbsp;$node-&gt;nid,&nbsp;'pid'&nbsp;=&gt;&nbsp;$pid);<a name="line_93"></a></li>
+<li id="line_94" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;94&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$build['comment_form']&nbsp;=&nbsp;drupal_get_form("comment_node_{$node-&gt;type}_form",&nbsp;(object)&nbsp;$edit);<a name="line_94"></a></li>
+<li id="line_95" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;95&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_95"></a></li>
+<li id="line_96" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;96&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<a name="line_96"></a></li>
+<li id="line_97" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;97&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_set_message(t('You&nbsp;are&nbsp;not&nbsp;authorized&nbsp;to&nbsp;post&nbsp;comments.'),&nbsp;'error');<a name="line_97"></a></li>
+<li id="line_98" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">&nbsp;98&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drupal_goto("node/$node-&gt;nid");<a name="line_98"></a></li>
+<li id="line_99" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">&nbsp;99&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;}<a name="line_99"></a></li>
+<li id="line_100" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">100&nbsp;</span>&nbsp;&nbsp;}<a name="line_100"></a></li>
+<li id="line_101" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">101&nbsp;</span><a name="line_101"></a></li>
+<li id="line_102" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="even hasIssues PMD"><span class="lineNumber">102&nbsp;</span>&nbsp;&nbsp;return&nbsp;$build;<a name="line_102"></a></li>
+<li id="line_103" title='|
+                        &lt;div class="tooltip"&gt;
+                            &lt;div class="title PMD"&gt;PMD&lt;/div&gt;
+                            &lt;div class="text"&gt;
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    &lt;/div&gt;
+                        &lt;/div&gt;
+                        ' class="odd hasIssues PMD"><span class="lineNumber">103&nbsp;</span>}<a name="line_103"></a></li>
+<li id="line_104" class="even"><span class="lineNumber">104&nbsp;</span><a name="line_104"></a></li>
+<li id="line_105" class="odd"><span class="lineNumber">105&nbsp;</span>/**<a name="line_105"></a></li>
+<li id="line_106" class="even"><span class="lineNumber">106&nbsp;</span>&nbsp;*&nbsp;Menu&nbsp;callback;&nbsp;publish&nbsp;specified&nbsp;comment.<a name="line_106"></a></li>
+<li id="line_107" class="odd"><span class="lineNumber">107&nbsp;</span>&nbsp;*<a name="line_107"></a></li>
+<li id="line_108" class="even"><span class="lineNumber">108&nbsp;</span>&nbsp;*&nbsp;@param&nbsp;$cid<a name="line_108"></a></li>
+<li id="line_109" class="odd"><span class="lineNumber">109&nbsp;</span>&nbsp;*&nbsp;&nbsp;&nbsp;A&nbsp;comment&nbsp;identifier.<a name="line_109"></a></li>
+<li id="line_110" class="even"><span class="lineNumber">110&nbsp;</span>&nbsp;*/<a name="line_110"></a></li>
+<li id="line_111" class="odd"><span class="lineNumber">111&nbsp;</span>function&nbsp;comment_approve($cid)&nbsp;{<a name="line_111"></a></li>
+<li id="line_112" class="even"><span class="lineNumber">112&nbsp;</span>&nbsp;&nbsp;if&nbsp;(!isset($_GET['token'])&nbsp;||&nbsp;!drupal_valid_token($_GET['token'],&nbsp;"comment/$cid/approve"))&nbsp;{<a name="line_112"></a></li>
+<li id="line_113" class="odd"><span class="lineNumber">113&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;MENU_ACCESS_DENIED;<a name="line_113"></a></li>
+<li id="line_114" class="even"><span class="lineNumber">114&nbsp;</span>&nbsp;&nbsp;}<a name="line_114"></a></li>
+<li id="line_115" class="odd"><span class="lineNumber">115&nbsp;</span>&nbsp;&nbsp;if&nbsp;($comment&nbsp;=&nbsp;comment_load($cid))&nbsp;{<a name="line_115"></a></li>
+<li id="line_116" class="even"><span class="lineNumber">116&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$comment-&gt;status&nbsp;=&nbsp;COMMENT_PUBLISHED;<a name="line_116"></a></li>
+<li id="line_117" class="odd"><span class="lineNumber">117&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;comment_save($comment);<a name="line_117"></a></li>
+<li id="line_118" class="even"><span class="lineNumber">118&nbsp;</span><a name="line_118"></a></li>
+<li id="line_119" class="odd"><span class="lineNumber">119&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;drupal_set_message(t('Comment&nbsp;approved.'));<a name="line_119"></a></li>
+<li id="line_120" class="even"><span class="lineNumber">120&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;drupal_goto('node/'&nbsp;.&nbsp;$comment-&gt;nid);<a name="line_120"></a></li>
+<li id="line_121" class="odd"><span class="lineNumber">121&nbsp;</span>&nbsp;&nbsp;}<a name="line_121"></a></li>
+<li id="line_122" class="even"><span class="lineNumber">122&nbsp;</span>&nbsp;&nbsp;return&nbsp;MENU_NOT_FOUND;<a name="line_122"></a></li>
+<li id="line_123" class="odd"><span class="lineNumber">123&nbsp;</span>}<a name="line_123"></a></li></ol></div></body></html>
+            
+            <div id="sidebar">
+                <table cellpadding="3">
+                    <thead>
+                        <tr>
+                            <th width="40px" align="center">
+                                <strong>start</strong>
+                            </th>
+                            <th width="40px" align="center">
+                                <strong>end</strong>
+                            </th>
+                            <th>
+                                <strong>comment</strong>
+                            </th>
+                            <th width="120px">
+                                <strong>type of error</strong>
+                            </th>
+                            <th width="60px">
+                                <strong>severity</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr class="PMD">
+                            <td align="center">
+                                <a href="#line_33" onclick="switchLine('line_33')">
+                                33</a>
+                            </td>
+                            <td align="center">
+                                <a href="#line_103" onclick="switchLine('line_33'); new Effect.Highlight('line_33-103', {duration: 1.5}); return false">
+                                103</a>
+                            </td>
+                            <td>
+                                <a href="#line_33" onclick="switchLine('line_33'); new Effect.Highlight('line_33-103', {duration: 1.5}); return false">
+                                
+      The function comment_reply() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </a>
+                            </td>
+                            <td>
+                                PMD                            </td>
+                            <td>
+                                error                            </td>
+                        </tr>
+                                            </tbody>
+                </table>
+            </div>
+            <script type="text/javascript" language="javascript">
+                $(initReview);
+            </script>
+                    </div>
+    </body>
+</html>
