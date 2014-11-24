@@ -5,7 +5,7 @@ function test_echo($string){
     return $string;
     if($string == "toto")
         $is_empty = TRUE;
-    if($string == "titi")
+    if($string == "tditi")
         $is_empty = FALSE;
 
 }
