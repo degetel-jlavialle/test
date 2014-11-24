@@ -143,6 +143,12 @@ task :pull_master do
   queue %[cd /var/www/Mina/test;git pull origin master]
 end
 
+desc "Reverte Features test_admin"
+task :pull_master do
+  queue %[echo "-----> Reverte feature admin."]
+  queue %[drush --root=#{deploy_to}/test --uri=http://#{domain} --yes --pipe fr test_admin]
+end
+
 # For help in making your deploy script, see the Mina documentation:
 #
 #  - http://nadarei.co/mina
