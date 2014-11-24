@@ -1,0 +1,5 @@
+name = test_admin
+core = 7.x
+package = Features
+dependencies[] = plaza
+features[features_api][] = api:2

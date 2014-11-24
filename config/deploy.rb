@@ -81,6 +81,7 @@ task :deploy => :environment do
     # Breek: Specific Drupal tasks
     invoke :'backup_database'
     invoke :'database_updates'
+    invoke :'pull_master'
     invoke :'run_cron'
     invoke :'clear_caches'
     invoke :'clear_advagg'
@@ -134,6 +135,12 @@ desc "Running cron"
 task :run_cron do
   queue %[echo "-----> Running cron."]
   queue %[drush --root=#{deploy_to}/test --uri=http://#{domain} --yes --pipe cron]
+end
+
+desc "Pull Master"
+task :pull_master do
+  queue %[echo "-----> Pull Master."]
+  queue %[cd /var/www/Mina/test;git pull origin master]
 end
 
 # For help in making your deploy script, see the Mina documentation:
